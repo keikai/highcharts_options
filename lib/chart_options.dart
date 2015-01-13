@@ -209,14 +209,33 @@ class HighChart extends OptionsObject implements ToMap  {
   }
   @reflectable XAxis get xAxis => _xAxis;
   
+  List<XAxis> _xAxes;
+  /**
+   * In case of multiple axes, xAxes is an array of xAxis. If this property is set, xAxis will be ignored
+   */
+  @reflectable set xAxes (List<XAxis> a_xAxes) {
+    _xAxes = configureNotifiers(#xAxes, _xAxes, a_xAxes);
+  }
+  @reflectable List<XAxis> get xAxes => _xAxes;
+  
   YAxis _yAxis;
   /**
-   * The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horiontal axis. In case of multiple axes, the yAxis node is an array of configuration objects.
+   * The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horiontal axis. 
    */
   @reflectable set yAxis (YAxis a_yAxis) {
     _yAxis = configureNotifiers(#yAxis, _yAxis, a_yAxis);
   }
   @reflectable YAxis get yAxis => _yAxis;
+  
+  List<YAxis> _yAxes;
+  /**
+   * In case of multiple axes, yAxes is an array of yAxis. If this property is set, yAxis will be ignored
+   */
+  @reflectable set yAxes (List<YAxis> a_yAxes) {
+    _yAxes = configureNotifiers(#yAxes, _yAxes, a_yAxes);
+  }
+  @reflectable List<YAxis> get yAxes => _yAxes;
+  
   
   Map toMap () {
     Map map = new Map ();
@@ -236,8 +255,18 @@ class HighChart extends OptionsObject implements ToMap  {
     addMapValue(map, 'subtitle', this.subtitle);
     addMapValue(map, 'title', this.title);
     addMapValue(map, 'tooltip', this.tooltip);
-    addMapValue(map, 'xAxis', this.xAxis);
-    addMapValue(map, 'yAxis', this.yAxis);
+    if (xAxes != null && xAxes.length > 0) {
+      addMapValue(map, 'xAxis', this.xAxes);
+    }
+    else {
+      addMapValue(map, 'xAxis', this.xAxis);
+    }
+    if (yAxes != null && yAxes.length > 0) {
+      addMapValue(map, 'yAxis', this.yAxes);
+    }
+    else {
+      addMapValue(map, 'yAxis', this.yAxis);
+    }
     if (moreOptions != null) {
       map.addAll(moreOptions);
     }
@@ -2375,15 +2404,33 @@ class Series extends PlotOptions implements ToMap {
   }
   @reflectable get xAxis => _xAxis;
   
+  var _xAxisId;
+  /**
+   * When using dual or multiple x axes, this number defines which xAxis the particular series is connected to. It refers to the axis id of the axis
+   */
+  @reflectable set xAxisId (var a_xAxisId) {
+    _xAxisId = configureNotifiers(#xAxisId, _xAxisId, a_xAxisId);
+  }
+  @reflectable get xAxisId => _xAxisId;
+  
   
   var _yAxis;
   /**
-   *  When using dual or multiple y axes, this number defines which yAxis the particular series is connected to. It refers to either the axis id or the index of the axis in the yAxis array, with 0 being the first. Defaults to 0.
+   *  When using dual or multiple y axes, this number defines which yAxis the particular series is connected to. It refers to the index of the axis in the yAxis array, with 0 being the first. Defaults to 0.
    */
   @reflectable set yAxis (var a_yAxis) {
     _yAxis = configureNotifiers(#yAxis, _yAxis, a_yAxis);
   }
   @reflectable get yAxis => _yAxis;
+  
+  var _yAxisId;
+  /**
+   *  When using dual or multiple y axes, this String defines which yAxis the particular series is connected to. It refers to the axis id of the axis
+   */
+  @reflectable set yAxisId (var a_yAxisId) {
+    _yAxisId = configureNotifiers(#yAxisId, _yAxisId, a_yAxisId);
+  }
+  @reflectable get yAxisId => _yAxisId;
   
   int _zIndex;
   /**
@@ -2414,6 +2461,8 @@ class Series extends PlotOptions implements ToMap {
     return out;
   }
   
+  JsObject getJsData () => _dataToJS();
+  
   Map toMap () {
     Map map = super.toMap();
     addMapValue(map, 'data', _dataToJS());
@@ -2423,8 +2472,18 @@ class Series extends PlotOptions implements ToMap {
     addMapValue(map, 'name', this.name);
     addMapValue(map, 'stack', this.stack);
     addMapValue(map, 'type', this.type);
-    addMapValue(map, 'xAxis', this.xAxis);
-    addMapValue(map, 'yAxis', this.yAxis);
+    if (this.xAxisId != null && this.xAxisId != "") {
+      addMapValue(map, 'xAxis', this.xAxisId);
+    }
+    else {
+      addMapValue(map, 'xAxis', this.xAxis);  
+    }
+    if (this.yAxisId != null && this.yAxisId != "") {
+      addMapValue(map, 'yAxis', this.yAxisId);
+    }
+    else {
+      addMapValue(map, 'yAxis', this.yAxis);
+    }
     addMapValue(map, 'zIndex', this.zIndex);
     
     if (moreOptions != null) 
