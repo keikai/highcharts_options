@@ -5,7 +5,7 @@ import 'dart:js';
 import 'dart:html';
 
 part 'util/js_map.dart';
-
+ 
 abstract class ToMap {
   Map toMap ();
 }
