@@ -12,6 +12,7 @@ abstract class ToMap {
 
 class OptionsObject extends Object with ChangeNotifier {
   
+  JsObject jsChart;
   Map _moreOptions;
   /**
    * This Angular Dart component tries to be as comprehensive as possible but some highchart 
@@ -44,6 +45,10 @@ class OptionsObject extends Object with ChangeNotifier {
       out = new JsObject.jsify ((this as ToMap).toMap());
     }
     return out;
+  }
+  
+  void setJsChart (JsObject jsChart) {
+    this.jsChart = jsChart; 
   }
 }
 
@@ -271,6 +276,16 @@ class HighChart extends OptionsObject implements ToMap  {
       map.addAll(moreOptions);
     }
     return map;
+  }
+  
+  @override setJsChart (JsObject jsChart) {
+    super.setJsChart(jsChart);
+    setJsChartOptionsObject(chart, jsChart);
+    setJsChartList(series, jsChart);
+    setJsChartList(xAxes, jsChart);
+    setJsChartOptionsObject(xAxis, jsChart);
+    setJsChartList(yAxes, jsChart);
+    setJsChartOptionsObject(yAxis, jsChart);
   }
 }
 
@@ -2490,6 +2505,12 @@ class Series extends PlotOptions implements ToMap {
       map.addAll(moreOptions);
     return map;
   }
+  
+  @override
+  void setJsChart (JsObject jsChart) {
+    super.setJsChart(jsChart);
+    setJsChartList(this.data, jsChart);
+  }
 }
 
 class DataLabels extends OptionsObject  implements ToMap {
@@ -2789,7 +2810,7 @@ class Point extends OptionsObject  implements ToMap {
   }
   @reflectable Map get events => _events;
   
-  String _id;
+  String _id = "${new DateTime.now().millisecond}";
   /**
    * An id for the point. This can be used after render time to get a pointer to the point object through chart.get().
    */
@@ -2889,7 +2910,25 @@ class Point extends OptionsObject  implements ToMap {
     return map;
   }
   
+  @override
+  void setJsChart (JsObject jsChart) {
+    super.setJsChart(jsChart);
+  }
   
+  void remove ({bool redraw, dynamic animation}) {
+    JsObject jsProxy = jsChart.callMethod("get", [this.id]);
+    jsProxy.callMethod("remove", [redraw, animation]);
+  }
+  
+  void select ({bool select, bool accumulate}) {
+    JsObject jsProxy = jsChart.callMethod("get", [this.id]);
+    jsProxy.callMethod("select", [select, accumulate]);
+  }
+  
+  void slice ({bool sliced, bool redraw, dynamic animation}) {
+    JsObject jsProxy = jsChart.callMethod("get", [this.id]);
+    jsProxy.callMethod("slice", [sliced, redraw, animation]);
+  }
   
 }
 

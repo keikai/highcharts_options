@@ -21,3 +21,16 @@ Map addMapValue (Map map, String key, dynamic value) {
   }
   return map;
 }
+
+void setJsChartList (List<OptionsObject> lst, JsObject jsChart) {
+  if (lst != null) { 
+    lst.forEach((OptionsObject obj) {
+      obj.setJsChart(jsChart);
+    });
+  }
+}
+
+void setJsChartOptionsObject (OptionsObject obj, JsObject jsChart) {
+  if (obj != null) 
+    obj.jsChart = jsChart;
+}
