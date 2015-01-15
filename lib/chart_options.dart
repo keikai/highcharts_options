@@ -1,6 +1,7 @@
 library highcharts.options;
 
 import 'package:polymer/polymer.dart';
+import 'package:uuid/uuid.dart';
 import 'dart:js';
 import 'dart:html';
 
@@ -11,6 +12,8 @@ abstract class ToMap {
 }
 
 class OptionsObject extends Object with ChangeNotifier {
+  
+  static Uuid uidGen = new Uuid();
   
   JsObject jsChart;
   Map _moreOptions;
@@ -1652,7 +1655,7 @@ class XAxis extends OptionsObject  implements ToMap {
   @reflectable num get gridZIndex => _gridZIndex;
   
   
-  String _id;
+  String _id = OptionsObject.uidGen.v4();
   /**
    * An id for the axis. This can be used after render time to get a pointer to the axis object through chart.get().
    */
@@ -2141,7 +2144,7 @@ class PlotLines extends OptionsObject  implements ToMap {
   @reflectable Map get events => _events;
   
   
-  String _id;
+  String _id = OptionsObject.uidGen.v4();
   /**
    * An id used for identifying the plot line in Axis.removePlotLine.
    */
@@ -2356,7 +2359,7 @@ class Series extends PlotOptions implements ToMap {
   }
   @reflectable List get numData => _numData;
   
-  String _id;
+  String _id = OptionsObject.uidGen.v4();
   /**
    * An id for the series. This can be used after render time to get a pointer to the series object through chart.get().
    */
@@ -2766,6 +2769,7 @@ class DataLabels extends OptionsObject  implements ToMap {
 }
 
 class Point extends OptionsObject  implements ToMap {
+  
   String _color;
   /**
    * Individual color for the point. By default the color is pulled from the global colors array.
@@ -2810,7 +2814,7 @@ class Point extends OptionsObject  implements ToMap {
   }
   @reflectable Map get events => _events;
   
-  String _id = "${new DateTime.now().millisecond}";
+  String _id = OptionsObject.uidGen.v4();
   /**
    * An id for the point. This can be used after render time to get a pointer to the point object through chart.get().
    */
