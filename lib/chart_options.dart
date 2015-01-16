@@ -1246,7 +1246,7 @@ class Tooltip extends OptionsObject  implements ToMap {
    *   The y value.
    */
   @reflectable void set formatter (Function f) {
-    notifyPropertyChange(#formatter, _formatter, f);
+    _formatter = notifyPropertyChange(#formatter, _formatter, f);
   }
   @reflectable Function get formatter => _formatter;
   
@@ -2857,6 +2857,15 @@ class Point extends OptionsObject  implements ToMap {
   }
   @reflectable bool get sliced => _sliced;
   
+  bool _selected;
+  /**
+   * Whether the point is selected or not.
+   */
+  @reflectable set selected (bool a_selected) {
+    _selected = configureNotifiers(#selected, _selected, a_selected);
+  }
+  @reflectable bool get selected => _selected;
+  
   num _x;
   /**
    * The x value of the point.
@@ -2905,6 +2914,7 @@ class Point extends OptionsObject  implements ToMap {
     addMapValue(map, 'legendIndex', this.legendIndex);
     addMapValue(map, 'marker', this.marker);
     addMapValue(map, 'name', this.name);
+    addMapValue(map, 'selected', this.selected);
     addMapValue(map, 'sliced', this.sliced);
     addMapValue(map, 'x', _xValueToJS());
     addMapValue(map, 'y', this.y);
@@ -2927,11 +2937,13 @@ class Point extends OptionsObject  implements ToMap {
   void select ({bool select, bool accumulate}) {
     JsObject jsProxy = jsChart.callMethod("get", [this.id]);
     jsProxy.callMethod("select", [select, accumulate]);
+    this.selected = true;
   }
   
   void slice ({bool sliced, bool redraw, dynamic animation}) {
     JsObject jsProxy = jsChart.callMethod("get", [this.id]);
     jsProxy.callMethod("slice", [sliced, redraw, animation]);
+    this.selected = false;
   }
   
 }
