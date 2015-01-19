@@ -2359,6 +2359,16 @@ class Series extends PlotOptions implements ToMap {
   }
   @reflectable List get numData => _numData;
   
+  String _color;
+  /**
+   * The color for this series
+   */
+  @reflectable set color (String a_color) {
+    _color = configureNotifiers(#color, _color, a_color);
+  }
+  @reflectable String get color => _color;
+  
+  
   String _id = OptionsObject.uidGen.v4();
   /**
    * An id for the series. This can be used after render time to get a pointer to the series object through chart.get().
@@ -2485,6 +2495,7 @@ class Series extends PlotOptions implements ToMap {
     Map map = super.toMap();
     addMapValue(map, 'data', _dataToJS());
     addMapValue(map, 'id', this.id);
+    addMapValue(map, 'color', this.color);
     addMapValue(map, 'index', this.index);
     addMapValue(map, 'legendIndex', this.legendIndex);
     addMapValue(map, 'name', this.name);
