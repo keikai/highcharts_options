@@ -5,6 +5,6 @@ description: Highcharts Options contains base classes for wrapping the highchart
 homepage: https://github.com/gonzalopezzi
 dependencies:
   polymer: '>=0.15.0 <0.16.0'
-  uuid: any
+  uuid: '>=0.5.0 <0.6.0'
 dev_dependencies:
   unittest: any
