@@ -2112,6 +2112,64 @@ class XAxis extends OptionsObject  implements ToMap {
     }
     return map;
   }
+  
+  bool same (o) {
+    return o is XAxis &&
+        o.allowDecimals == this.allowDecimals &&
+        o.alternateGridColor == this.alternateGridColor &&
+        o.categories == this.categories &&
+        o.ceiling == this.ceiling &&
+        o.dateTimeLabelFormats == this.dateTimeLabelFormats &&
+        o.endOnTick == this.endOnTick &&
+        o.events == this.events &&
+        o.floor == this.floor &&
+        o.gridLineColor == this.gridLineColor &&
+        o.gridLineDashStyle == this.gridLineDashStyle &&
+        o.gridLineWidth == this.gridLineWidth &&
+        o.gridZIndex == this.gridZIndex &&
+        o.id == this.id &&
+        o.labels == this.labels &&
+        o.color == this.color &&
+        o.lineWidth == this.lineWidth &&
+        o.linkedTo == this.linkedTo &&
+        o.max == this.max &&
+        o.maxPadding == this.maxPadding &&
+        o.min == this.min &&
+        o.minPadding == this.minPadding &&
+        o.minRange == this.minRange &&
+        o.minTickInterval == this.minTickInterval &&
+        o.minorGridLineColor == this.minorGridLineColor &&
+        o.minorGridLineDashStyle == this.minorGridLineDashStyle &&
+        o.minorGridLineWidth == this.minorGridLineWidth &&
+        o.minorTickColor == this.minorTickColor &&
+        o.minorTickInterval == this.minorTickInterval &&
+        o.minorTickLength == this.minorTickLength &&
+        o.minorTickPosition == this.minorTickPosition &&
+        o.minorTickWidth == this.minorTickWidth &&
+        o.offset == this.offset &&
+        o.opposite == this.opposite &&
+        o.plotBands == this.plotBands &&
+        o.plotLines == this.plotLines &&
+        o.reversed == this.reversed &&
+        o.showEmpty == this.showEmpty &&
+        o.showFirstLabel == this.showFirstLabel &&
+        o.showLastLabel == this.showLastLabel &&
+        o.startOfWeek == this.startOfWeek &&
+        o.startOnTick == this.startOnTick &&
+        o.tickColor == this.tickColor &&
+        o.tickInterval == this.tickInterval &&
+        o.tickLength == this.tickLength &&
+        o.tickPixelInterval == this.tickPixelInterval &&
+        o.tickPosition == this.tickPosition &&
+        o.tickPositioner == this.tickPositioner &&
+        o.tickPositions == this.tickPositions &&
+        o.tickWidth == this.tickWidth &&
+        o.tickmarkPlacement == this.tickmarkPlacement &&
+        /*o.title == this.title &&   TODO: equals de AxisTitle */
+        o.type == this.type &&
+        o.moreOptions == this.moreOptions;
+  }
+  
 }
 
 class PlotLines extends OptionsObject  implements ToMap {
@@ -2209,8 +2267,6 @@ class PlotLines extends OptionsObject  implements ToMap {
     }
     return map;
   }
-  
-  
 }
 
 class AxisTitle extends OptionsObject  implements ToMap {
@@ -2326,6 +2382,15 @@ class YAxis extends XAxis implements ToMap {
       map.addAll(moreOptions);
     }
     return map;
+  }
+  
+  @override
+  bool same (o) {
+      return super.same(o) &&
+          o is YAxis && 
+          o.maxColor == this.maxColor && 
+          o.minColor == this.minColor && 
+          o.stackLabels == this.stackLabels;
   }
   
 }
