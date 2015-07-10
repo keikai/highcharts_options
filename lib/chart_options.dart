@@ -2479,6 +2479,15 @@ class Series extends PlotOptions implements ToMap {
   }
   @reflectable get stack => _stack;
   
+  String _stacking;
+  /**
+   * Whether to stack the values of each series on top of each other. Possible values are null to disable, "normal" to stack by value or "percent".
+   */
+  @reflectable set stacking (String a_stacking) {
+    _stacking = configureNotifiers(#stacking, _stacking, a_stacking);
+  }
+  @reflectable get stacking => _stacking;
+  
   String _type;
   /**
    * The type of series. Can be one of area, areaspline, bar, column, line, pie, scatter or spline. From version 2.3, arearange, areasplinerange and columnrange are supported with the highcharts-more.js component.
@@ -2565,6 +2574,7 @@ class Series extends PlotOptions implements ToMap {
     addMapValue(map, 'legendIndex', this.legendIndex);
     addMapValue(map, 'name', this.name);
     addMapValue(map, 'stack', this.stack);
+    addMapValue(map, 'stacking', this.stacking);
     addMapValue(map, 'type', this.type);
     if (this.xAxisId != null && this.xAxisId != "") {
       addMapValue(map, 'xAxis', this.xAxisId);
