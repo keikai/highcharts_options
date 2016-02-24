@@ -1,250 +1,151 @@
 library highcharts.options;
 
-import 'package:polymer/polymer.dart';
 import 'package:uuid/uuid.dart';
 import 'dart:js';
+import 'package:js/js.dart';
 import 'dart:html';
-
-part 'util/js_map.dart';
  
 abstract class ToMap {
   Map toMap ();
 }
 
-class OptionsObject extends Object with ChangeNotifier {
+class OptionsObject {
   
   static Uuid uidGen = new Uuid();
   
   JsObject jsChart;
-  Map _moreOptions;
-  /**
-   * This Angular Dart component tries to be as comprehensive as possible but some highchart 
-   * properties may not be covered by this implementation. Any property not available in this 
-   * implementation can be added in this map and the js highcharts will get it  
-   */
-  @reflectable set moreOptions (Map m) {
-    _moreOptions = configureNotifiers(#moreOptions, _moreOptions, m);
-  }
-  @reflectable Map get moreOptions => _moreOptions;
-  
-  dynamic configureNotifiers (Symbol symbol, dynamic oldValue, dynamic newValue) {
-    notifyPropertyChange(symbol, oldValue, newValue);
-    var out = toObservable(newValue);
-    if (out is Observable) 
-      (out as Observable).changes.listen ((_) { notifyPropertyChange(symbol, null, newValue); });
-    if (out is Iterable) {
-      for (var item in out) {
-        if (item is OptionsObject) {
-          (item as Observable).changes.listen((_) { notifyPropertyChange(symbol, null, newValue);});
-        }
-      }
-    }
-    return out;
-  }
-  
-  JsObject toJsObject () {
-    JsObject out;
-    if (this is ToMap) {
-      out = new JsObject.jsify ((this as ToMap).toMap());
-    }
-    return out;
-  }
-  
+
   void setJsChart (JsObject jsChart) {
     this.jsChart = jsChart; 
   }
 }
 
-class HighChart extends OptionsObject implements ToMap  {
+@JS()
+@anonymous
+class HighChart extends OptionsObject {
   
-  Chart _chart;
   /**
    * Options regarding the chart area and plot area as well as general chart options.
    */
-  @reflectable set chart (Chart c) {
-    _chart = configureNotifiers(#chart, _chart, c);
-  }
-  @reflectable Chart get chart => _chart;
+  external Chart get chart;
+  external void set chart (Chart a_chart);
   
-  List<String> _colors;
   /**
    * An array containing the default colors for the chart's series. When all colors are used, new colors are pulled from the start again. Defaults to:
    */
-  @reflectable set colors (List<String> a_colors) {
-    _colors = configureNotifiers(#colors, _colors, a_colors);
-  }
-  @reflectable List<String> get colors => _colors;
+  external List<String> get colors;
+  external void set colors (List<String> a_colors);
   
-  Credits _credits;
   /**
    * Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
    */
-  @reflectable set credits (Credits a_credits) {
-    _credits = configureNotifiers(#credits, _credits, a_credits);
-  }
-  @reflectable Credits get credits => _credits;
+  external Credits get credits;
+  external void set credits (Credits a_credits);
   
-  DrillDown _drilldown;
   /**
    * Options for drill down, the concept of inspecting increasingly high resolution data through clicking on chart items like columns or pie slices.
    */
-  @reflectable set drilldown (DrillDown a_drilldown) {
-    _drilldown = configureNotifiers(#drilldown, _drilldown, a_drilldown);
-  }
-  @reflectable DrillDown get drilldown => _drilldown;
+  external DrillDown get drilldown;
+  external void set drilldown (DrillDown a_drilldown);
   
-
-  Exporting _exporting;
   /**
    * Options for the exporting module. For an overview on the matter, see the docs.
    */
-  @reflectable set exporting (Exporting a_exporting) {
-    _exporting = configureNotifiers(#exporting, _exporting, a_exporting);
-  }
-  @reflectable Exporting get exporting => _exporting;
+  external Exporting get exporting;
+  external void set exporting (Exporting a_exporting);
   
-  Labels _labels;
   /**
    * HTML labels that can be positioined anywhere in the chart area.
    */
-  @reflectable set labels (Labels a_labels) {
-    _labels = configureNotifiers(#labels, _labels, a_labels);
-  }
-  @reflectable Labels get labels => _labels;
+  external Labels get labels;
+  external void set labels (Labels a_labels);
   
-  
-  Legend _legend;
   /**
    * The legend is a box containing a symbol and name for each series item or point item in the chart.
    */
-  @reflectable set legend (Legend l) {
-    _legend = configureNotifiers (#legend, _legend, l);
-  }
-  @reflectable Legend get legend => _legend;
+  external Legend get legend;
+  external void set legend (Legend a_legend);
   
-  
-  Loading _loading;
   /**
    * The loading options control the appearance of the loading screen that covers the plot area on chart operations. This screen only appears after an explicit call to chart.showLoading(). It is a utility for developers to communicate to the end user that something is going on, for example while retrieving new data via an XHR connection. The "Loading..." text itself is not part of this configuration object, but part of the lang object.
    */
-  @reflectable set loading (Loading a_loading) {
-    _loading = configureNotifiers(#loading, _loading, a_loading);
-  }
-  @reflectable Loading get loading => _loading;
+  external Loading get loading;
+  external void set loading (Loading a_loading);
   
-  Navigation _navigation;
   /**
    * A collection of options for buttons and menus appearing in the exporting module.
    */
-  @reflectable set navigation (Navigation a_navigation) {
-    _navigation = configureNotifiers(#navigation, _navigation, a_navigation);
-  }
-  @reflectable Navigation get navigation => _navigation;
+  external Navigation get navigation;
+  external void set navigation (Navigation a_navigation);
   
-  Map _noData;
   /**
    * Options for displaying a message like "No data to display". This feature requires the file no-data-to-display.js to be loaded in the page.
    */
-  @reflectable set noData (Map a_noData) {
-    _noData = configureNotifiers(#noData, _noData, a_noData);
-  }
-  @reflectable Map get noData => _noData;
+  external JsObject get noData;
+  external void set noData (JsObject a_noData);
   
-  Pane _pane;
   /**
    * Applies only to polar charts and angular gauges. This configuration object holds general options for the combined X and Y axes set. Each xAxis or yAxis can reference the pane by index.
    */
-  @reflectable set pane (Pane a_pane) {
-    _pane = configureNotifiers(#pane, _pane, a_pane);
-  }
-  @reflectable Pane get pane => _pane;
+  external Pane get pane;
+  external void set pane (Pane a_pane);
   
-  PlotOptions _plotOptions;
   /**
    * The plotOptions is a wrapper object for config objects for each series type. The config objects for each series can also be overridden for each series item as given in the series array.
    * Configuration options for the series are given in three levels. Options for all series in a chart are given in the plotOptions.series object. Then options for all series of a specific type are given in the plotOptions of that type, for example plotOptions.line. Next, options for one single series are given in the series array.
    */
-  @reflectable set plotOptions (PlotOptions a_plotOptions) {
-    _plotOptions = configureNotifiers(#plotOptions, _plotOptions, a_plotOptions);
-  }
-  @reflectable PlotOptions get plotOptions => _plotOptions;
+  external PlotOptions get plotOptions;
+  external void set plotOptions (PlotOptions a_plotOptions);
   
   /**
    * The actual series to append to the chart. In addition to the members listed below, any member of the plotOptions for that specific type of plot can be added to a series individually. For example, even though a general lineWidth is specified in plotOptions.series, an individual lineWidth can be specified for each series. 
    */
-  List<Series> _series;
-  @reflectable set series (List<Series> s) {
-    /*_series = toObservable(s);
-    (_series as ObservableList).changes.listen ((_) { notifyPropertyChange(#series, _series, s); });
-    */
-    _series = configureNotifiers(#series, _series, s);
-  }
-  @reflectable List<Series> get series => _series;
+  external List<Series> get series;
+  external void set series (List<Series> a_series);
   
-  Subtitle _subtitle;
   /**
    * The chart's subtitle
    */
-  @reflectable set subtitle (Subtitle a_subtitle) {
-    _subtitle = configureNotifiers(#subtitle, _subtitle, a_subtitle);
-  }
-  @reflectable Subtitle get subtitle => _subtitle;
+  external Subtitle get subtitle;
+  external void set subtitle (Subtitle a_subtitle);
   
-  Title _title;
   /**
    * The chart's title
    */
-  @reflectable set title (Title a_title) {
-    _title = configureNotifiers(#title, _title, a_title);
-  }
-  @reflectable Title get title => _title;
+  external Title get title;
+  external void set title (Title a_title);
   
-  Tooltip _tooltip;
   /**
    * Options for the tooltip that appears when the user hovers over a series or point.
    */
-  @reflectable set tooltip (Tooltip a_tooltip) {
-    _tooltip = configureNotifiers(#tooltip, _tooltip, a_tooltip);
-  }
-  @reflectable Tooltip get tooltip => _tooltip;
+  external Tooltip get tooltip;
+  external void set tooltip (Tooltip a_tooltip);
   
-  XAxis _xAxis;
   /**
    * The X axis or category axis. Normally this is the horizontal axis, though if the chart is inverted this is the vertical axis. In case of multiple axes, the xAxis node is an array of configuration objects.
    */
-  @reflectable set xAxis (XAxis a_xAxis) {
-    _xAxis = configureNotifiers(#xAxis, _xAxis, a_xAxis);
-  }
-  @reflectable XAxis get xAxis => _xAxis;
+  external XAxis get xAxis;
+  external void set xAxis (XAxis a_xAxis);
   
-  List<XAxis> _xAxes;
   /**
    * In case of multiple axes, xAxes is an array of xAxis. If this property is set, xAxis will be ignored
    */
-  @reflectable set xAxes (List<XAxis> a_xAxes) {
-    _xAxes = configureNotifiers(#xAxes, _xAxes, a_xAxes);
-  }
-  @reflectable List<XAxis> get xAxes => _xAxes;
+  external List<XAxis> get xAxes;
+  external void set xAxes (List<XAxis> a_xAxes);
   
-  YAxis _yAxis;
   /**
    * The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horiontal axis. 
    */
-  @reflectable set yAxis (YAxis a_yAxis) {
-    _yAxis = configureNotifiers(#yAxis, _yAxis, a_yAxis);
-  }
-  @reflectable YAxis get yAxis => _yAxis;
+  external YAxis get yAxis;
+  external void set yAxis (YAxis a_yAxis);
   
-  List<YAxis> _yAxes;
   /**
    * In case of multiple axes, yAxes is an array of yAxis. If this property is set, yAxis will be ignored
    */
-  @reflectable set yAxes (List<YAxis> a_yAxes) {
-    _yAxes = configureNotifiers(#yAxes, _yAxes, a_yAxes);
-  }
-  @reflectable List<YAxis> get yAxes => _yAxes;
-  
-  
+  external List<YAxis> get yAxes;
+  external void set yAxes (List<YAxis> a_yAxes);
+
+  /* TODO: Ojo qué pasa aquí con los ejes xAxes vs xAxis
   Map toMap () {
     Map map = new Map ();
     addMapValue(map, 'chart', this.chart);
@@ -279,8 +180,9 @@ class HighChart extends OptionsObject implements ToMap  {
       map.addAll(moreOptions);
     }
     return map;
-  }
-  
+  }*/
+
+  /* TODO: ¿Esto para qué es?
   @override setJsChart (JsObject jsChart) {
     super.setJsChart(jsChart);
     setJsChartOptionsObject(chart, jsChart);
@@ -290,229 +192,119 @@ class HighChart extends OptionsObject implements ToMap  {
     setJsChartList(yAxes, jsChart);
     setJsChartOptionsObject(yAxis, jsChart);
   }
+  */
 }
 
-class Labels extends OptionsObject implements ToMap {
-  List _items;
-  /**
-   * A HTML label that can be positioined anywhere in the chart area.
-   */
-  @reflectable set items (List  a_items) {
-    _items = configureNotifiers(#items, _items, a_items);
-  }
-  @reflectable List  get items => _items;
+@JS()
+@anonymous
+class Labels extends OptionsObject {
+  external List get items;
+  external void set items (List items);
 
-  
-  Map _style;
-  /**
-   * Shared CSS styles for all labels. Defaults to:
-  style: {
-          color: '#3E576F'
-  }
-   */
-  @reflectable set style (Map  a_style) {
-    _style = configureNotifiers(#style, _style, a_style);
-  }
-  @reflectable Map  get style => _style;
-
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'items', this.items);
-    addMapValue(map, 'style', this.style);
-    if (moreOptions != null) 
-      map.addAll(moreOptions);
-    return map;
-  }
-  
+  external set style (JsObject  a_style);
+  external JsObject get style;
 }
 
-class Pane extends OptionsObject implements ToMap {
-  List _background;
+@JS()
+@anonymous
+class Pane extends OptionsObject {
   /**
    * An object, or array of objects, for backgrounds. Sub options include backgroundColor (can be solid or gradient), shape (solid or arc), innerWidth, outerWidth, borderWidth, borderColor.
    */
-  @reflectable set background (List  a_background) {
-    _background = configureNotifiers(#background, _background, a_background);
-  }
-  @reflectable List  get background => _background;
-
-
-  List _center;
+  external List get background;
+  external void set background (List a_background);
   /**
    * The center of a polar chart or angular gauge, given as an array of [x, y] positions. Positions can be given as integers that transform to pixels, or as percentages of the plot area size. Defaults to [50%, 50%].
    */
-  @reflectable set center (List  a_center) {
-    _center = configureNotifiers(#center, _center, a_center);
-  }
-  @reflectable List  get center => _center;
-
-
-  num _endAngle;
+  external List get center;
+  external void set center (List a_center);
   /**
    * The end angle of the polar X axis or gauge value axis, given in degrees where 0 is north. Defaults to startAngle + 360.
    */
-  @reflectable set endAngle (num  a_endAngle) {
-    _endAngle = configureNotifiers(#endAngle, _endAngle, a_endAngle);
-  }
-  @reflectable num  get endAngle => _endAngle;
+  external num get endAngle;
+  external void set endAngle (num a_endAngle);
 
-
-  num _startAngle;
   /**
    * The start angle of the polar X axis or gauge axis, given in degrees where 0 is north. Defaults to 0.
    */
-  @reflectable set startAngle (num  a_startAngle) {
-    _startAngle = configureNotifiers(#startAngle, _startAngle, a_startAngle);
-  }
-  @reflectable num  get startAngle => _startAngle;
+  external num get startAngle;
+  external void set startAngle (num a_startAngle);
 
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'background', this.background);
-    addMapValue(map, 'center', this.center);
-    addMapValue(map, 'endAngle', this.endAngle);
-    addMapValue(map, 'startAngle', this.startAngle);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
 }
 
-class Exporting extends OptionsObject implements ToMap {
-  Map _buttons;
+@JS()
+@anonymous
+class Exporting extends OptionsObject {
   /**
    * Options for the export related buttons, print and export. In addition to the default buttons listed here, custom buttons can be added. See navigation.buttonOptions for general options.
    */
-  @reflectable set buttons (Map  a_buttons) {
-    _buttons = configureNotifiers(#buttons, _buttons, a_buttons);
-  }
-  @reflectable Map  get buttons => _buttons;
+  external JsObject get buttons;
+  external void set buttons (JsObject a_buttons);
 
-
-  Map _chartOptions;
   /**
    * Additional chart options to be merged into an exported chart. For example, the exported chart can be given a specific width and height, or a printer-friendly color scheme. Defaults to null.
    */
-  @reflectable set chartOptions (Map  a_chartOptions) {
-    _chartOptions = configureNotifiers(#chartOptions, _chartOptions, a_chartOptions);
-  }
-  @reflectable Map  get chartOptions => _chartOptions;
+  external JsObject get chartOptions;
+  external void set chartOptions (JsObject a_chartOptions);
 
-
-  bool _enabled;
   /**
    * Whether to enable the exporting module. Disabling the module will hide the context button, but API methods will still be available. Defaults to true.
    */
-  @reflectable set enabled (bool  a_enabled) {
-    _enabled = configureNotifiers(#enabled, _enabled, a_enabled);
-  }
-  @reflectable bool  get enabled => _enabled;
-
+  external bool get enabled;
+  external void set enabled (bool a_enabled);
 
   String _filename;
   /**
    * The filename, without extension, to use for the exported chart. Defaults to chart.
    */
-  @reflectable set filename (String  a_filename) {
-    _filename = configureNotifiers(#filename, _filename, a_filename);
-  }
-  @reflectable String  get filename => _filename;
+  external String get filename;
+  external void set filename (String a_filename);
 
-
-  Map _formAttributes;
   /**
    * An object containing additional attributes for the POST form that sends the SVG to the export server. For example, a target can be set to make sure the generated image is received in another frame, or a custom enctype or encoding can be set.
    */
-  @reflectable set formAttributes (Map  a_formAttributes) {
-    _formAttributes = configureNotifiers(#formAttributes, _formAttributes, a_formAttributes);
-  }
-  @reflectable Map  get formAttributes => _formAttributes;
+  external JsObject get formAttributes;
+  external void set formAttributes (JsObject formAttributes);
 
-
-  num _scale;
   /**
    * Defines the scale or zoom factor for the exported image compared to the on-screen display. While for instance a 600px wide chart may look good on a website, it will look bad in print. The default scale of 2 makes this chart export to a 1200px PNG or JPG. Defaults to 2.
    */
-  @reflectable set scale (num  a_scale) {
-    _scale = configureNotifiers(#scale, _scale, a_scale);
-  }
-  @reflectable num  get scale => _scale;
+  external num get scale;
+  external void set scale (num a_scale);
 
-
-  int _sourceHeight;
   /**
    * Analogous to sourceWidth
    */
-  @reflectable set sourceHeight (int  a_sourceHeight) {
-    _sourceHeight = configureNotifiers(#sourceHeight, _sourceHeight, a_sourceHeight);
-  }
-  @reflectable int  get sourceHeight => _sourceHeight;
+  external int get sourceHeight;
+  external void set sourceHeight (int a_sourceHeight);
 
-
-  int _sourceWidth;
   /**
    * The width of the original chart when exported, unless an explicit chart.width is set. The width exported raster image is then multiplied byscale.
    */
-  @reflectable set sourceWidth (int  a_sourceWidth) {
-    _sourceWidth = configureNotifiers(#sourceWidth, _sourceWidth, a_sourceWidth);
-  }
-  @reflectable int  get sourceWidth => _sourceWidth;
+  external int get sourceWidth;
+  external void set sourceWidth (int a_sourceWidth);
 
-
-  String _type;
   /**
    * Default MIME type for exporting if chart.exportChart() is called without specifying a type option. Possible values areimage/png, image/jpeg, application/pdf and image/svg+xml. Defaults to image/png.
    */
-  @reflectable set type (String  a_type) {
-    _type = configureNotifiers(#type, _type, a_type);
-  }
-  @reflectable String  get type => _type;
+  external String get type;
+  external void set type (String a_type);
 
-
-  String _url;
   /**
    * The URL for the server module converting the SVG string to an image format. By default this points to Highslide Software's free web service. Defaults to http://export.highcharts.com.
    */
-  @reflectable set url (String  a_url) {
-    _url = configureNotifiers(#url, _url, a_url);
-  }
-  @reflectable String  get url => _url;
+  external String get url;
+  external void set url (String a_url);
 
-
-  int _width;
   /**
    * The pixel width of charts exported to PNG or JPG. As of Highcharts 3.0, the default pixel width is a function of the chart.width orexporting.sourceWidth and the exporting.scale. Defaults to undefined.
    */
-  @reflectable set width (int  a_width) {
-    _width = configureNotifiers(#width, _width, a_width);
-  }
-  @reflectable int  get width => _width;
+  external int get width;
+  external void set width (int a_width);
 
-
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'buttons', this.buttons);
-    addMapValue(map, 'chartOptions', this.chartOptions);
-    addMapValue(map, 'enabled', this.enabled);
-    addMapValue(map, 'filename', this.filename);
-    addMapValue(map, 'formAttributes', this.formAttributes);
-    addMapValue(map, 'scale', this.scale);
-    addMapValue(map, 'sourceHeight', this.sourceHeight);
-    addMapValue(map, 'sourceWidth', this.sourceWidth);
-    addMapValue(map, 'type', this.type);
-    addMapValue(map, 'url', this.url);
-    addMapValue(map, 'width', this.width);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
-  
 }
 
-class DrillDown extends OptionsObject implements ToMap {
-  Map _activeAxisLabelStyle;
+class DrillDown extends OptionsObject {
   /**
    * Additional styles to apply to the X axis label for a point that has drilldown data. By default it is underlined and blue to invite to interaction. Defaults to:
   activeAxisLabelStyle: {
@@ -522,13 +314,9 @@ class DrillDown extends OptionsObject implements ToMap {
           textDecoration: 'underline'                        
   }
    */
-  @reflectable set activeAxisLabelStyle (Map  a_activeAxisLabelStyle) {
-    _activeAxisLabelStyle = configureNotifiers(#activeAxisLabelStyle, _activeAxisLabelStyle, a_activeAxisLabelStyle);
-  }
-  @reflectable Map  get activeAxisLabelStyle => _activeAxisLabelStyle;
-
+  external JsObject get activeAxisLabelStyle;
+  external void set activeAxisLabelStyle (JsObject a_activeAxisLabelStyle);
   
-  Map _activeDataLabelStyle;
   /**
    * Additional styles to apply to the data label of a point that has drilldown data. By default it is underlined and blue to invite to interaction. Defaults to:
   activeAxisLabelStyle: {
@@ -538,13 +326,9 @@ class DrillDown extends OptionsObject implements ToMap {
           textDecoration: 'underline'                        
   }
    */
-  @reflectable set activeDataLabelStyle (Map  a_activeDataLabelStyle) {
-    _activeDataLabelStyle = configureNotifiers(#activeDataLabelStyle, _activeDataLabelStyle, a_activeDataLabelStyle);
-  }
-  @reflectable Map  get activeDataLabelStyle => _activeDataLabelStyle;
+  external JsObject get activeDataLabelStyle;
+  external void set activeDataLabelStyle (JsObject a_activeDataLabelStyle);
 
-  
-  dynamic _animation;
   /**
    * Set the animation for all drilldown animations. Animation of a drilldown occurs when drilling between a column point and a column series, or a pie slice and a full pie series. Drilldown can still be used between series and points of different types, but animation will not occur.
 
@@ -555,80 +339,42 @@ class DrillDown extends OptionsObject implements ToMap {
   easing
   When using jQuery as the general framework, the easing can be set to linear or swing. More easing functions are available with the use of jQuery plug-ins, most notably the jQuery UI suite. See the jQuery docs. When using MooTools as the general framework, use the property name transition instead of easing.
    */
-  @reflectable set animation (dynamic  a_animation) {
-    _animation = configureNotifiers(#animation, _animation, a_animation);
-  }
-  @reflectable dynamic  get animation => _animation;
+  external dynamic get animation;
+  external void set animation (dynamic a_animation);
 
-  
-  DrillUpButton _drillUpButton;
   /**
    * Options for the drill up button that appears when drilling down on a series. The text for the button is defined in lang.drillUpText.
    */
-  @reflectable set drillUpButton (DrillUpButton  a_drillUpButton) {
-    _drillUpButton = configureNotifiers(#drillUpButton, _drillUpButton, a_drillUpButton);
-  }
-  @reflectable DrillUpButton  get drillUpButton => _drillUpButton;
+  external DrillUpButton get drillUpButton;
+  external void set drillUpButton (DrillUpButton a_drillUpButton);
 
-  
-  List<Map> _series;
   /**
    * An array of series configurations for the drill down. Each series configuration uses the same syntax as the series option set. These drilldown series are hidden by default. The drilldown series is linked to the parent series' point by its id.
    */
-  @reflectable set series (List<Map>  a_series) {
-    _series = configureNotifiers(#series, _series, a_series);
-  }
-  @reflectable List<Map>  get series => _series;
-
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'activeAxisLabelStyle', this.activeAxisLabelStyle);
-    addMapValue(map, 'activeDataLabelStyle', this.activeDataLabelStyle);
-    addMapValue(map, 'animation', this.animation);
-    addMapValue(map, 'drillUpButton', this.drillUpButton);
-    addMapValue(map, 'series', this.series);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
-  
+  external List<JsObject> get series;
+  external void set series (List<JsObject> a_series);
 }
 
-class DrillUpButton extends OptionsObject implements ToMap {
-  Map _position;
+@JS()
+@anonymous
+class DrillUpButton extends OptionsObject {
   /**
    * Positioning options for the button within the relativeTo box. Available properties are x, y, align and verticalAlign.
    */
-  @reflectable set position (Map  a_position) {
-    _position = configureNotifiers(#position, _position, a_position);
-  }
-  @reflectable Map  get position => _position;
+  external JsObject get position;
+  external void set position (JsObject a_position);
 
-  
-  String _relativeTo;
   /**
    * What box to align the button to. Can be either ""plotBox"" or ""spacingBox"". Defaults to plotBox.
    */
-  @reflectable set relativeTo (String  a_relativeTo) {
-    _relativeTo = configureNotifiers(#relativeTo, _relativeTo, a_relativeTo);
-  }
-  @reflectable String  get relativeTo => _relativeTo;
+  external String get relativeTo;
+  external void set relativeTo (String a_relativeTo);
 
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'position', this.position);
-    addMapValue(map, 'relativeTo', this.relativeTo);
-    if (moreOptions != null) 
-      map.addAll(moreOptions);
-    return map;
-  }
-  
-  
 }
 
-class Navigation extends OptionsObject implements ToMap {
-  Map _menuItemHoverStyle;
+@JS()
+@anonymous
+class Navigation extends OptionsObject {
   /**
    * CSS styles for the hover state of the individual items within the popup menu appearing by default when the export icon is clicked. The menu items are rendered in HTML. Defaults to
   menuItemHoverStyle: {
@@ -636,13 +382,9 @@ class Navigation extends OptionsObject implements ToMap {
           color: '#FFFFFF'
   }
    */
-  @reflectable set menuItemHoverStyle (Map  a_menuItemHoverStyle) {
-    _menuItemHoverStyle = configureNotifiers(#menuItemHoverStyle, _menuItemHoverStyle, a_menuItemHoverStyle);
-  }
-  @reflectable Map  get menuItemHoverStyle => _menuItemHoverStyle;
+  external JsObject get menuItemHoverStyle;
+  external void set menuItemHoverStyle (JsObject a_menuItemHoverStyle);
 
-
-  Map _menuItemStyle;
   /**
    * CSS styles for the individual items within the popup menu appearing by default when the export icon is clicked. The menu items are rendered in HTML. Defaults to
   menuItemStyle: {
@@ -651,93 +393,52 @@ class Navigation extends OptionsObject implements ToMap {
           color: '#303030'
   }
    */
-  @reflectable set menuItemStyle (Map  a_menuItemStyle) {
-    _menuItemStyle = configureNotifiers(#menuItemStyle, _menuItemStyle, a_menuItemStyle);
-  }
-  @reflectable Map  get menuItemStyle => _menuItemStyle;
+  external JsObject get menuItemStyle;
+  external void set menuItemStyle (JsObject a_menuItemStyle);
 
-
-  Map _menuStyle;
   /**
    * CSS styles for the popup menu appearing by default when the export icon is clicked. This menu is rendered in HTML. Defaults to
    */
-  @reflectable set menuStyle (Map  a_menuStyle) {
-    _menuStyle = configureNotifiers(#menuStyle, _menuStyle, a_menuStyle);
-  }
-  @reflectable Map  get menuStyle => _menuStyle;
+  external JsObject get menuStyle;
+  external void set menuStyle (JsObject a_menuStyle);
 
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'menuItemHoverStyle', this.menuItemHoverStyle);
-    addMapValue(map, 'menuItemStyle', this.menuItemStyle);
-    addMapValue(map, 'menuStyle', this.menuStyle);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
-  
 }
 
-class Loading extends OptionsObject implements ToMap {
-  int _hideDuration;
+@JS()
+@anonymous
+class Loading extends OptionsObject {
   /**
    * Description of the
   field
    */
-  @reflectable set hideDuration (int  a_hideDuration) {
-    _hideDuration = configureNotifiers(#hideDuration, _hideDuration, a_hideDuration);
-  }
-  @reflectable int  get hideDuration => _hideDuration;
+  external int get hideDuration;
+  external void set hideDuration (int a_hideDuration);
 
-  
-  Map _labelStyle;
   /**
    * Description of the
   field
    */
-  @reflectable set labelStyle (Map  a_labelStyle) {
-    _labelStyle = configureNotifiers(#labelStyle, _labelStyle, a_labelStyle);
-  }
-  @reflectable Map  get labelStyle => _labelStyle;
+  external JsObject get labelStyle;
+  external void set labelStyle (JsObject a_labelStyle);
 
-  
-  int _showDuration;
   /**
    * Description of the
   field
    */
-  @reflectable set showDuration (int  a_showDuration) {
-    _showDuration = configureNotifiers(#showDuration, _showDuration, a_showDuration);
-  }
-  @reflectable int  get showDuration => _showDuration;
+  external int get showDuration;
+  external void set showDuration (int a_showDuration);
 
-  
-  Map _style;
   /**
    * Description of the
   field
    */
-  @reflectable set style (Map  a_style) {
-    _style = configureNotifiers(#style, _style, a_style);
-  }
-  @reflectable Map  get style => _style;
-
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'hideDuration', this.hideDuration);
-    addMapValue(map, 'labelStyle', this.labelStyle);
-    addMapValue(map, 'showDuration', this.showDuration);
-    addMapValue(map, 'style', this.style);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
-  
+  external JsObject get style;
+  external void set style (JsObject a_style);
 }
 
-class Legend extends OptionsObject implements ToMap {
+@JS()
+@anonymous
+class Legend extends OptionsObject {
   String _align;
   /**
    * The horizontal alignment of the legend box within the chart area. Valid values are "left", "center" and "right". Defaults to center
