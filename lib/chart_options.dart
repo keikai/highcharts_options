@@ -439,421 +439,257 @@ class Loading extends OptionsObject {
 @JS()
 @anonymous
 class Legend extends OptionsObject {
-  String _align;
   /**
    * The horizontal alignment of the legend box within the chart area. Valid values are "left", "center" and "right". Defaults to center
    **/
-  @reflectable set align (String a_align) {
-    _align = configureNotifiers(#align, _align, a_align);
-  }
-  @reflectable String get align => _align;
+  external String get align;
+  external void set align (String a_align);
   
-  String _backgroundColor;
   /**
    * The background color of the legend, filling the rounded corner border.
    * */
-  @reflectable set backgroundColor (String a_backgroundColor) {
-    _backgroundColor = configureNotifiers(#backgroundColor, _backgroundColor, a_backgroundColor);
-  }
-  @reflectable String get backgroundColor => _backgroundColor;
+  external String get backgroundColor;
+  external void set backgroundColor (String a_backgroundColor);
   
-  String _borderColor;
   /**
    * The color of the drawn border around the legend. Defaults to #909090.
    */
-  @reflectable set borderColor (String a_borderColor) {
-    _borderColor = configureNotifiers(#borderColor, _borderColor, a_borderColor);
-  }
-  @reflectable String get borderColor => _borderColor;
+  external String get borderColor;
+  external void set borderColor (String a_borderColor);
   
-  int _borderRadius;
   /**
    * The border corner radius of the legend. Defaults to 0.
    */
-  @reflectable set borderRadius (int a_borderRadius) {
-    _borderRadius = configureNotifiers(#borderRadius, _borderRadius, a_borderRadius);
-  }
-  @reflectable int get borderRadius => _borderRadius;
-  
-  int _borderWidth;
+  external int get borderRadius;
+  external void set borderRadius (int a_borderRadius);
+
   /**
    * The width of the drawn border around the legend. Defaults to 0.
    */
-  @reflectable set borderWidth (int a_borderWidth) {
-    _borderWidth = configureNotifiers(#borderWidth, _borderWidth, a_borderWidth);
-  }
-  @reflectable int get borderWidth => _borderWidth;
+  external int get borderWidth;
+  external void set borderWidth (int a_borderWidth);
   
-  bool _enabled;
   /**
    * Enable or disable the legend. Defaults to true.
    */
-  @reflectable set enabled (bool a_enabled) {
-    _enabled = configureNotifiers(#enabled, _enabled, a_enabled);
-  }
-  @reflectable bool get enabled => _enabled;
+  external bool get enabled;
+  external void set enabled (bool a_enabled);
   
-  bool _floating;
   /**
    * When the legend is floating, the plot area ignores it and is allowed to be placed below it. Defaults to false.
    */
-  @reflectable set floating (bool a_floating) {
-    _floating = configureNotifiers(#floating, _floating, a_floating);
-  }
-  @reflectable bool get floating => _floating;
+  external bool get floating;
+  external void set floating (bool a_floating);
   
-  int _itemDistance;
   /**
    * In a legend with horizontal layout, the itemDistance defines the pixel distance between each item. Defaults to 20.
    */
-  @reflectable set itemDistance (int a_itemDistance) {
-    _itemDistance = configureNotifiers(#itemDistance, _itemDistance, a_itemDistance);
-  }
-  @reflectable int get itemDistance => _itemDistance;
-  
-  Map _itemHiddenStyle;
+  external int get itemDistance;
+  external void set itemDistance (int a_itemDistance);
+
   /**
    * CSS styles for each legend item when the corresponding series or point is hidden. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from style unless overridden here. Defaults to:
    *  itemHiddenStyle: {
    *     color: '#CCC'
    *  }
    */
-  @reflectable set itemHiddenStyle (Map a_itemHiddenStyle) {
-    _itemHiddenStyle = configureNotifiers(#itemHiddenStyle, _itemHiddenStyle, a_itemHiddenStyle);
-  }
-  @reflectable Map get itemHiddenStyle => _itemHiddenStyle;
+  external JsObject get itemHiddenStyle;
+  external void set itemHiddenStyle (JsObject a_itemHiddenStyle);
   
-  Map _itemHoverStyle;
   /**
    * CSS styles for each legend item in hover mode. Only a subset of CSS is supported, notably those options related to text. Properties are inherited from style unless overridden here. Defaults to:
    *   itemHoverStyle: {
    *     color: '#000'
    *   }
    */
-  @reflectable set itemHoverStyle (Map a_itemHoverStyle) {
-    _itemHoverStyle = configureNotifiers(#itemHoverStyle, _itemHoverStyle, a_itemHoverStyle);
-  }
-  @reflectable Map get itemHoverStyle => _itemHoverStyle;
+  external JsObject get itemHoverStyle;
+  external void set itemHoverStyle (JsObject a_itemHoverStyle);
   
-  int _itemMarginBottom;
   /**
    * The pixel bottom margin for each legend item. Defaults to 0.
    */
-  @reflectable set itemMarginBottom (int a_itemMarginBottom) {
-    _itemMarginBottom = configureNotifiers(#itemMarginBottom, _itemMarginBottom, a_itemMarginBottom);
-  }
-  @reflectable int get itemMarginBottom => _itemMarginBottom;
-  
-  int _itemMarginTop;
+  external int get itemMarginBottom;
+  external void set itemMarginBottom (int a_itemMarginBottom);
+
   /**
    * The pixel top margin for each legend item. Defaults to 0.
    */
-  @reflectable set itemMarginTop (int a_itemMarginTop) {
-    _itemMarginTop = configureNotifiers(#itemMarginTop, _itemMarginTop, a_itemMarginTop);
-  }
-  @reflectable int get itemMarginTop => _itemMarginTop;
+  external int get itemMarginTop;
+  external void set itemMarginTop (int a_itemMarginTop);
   
-  Map _itemStyle;
   /**
    * CSS styles for each legend item. Only a subset of CSS is supported, notably those options related to text. Defaults to { "color": "#333333", "cursor": "pointer", "fontSize": "12px", "fontWeight": "bold" }.
    */
-  @reflectable set itemStyle (Map a_itemStyle) {
-    _itemStyle = configureNotifiers(#itemStyle, _itemStyle, a_itemStyle);
-  }
-  @reflectable Map get itemStyle => _itemStyle;
+  external JsObject get itemStyle;
+  external void set itemStyle (JsObject a_itemStyle);
   
-  int _itemWidth;
   /**
    * The width for each legend item. This is useful in a horizontal layout with many items when you want the items to align vertically. .
    */
-  @reflectable set itemWidth (int a_itemWidth) {
-    _itemWidth = configureNotifiers(#itemWidth, _itemWidth, a_itemWidth);
-  }
-  @reflectable int get itemWidth => _itemWidth;
+  external int get itemWidth;
+  external void set itemWidth (int a_itemWidth);
   
-  String _labelFormat;
   /**
    * A format string for each legend label. Available variables relates to properties on the series, or the point in case of pies. Defaults to {name}.
    */
-  @reflectable set labelFormat (String a_labelFormat) {
-    _labelFormat = configureNotifiers(#labelFormat, _labelFormat, a_labelFormat);
-  }
-  @reflectable String get labelFormat => _labelFormat;
-  
-  Function _labelFormatter;
+  external String get labelFormat;
+  external void set labelFormat (String a_labelFormat);
+
   /**
    * Callback function to format each of the series' labels. The this keyword refers to the series object, or the point object in case of pie charts. By default the series or point name is printed.
    */
-  @reflectable set labelFormatter (Function a_labelFormatter) {
-    _labelFormatter = configureNotifiers(#labelFormatter, _labelFormatter, a_labelFormatter);
-  }
-  @reflectable Function get labelFormatter => _labelFormatter;
+  external Function get labelFormatter;
+  external void set labelFormatter (Function a_labelFormatter);
   
-  
-  String _layout;
   /**
    * The layout of the legend items. Can be one of "horizontal" or "vertical". Defaults to horizontal.
    */
-  @reflectable set layout (String a_layout) {
-    _layout = configureNotifiers(#layout, _layout, a_layout);
-  }
-  @reflectable String get layout => _layout;
+  external String get layout;
+  external void set layout (String a_layout);
   
-  int _lineHeight;
   /**
    * Line height for the legend items. Deprecated as of 2.1. Instead, the line height for each item can be set using itemStyle.lineHeight, and the padding between items using itemMarginTop and itemMarginBottom. Defaults to 16.
    */
-  @reflectable set lineHeight (int a_lineHeight) {
-    _lineHeight = configureNotifiers(#lineHeight, _lineHeight, a_lineHeight);
-  }
-  @reflectable int get lineHeight => _lineHeight;
+  external int get lineHeight;
+  external void set lineHeight (int a_lineHeight);
   
-  int _margin;
   /**
    * If the plot area sized is calculated automatically and the legend is not floating, the legend margin is the space between the legend and the axis labels or plot area. Defaults to 15.
    */
-  @reflectable set margin (int a_margin) {
-    _margin = configureNotifiers(#margin, _margin, a_margin);
-  }
-  @reflectable int get margin => _margin;
+  external int get margin;
+  external void set margin (int a_margin);
   
-  int _maxHeight;
   /**
    * Maximum pixel height for the legend. When the maximum height is extended, navigation will show.
   */
-  @reflectable set maxHeight (int a_maxHeight) {
-    _maxHeight = configureNotifiers(#maxHeight, _maxHeight, a_maxHeight);
-  }
-  @reflectable int get maxHeight => _maxHeight;
-  
-  Map _navigation;
+  external int get maxHeight;
+  external void set maxHeight (int a_maxHeight);
+
   /**
    * Options for the paging or navigation appearing when the legend is overflown. When legend.useHTML is enabled, navigation is disabled.
   */
-  @reflectable set navigation (Map a_navigation) {
-    _navigation = configureNotifiers(#navigation, _navigation, a_navigation);
-  }
-  @reflectable Map get navigation => _navigation;
+  external JsObject get navigation;
+  external void set navigation (JsObject a_navigation);
   
-  int _padding;
   /**
    * The inner padding of the legend box. Defaults to 0;
    */
-  @reflectable set padding (int a_padding) {
-    _padding = configureNotifiers(#padding, _padding, a_padding);
-  }
-  @reflectable int get padding => _padding;
+  external int get padding;
+  external void set padding (int a_padding);
   
-  bool _reversed;
   /**
    * Whether to reverse the order of the legend items compared to the order of the series or points as defined in the configuration object. Defaults to false.
    */
-  @reflectable set reversed (bool a_reversed) {
-    _reversed = configureNotifiers(#reversed, _reversed, a_reversed);
-  }
-  @reflectable bool get reversed => _reversed;
+  external bool get reversed;
+  external void set reversed (bool a_reversed);
   
-  bool _rtl;
   /**
    * Whether to show the symbol on the right side of the text rather than the left side. This is common in Arabic and Hebraic. Defaults to false.
    */
-  @reflectable set rtl (bool a_rtl) {
-    _rtl = configureNotifiers(#rtl, _rtl, a_rtl);
-  }
-  @reflectable bool get rtl => _rtl;
-  
-  var _shadow;
+  external bool get rtl;
+  external void set rtl (bool a_rtl);
+
   /**
    * Whether to apply a drop shadow to the legend. A backgroundColor also needs to be applied for this to take effect. Since 2.3 the shadow can be an object configuration containing color, offsetX, offsetY, opacity and width. Defaults to false.
    */
-  @reflectable set shadow (dynamic a_shadow) {
-    _shadow = configureNotifiers(#shadow, _shadow, a_shadow);
-  }
-  @reflectable dynamic get shadow => _shadow;
+  external dynamic get shadow;
+  external void set shadow (dynamic a_shadow);
   
-  int _symbolHeight;
   /**
    * The pixel height of the symbol for series types that use a rectangle in the legend. Defaults to 12.
   */
-  @reflectable set symbolHeight (int a_symbolHeight) {
-    _symbolHeight = configureNotifiers(#symbolHeight, _symbolHeight, a_symbolHeight);
-  }
-  @reflectable int get symbolHeight => _symbolHeight;
+  external int get symbolHeight;
+  external void set symbolHeight (int a_symbolHeight);
   
-  int _symbolPadding;
   /**
    * The pixel padding between the legend item symbol and the legend item text. Defaults to 5.
    */
-  @reflectable set symbolPadding (int a_symbolPadding) {
-    _symbolPadding = configureNotifiers(#symbolPadding, _symbolPadding, a_symbolPadding);
-  }
-  @reflectable int get symbolPadding => _symbolPadding;
+  external int get symbolPadding;
+  external void set symbolPadding (int a_symbolPadding);
   
-  int _symbolRadius;
   /**
    * The border radius of the symbol for series types that use a rectangle in the legend. Defaults to 2.
    */
-  @reflectable set symbolRadius (int a_symbolRadius) {
-    _symbolRadius = configureNotifiers(#symbolRadius, _symbolRadius, a_symbolRadius);
-  }
-  @reflectable int get symbolRadius => _symbolRadius;
+  external int get symbolRadius;
+  external void set symbolRadius (int a_symbolRadius);
   
-  int _symbolWidth;
   /**
    * The pixel width of the legend item symbol. Defaults to 16.
    */
-  @reflectable set symbolWidth (int a_symbolWidth) {
-    _symbolWidth = configureNotifiers(#symbolWidth, _symbolWidth, a_symbolWidth);
-  }
-  @reflectable int get symbolWidth => _symbolWidth;
+  external int get symbolWidth;
+  external void set symbolWidth (int a_symbolWidth);
   
-  Map _title;
   /**
    * A title to be added on top of the legend.
    */
-  @reflectable set title (Map a_title) {
-    _title = configureNotifiers(#title, _title, a_title);
-  }
-  @reflectable Map get title => _title;
+  external JsObject get title;
+  external void set title (JsObject a_title);
   
-  bool _useHTML;
   /**
    * Whether to use HTML to render the legend item texts. When using HTML, legend.navigation is disabled.
    */
-  @reflectable set useHTML (bool a_useHTML) {
-    _useHTML = configureNotifiers(#useHTML, _useHTML, a_useHTML);
-  }
-  @reflectable bool get useHTML => _useHTML;
+  external bool get useHTML;
+  external void set useHTML (bool a_useHTML);
   
-  String _verticalAlign;
   /**
    * The vertical alignment of the legend box. Can be one of "top", "middle" or "bottom". Vertical position can be further determined by the y option. Defaults to bottom.
    */
-  @reflectable set verticalAlign (String a_verticalAlign) {
-    _verticalAlign = configureNotifiers(#verticalAlign, _verticalAlign, a_verticalAlign);
-  }
-  @reflectable String get verticalAlign => _verticalAlign;
+  external String get verticalAlign;
+  external void set verticalAlign (String a_verticalAlign);
   
-  int _width;
   /**
    * The width of the legend box.
    */
-  @reflectable set width (int a_width) {
-    _width = configureNotifiers(#width, _width, a_width);
-  }
-  @reflectable int get width => _width;
+  external int get width;
+  external void set width (int a_width);
   
-  int _x;
   /**
    * The x offset of the legend relative to it's horizontal alignment align within chart.spacingLeft and chart.spacingRight. Negative x moves it to the left, positive x moves it to the right. Defaults to 0.
    */
-  @reflectable set x (int a_x) {
-    _x = configureNotifiers(#x, _x, a_x);
-  }
-  @reflectable int get x => _x;
-  
-  
-  int _y;
+  external int get x;
+  external void set x (int a_x);
+
   /**
    * The vertical offset of the legend relative to it's vertical alignment verticalAlign within chart.spacingTop and chart.spacingBottom. Negative y moves it up, positive y moves it down. Defaults to 0.
    */
-  @reflectable set y (int a_y) {
-    _y = configureNotifiers(#y, _y, a_y);
-  }
-  @reflectable int get y => _y;
-  
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'align', this.align);
-    addMapValue(map, 'backgroundColor', this.backgroundColor);
-    addMapValue(map, 'borderColor', this.borderColor);
-    addMapValue(map, 'borderRadius', this.borderRadius);
-    addMapValue(map, 'borderWidth', this.borderWidth);
-    addMapValue(map, 'enabled', this.enabled);
-    addMapValue(map, 'floating', this.floating);
-    addMapValue(map, 'itemDistance', this.itemDistance);
-    addMapValue(map, 'itemHiddenStyle', this.itemHiddenStyle);
-    addMapValue(map, 'itemHoverStyle', this.itemHoverStyle);
-    addMapValue(map, 'itemMarginBottom', this.itemMarginBottom);
-    addMapValue(map, 'itemMarginTop', this.itemMarginTop);
-    addMapValue(map, 'itemStyle', this.itemStyle);
-    addMapValue(map, 'itemWidth', this.itemWidth);
-    addMapValue(map, 'labelFormat', this.labelFormat);
-    addMapValue(map, 'labelFormatter', this.labelFormatter);
-    addMapValue(map, 'layout', this.layout);
-    addMapValue(map, 'lineHeight', this.lineHeight);
-    addMapValue(map, 'margin', this.margin);
-    addMapValue(map, 'maxHeight', this.maxHeight);
-    addMapValue(map, 'navigation', this.navigation);
-    addMapValue(map, 'padding', this.padding);
-    addMapValue(map, 'reversed', this.reversed);
-    addMapValue(map, 'rtl', this.rtl);
-    addMapValue(map, 'shadow', this.shadow);
-    addMapValue(map, 'symbolHeight', this.symbolHeight);
-    addMapValue(map, 'symbolPadding', this.symbolPadding);
-    addMapValue(map, 'symbolRadius', this.symbolRadius);
-    addMapValue(map, 'symbolWidth', this.symbolWidth);
-    addMapValue(map, 'title', this.title);
-    addMapValue(map, 'useHTML', this.useHTML);
-    addMapValue(map, 'verticalAlign', this.verticalAlign);
-    addMapValue(map, 'width', this.width);
-    addMapValue(map, 'x', this.x);
-    addMapValue(map, 'y', this.y);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
+  external int get y;
+  external void set y (int a_y);
   
 }
 
-class Tooltip extends OptionsObject  implements ToMap {
-  bool _animation;
+@JS()
+@anonymous
+class Tooltip extends OptionsObject {
   /**
    * Enable or disable animation of the tooltip. In slow legacy IE browsers the animation is disabled by default. Defaults to true.
    */
-  @reflectable set animation (bool a_animation) {
-    _animation = configureNotifiers(#animation, _animation, a_animation);
-  }
-  @reflectable bool get animation => _animation;
+  external bool get animation;
+  external void set animation (bool a_animation);
   
-  String _backgroundColor;
   /**
    * The background color or gradient for the tooltip. Defaults to rgba(255, 255, 255, 0.85).
    */
-  @reflectable set backgroundColor (String a_backgroundColor) {
-    _backgroundColor = configureNotifiers(#backgroundColor, _backgroundColor, a_backgroundColor);
-  }
-  @reflectable String get backgroundColor => _backgroundColor;
+  external String get backgroundColor;
+  external void set backgroundColor (String a_backgroundColor);
   
-  String _borderColor;
   /**
    * The color of the tooltip border. When null, the border takes the color of the corresponding series or point. Defaults to auto.
    */
-  @reflectable set borderColor (String a_borderColor) {
-    _borderColor = configureNotifiers(#borderColor, _borderColor, a_borderColor);
-  }
-  @reflectable String get borderColor => _borderColor;
+  external String get borderColor;
+  external void set borderColor (String a_borderColor);
   
-  int _borderRadius;
   /**
    * The radius of the rounded border corners. Defaults to 3.
    */
-  @reflectable set borderRadius (int a_borderRadius) {
-    _borderRadius = configureNotifiers(#borderRadius, _borderRadius, a_borderRadius);
-  }
-  @reflectable int get borderRadius => _borderRadius;
+  external int get borderRadius;
+  external void set borderRadius (int a_borderRadius);
   
-  int _borderWidth;
   /**
    * The pixel width of the tooltip border. Defaults to 1.
    */
-  @reflectable set borderWidth (int a_borderWidth) {
-    _borderWidth = configureNotifiers(#borderWidth, _borderWidth, a_borderWidth);
-  }
-  @reflectable int get borderWidth => _borderWidth;
-  
-  var _crosshairs;
+  external int get borderWidth;
+  external void set borderWidth (int a_borderWidth);
+
   /**
    * Display crosshairs to connect the points with their corresponding axis values. The crosshairs can be defined as a boolean, an array of booleans or an object.
    * Boolean
@@ -864,10 +700,8 @@ class Tooltip extends OptionsObject  implements ToMap {
    * In an array of objects, the first value applies to the x axis crosshair and the second value to the y axis crosshair. For each dimension, a width, color, dashStyle and zIndex can be given.
    * Defaults to null.
    */
-  @reflectable set crosshairs (dynamic a_crosshairs) {
-    _crosshairs = configureNotifiers(#crosshairs, _crosshairs, a_crosshairs);
-  }
-  @reflectable get crosshairs => _crosshairs;
+  external dynamic get crosshairs;
+  external void set crosshairs (dynamic a_crosshairs);
   
   /**
    * For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see dateFormat.
@@ -884,47 +718,35 @@ class Tooltip extends OptionsObject  implements ToMap {
    *      year:"%Y"
    *  }
    */
-  @observable Map dateTimeLabelFormats;
+  external JsObject get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
   
-  bool _enabled;
   /**
    * Enable or disable the tooltip. Defaults to true.
    */
-  @reflectable set enabled (bool a_enabled) {
-    _enabled = configureNotifiers(#enabled, _enabled, a_enabled);
-  }
-  @reflectable bool get enabled => _enabled;
-  
-  bool _followPointer;
+  external bool get enabled;
+  external void set enabled (bool a_enabled);
+
   /**
    * Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the plotOptions for those series types.
    * For touch moves to behave the same way, followTouchMove must be true also.
    * Defaults to false.
    */
-  @reflectable set followPointer (bool a_followPointer) {
-    _followPointer = configureNotifiers(#followPointer, _followPointer, a_followPointer);
-  }
-  @reflectable bool get followPointer => _followPointer;
-  
-  bool _followTouchMove;
+  external bool get followPointer;
+  external void set followPointer (bool a_followPointer);
+
   /**
    * Whether the tooltip should follow the finger as it moves on a touch device. The default value of false causes a touch move to scroll the web page, as is default behaviour on touch devices. Setting it to true may cause the user to be trapped inside the chart and unable to scroll away, so it should be used with care. If chart.zoomType is set, it will override followTouchMove Defaults to false.
    */
-  @reflectable set followTouchMove (bool a_followTouchMove) {
-    _followTouchMove = configureNotifiers(#followTouchMove, _followTouchMove, a_followTouchMove);
-  }
-  @reflectable bool get followTouchMove => _followTouchMove;
-  
-  String _footerFormat;
+  external bool get followTouchMove;
+  external void set followTouchMove (bool a_followTouchMove);
+
   /**
    * A string to append to the tooltip format. Defaults to false.
    */
-  @reflectable set footerFormat (String a_footerFormat) {
-    _footerFormat = configureNotifiers(#footerFormat, _footerFormat, a_footerFormat);
-  }
-  @reflectable String get footerFormat => _footerFormat;
-  
-  Function _formatter;
+  external String get footerFormat;
+  external void set footerFormat (String a_footerFormat);
+
   /**
    * Callback function to format the text of the tooltip. Return false to disable tooltip for a specific point on series.
    * A subset of HTML is supported. The HTML of the tooltip is parsed and converted to SVG, therefore this isn't a complete HTML renderer. The following tabs are supported: <b>, <strong>, <i>, <em>, <br/>, <span>. Spans can be styled with a style attribute, but only text-related CSS that is shared with SVG is handled.
@@ -946,329 +768,194 @@ class Tooltip extends OptionsObject  implements ToMap {
    * this.y (not shared) / this.points[i].y (shared)
    *   The y value.
    */
-  @reflectable void set formatter (Function f) {
-    _formatter = notifyPropertyChange(#formatter, _formatter, f);
-  }
-  @reflectable Function get formatter => _formatter;
-  
-  String _headerFormat;
+  external Function get formatter;
+  external void set formatter (Function a_formatter);
+
   /**
    * The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables  are point.key, series.name, series.color and other members from the point and series objects. The point.key variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the point.key date format can be set using tooltip.xDateFormat.
    * Defaults to <span style="font-size: 10px">{point.key}</span><br/>
    */
-  @reflectable set headerFormat (String a_headerFormat) {
-    _headerFormat = configureNotifiers(#headerFormat, _headerFormat, a_headerFormat);
-  }
-  @reflectable String get headerFormat => _headerFormat;
-  
-  int _hideDelay;
+  external String get headerFormat;
+  external void set headerFormat (String a_headerFormat);
+
   /**
    * The number of milliseconds to wait until the tooltip is hidden when mouse out from a point or chart. Defaults to 500.
    */
-  @reflectable set hideDelay (int a_hideDelay) {
-    _hideDelay = configureNotifiers(#hideDelay, _hideDelay, a_hideDelay);
-  }
-  @reflectable int get hideDelay => _hideDelay;
-  
-  String _pointFormat;
+  external int get hideDelay;
+  external void set hideDelay (int a_hideDelay);
+
   /**
    * The HTML of the point's line in the tooltip. Variables are enclosed by curly brackets. Available variables are point.x, point.y, series.name and series.color and other properties on the same form. Furthermore, point.y can be extended by the tooltip.yPrefix and tooltip.ySuffix variables. This can also be overridden for each series, which makes it a good hook for displaying units.
    * Defaults to <span style="color:{series.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>.
    */
-  @reflectable set pointFormat (String a_pointFormat) {
-    _pointFormat = configureNotifiers(#pointFormat, _pointFormat, a_pointFormat);
-  }
-  @reflectable String get pointFormat => _pointFormat;
-  
-  Function _positioner;
+  external String get pointFormat;
+  external void set pointFormat (String a_pointFormat);
+
   /**
    * A callback function to place the tooltip in a default position. The callback receives three parameters: labelWidth, labelHeight and point, where point contains values for plotX and plotY telling where the reference point is in the plot area. Add chart.plotLeft and chart.plotTop to get the full coordinates.
    * The return should be an object containing x and y values, for example { x: 100, y: 100 }.
    */
-  void set positioner (Function f) {
-    _positioner = notifyPropertyChange(#positioner,  _positioner,  f);
-  }
-  Function get positioner => _positioner;
-  
-  bool _shadow;
+  external Function get positioner;
+  external void set positioner (Function a_positioner);
+
   /**
    * Whether to apply a drop shadow to the tooltip. Defaults to true.
    */
-  @reflectable set shadow (bool a_shadow) {
-    _shadow = configureNotifiers(#shadow, _shadow, a_shadow);
-  }
-  @reflectable bool get shadow => _shadow;
-  
-  String _shape;
+  external bool get shadow;
+  external void set shadow (bool a_shadow);
+
   /**
    * The name of a symbol to use for the border around the tooltip. In Highcharts 3.x and less, the shape was square. Defaults to callout.
    */
-  @reflectable set shape (String a_shape) {
-    _shape = configureNotifiers(#shape, _shape, a_shape);
-  }
-  @reflectable String get shape => _shape;
-  
-  bool _shared;
+  external String get shape;
+  external void set shape (String a_shape);
+
   /**
    * When the tooltip is shared, the entire plot area will capture mouse movement. Tooltip texts for series types with ordered data (not pie, scatter, flags etc) will be shown in a single bubble. This is recommended for single series charts and for tablet/mobile optimized charts. Defaults to false.
    */
-  @reflectable set shared (bool a_shared) {
-    _shared = configureNotifiers(#shared, _shared, a_shared);
-  }
-  @reflectable bool get shared => _shared;
-  
-  int _snap;
+  external bool get shared;
+  external void set shared (bool a_shared);
+
   /**
    * Proximity snap for graphs or single points. Does not apply to bars, columns and pie slices. It defaults to 10 for mouse-powered devices and 25 for touch devices.
    */
-  @reflectable set snap (int a_snap) {
-    _snap = configureNotifiers(#snap, _snap, a_snap);
-  }
-  @reflectable int get snap => _snap;
-  
-  Map _style;
+  external int get snap;
+  external void set snap (int a_snap);
+
   /**
    * CSS styles for the tooltip. The tooltip can also be styled through the CSS class .highcharts-tooltip. Default value:
    */
-  @reflectable set style (Map a_style) {
-    _style = configureNotifiers(#style, _style, a_style);
-  }
-  @reflectable Map get style => _style;
-  
-  bool _useHTML;
+  external JsObject get style;
+  external void set style (JsObject a_style);
+
   /**
    * Use HTML to render the contents of the tooltip instead of SVG. Using HTML allows advanced formatting like tables and images in the tooltip. It is also recommended for rtl languages as it works around rtl bugs in early Firefox. Defaults to false.
    */
-  @reflectable set useHTML (bool a_useHTML) {
-    _useHTML = configureNotifiers(#useHTML, _useHTML, a_useHTML);
-  }
-  @reflectable bool get useHTML => _useHTML;
-  
-  int _valueDecimals;
+  external bool get useHTML;
+  external void set useHTML (bool a_useHTML);
+
   /**
    * How many decimals to show in each series' y value. This is overridable in each series' tooltip options object. The default is to preserve all decimals.
    */
-  @reflectable set valueDecimals (int a_valueDecimals) {
-    _valueDecimals = configureNotifiers(#valueDecimals, _valueDecimals, a_valueDecimals);
-  }
-  @reflectable int get valueDecimals => _valueDecimals;
-  
-  String _valuePrefix;
+  external int get valueDecimals;
+  external void set valueDecimals (int a_valueDecimals);
+
   /**
    * A string to prepend to each series' y value. Overridable in each series' tooltip options object.
    */
-  @reflectable set valuePrefix (String a_valuePrefix) {
-    _valuePrefix = configureNotifiers(#valuePrefix, _valuePrefix, a_valuePrefix);
-  }
-  @reflectable String get valuePrefix => _valuePrefix;
-  
-  String _valueSuffix;
+  external String get valuePrefix;
+  external void set valuePrefix (String a_valuePrefix);
+
   /**
    * A string to append to each series' y value. Overridable in each series' tooltip options object.
    */
-  @reflectable set valueSuffix (String a_valueSuffix) {
-    _valueSuffix = configureNotifiers(#valueSuffix, _valueSuffix, a_valueSuffix);
-  }
-  @reflectable String get valueSuffix => _valueSuffix;
-  
-  String _xDateFormat;
+  external String get valueSuffix;
+  external void set valueSuffix (String a_valueSuffix);
+
   /**
    * The format for the date in the tooltip header if the X axis is a datetime axis. The default is a best guess based on the smallest distance between points in the chart.
    */
-  @reflectable set xDateFormat (String a_xDateFormat) {
-    _xDateFormat = configureNotifiers(#xDateFormat, _xDateFormat, a_xDateFormat);
-  }
-  @reflectable String get xDateFormat => _xDateFormat;
+  external String get xDateFormat;
+  external void set xDateFormat (String a_xDateFormat);
   
-  
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'animation', this.animation);
-    addMapValue(map, 'backgroundColor', this.backgroundColor);
-    addMapValue(map, 'borderColor', this.borderColor);
-    addMapValue(map, 'borderRadius', this.borderRadius);
-    addMapValue(map, 'borderWidth', this.borderWidth);
-    addMapValue(map, 'crosshairs', this.crosshairs);
-    addMapValue(map, 'dateTimeLabelFormats', this.dateTimeLabelFormats);
-    addMapValue(map, 'enabled', this.enabled);
-    addMapValue(map, 'followPointer', this.followPointer);
-    addMapValue(map, 'followTouchMove', this.followTouchMove);
-    addMapValue(map, 'footerFormat', this.footerFormat);
-    addMapValue(map, 'formatter', this.formatter);
-    addMapValue(map, 'headerFormat', this.headerFormat);
-    addMapValue(map, 'hideDelay', this.hideDelay);
-    addMapValue(map, 'pointFormat', this.pointFormat);
-    addMapValue(map, 'positioner', this.positioner);
-    addMapValue(map, 'shadow', this.shadow);
-    addMapValue(map, 'shape', this.shape);
-    addMapValue(map, 'shared', this.shared);
-    addMapValue(map, 'snap', this.snap);
-    addMapValue(map, 'style', this.style);
-    addMapValue(map, 'useHTML', this.useHTML);
-    addMapValue(map, 'valueDecimals', this.valueDecimals);
-    addMapValue(map, 'valuePrefix', this.valuePrefix);
-    addMapValue(map, 'valueSuffix', this.valueSuffix);
-    addMapValue(map, 'xDateFormat', this.xDateFormat);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
 }
 
+@JS()
+@anonymous
+class Title extends OptionsObject {
 
-class Title extends OptionsObject  implements ToMap {
-  String _align/* = "center"*/;
   /**
    * The horizontal alignment of the title. Can be one of "left", "center" and "right". Defaults to center.
    */
-  @reflectable set align (String a_align) {
-    _align = configureNotifiers(#align, _align, a_align);
-  }
-  @reflectable String get align => _align;
-  
-  
-  bool _floating;
+  external String get align;
+  external void set align (String a_align);
+
   /**
    * When the title is floating, the plot area will not move to make space for it. Defaults to false.
    */
-  @reflectable set floating (bool a_floating) {
-    _floating = configureNotifiers(#floating, _floating, a_floating);
-  }
-  @reflectable bool get floating => _floating;
+  external bool get floating;
+  external void set floating (bool a_floating);
 
-  int _margin/* = 15*/;  
   /**
    * The margin between the title and the plot area, or if a subtitle is present, the margin between the subtitle and the plot area. Defaults to 15.
    */
-  @reflectable set margin (int a_margin) {
-    _margin = configureNotifiers(#margin, _margin, a_margin);
-  }
-  @reflectable int get margin => _margin;
-  
-  
-  Map _style;
+  external int get margin;
+  external void set margin (int a_margin);
+
   /**
    * CSS styles for the title. Use this for font styling, but use align, x and yfor text alignment. Defaults to { "color": "#333333", "fontSize": "18px" }.
    */
-  @reflectable set style (Map a_style) {
-    _style = configureNotifiers(#style, _style, a_style);
-  }
-  @reflectable Map get style => _style;
-  
-  String _text/* = "Chart title"*/;
+  external JsObject get style;
+  external void set style (JsObject a_style);
+
   /**
    * The title of the chart. To disable the title, set the text to null. Defaults to Chart title.
    */
-  @reflectable set text (String a_text) {
-    /*_text = configureNotifiers(#text, _text, a_text);*/
-    _text = notifyPropertyChange (#text, _text, a_text);
-  }
-  @reflectable String get text => _text;
-  
-  bool _useHTML/* = false*/;
+  external String get text;
+  external void set text (String a_text);
+
   /**
    * Whether to use HTML to render the text. Defaults to false.
    */
-  @reflectable set useHTML (bool a_useHTML) {
-    _useHTML = configureNotifiers(#useHTML, _useHTML, a_useHTML);
-  }
-  @reflectable bool get useHTML => _useHTML;
-  
-  String _verticalAlign;
+  external bool get useHTML;
+  external void set useHTML (bool a_useHTML);
+
   /**
    * The vertical alignment of the title. Can be one of "top", "middle" and "bottom". When a value is given, the title behaves as floating. Defaults to .
    */
-  @reflectable set verticalAlign (String a_verticalAlign) {
-    _verticalAlign = configureNotifiers(#verticalAlign, _verticalAlign, a_verticalAlign);
-  }
-  @reflectable String get verticalAlign => _verticalAlign;
-  
-  int _x/* = 0*/;
+  external String get verticalAlign;
+  external void set verticalAlign (String a_verticalAlign);
+
   /**
    * The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight. Defaults to 0.
    */
-  @reflectable set x (int a_x) {
-    _x = configureNotifiers(#x, _x, a_x);
-  }
-  @reflectable int get x => _x;
-  
-  int _y/* = 15*/;
+  external int get x;
+  external void set x (int a_x);
+
   /**
    * The y position of the title relative to the alignment within chart.spacingTop and chart.spacingBottom. Defaults to 15.
    */
-  @reflectable set y (int a_y) {
-    _y = configureNotifiers(#y, _y, a_y);
-  }
-  @reflectable int get y => _y;
-  
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'align', this.align);
-    addMapValue(map, 'floating', this.floating);
-    addMapValue(map, 'margin', this.margin);
-    addMapValue(map, 'style', this.style);
-    addMapValue(map, 'text', this.text);
-    addMapValue(map, 'useHTML', this.useHTML);
-    addMapValue(map, 'verticalAlign', this.verticalAlign);
-    addMapValue(map, 'x', this.x);
-    addMapValue(map, 'y', this.y);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
+  external int get y;
+  external void set y (int a_y);
   
 }
 
-class Subtitle extends Title implements ToMap {
-  Map toMap () {
-    return super.toMap();
-  }
+@JS()
+@anonymous
+class Subtitle extends Title {
 }
 
-class XAxis extends OptionsObject  implements ToMap {
-  bool _allowDecimals;
+@JS()
+@anonymous
+class XAxis extends OptionsObject {
+
   /**
    * Whether to allow decimals in this axis' ticks. When counting integers, like persons or hits on a web page, decimals must be avoided in the axis tick labels. Defaults to true.
    */
-  @reflectable set allowDecimals (bool a_allowDecimals) {
-    _allowDecimals = configureNotifiers(#allowDecimals, _allowDecimals, a_allowDecimals);
-  }
-  @reflectable bool get allowDecimals => _allowDecimals;
-  
-  String _alternateGridColor;
+  external bool get allowDecimals;
+  external void set allowDecimals (bool a_allowDecimals);
+
   /**
    * When using an alternate grid color, a band is painted across the plot area between every other grid line.
    */
-  @reflectable set alternateGridColor (String a_alternateGridColor) {
-    _alternateGridColor = configureNotifiers(#alternateGridColor, _alternateGridColor, a_alternateGridColor);
-  }
-  @reflectable String get alternateGridColor => _alternateGridColor;
-  
-  List<String> _categories;
+  external String get alternateGridColor;
+  external void set alternateGridColor (String a_alternateGridColor);
+
   /**
    * If categories are present for the xAxis, names are used instead of numbers for that axis. Since Highcharts 3.0, categories can also be extracted by giving each point a name and setting axis type to "category".
    * Example:
    * categories: ['Apples', 'Bananas', 'Oranges']
    * Defaults to null
    */
-  @reflectable set categories (List<String> a_categories) {
-    _categories = configureNotifiers(#categories, _categories, a_categories);
-  }
-  @reflectable List<String> get categories => _categories;
-  
-  
-  num _ceiling;
+  external List<String> get categories;
+  external void set categories (List<String> a_categories);
+
   /**
    * The highest allowed value for automatically computed axis extremes.
    */
-  @reflectable set ceiling (num a_ceiling) {
-    _ceiling = configureNotifiers(#ceiling, _ceiling, a_ceiling);
-  }
-  @reflectable num get ceiling => _ceiling;
-  
-  Map _dateTimeLabelFormats;
+  external num get ceiling;
+  external void set ceiling (num a_ceiling);
+
   /**
    * For a datetime axis, the scale will automatically adjust to the appropriate unit. This member gives the default string representations used for each unit. For an overview of the replacement codes, see dateFormat. Defaults to:
    * 
@@ -1284,536 +971,298 @@ class XAxis extends OptionsObject  implements ToMap {
    *  }
    * 
    */
-  @reflectable set dateTimeLabelFormats (Map a_dateTimeLabelFormats) {
-    _dateTimeLabelFormats = configureNotifiers(#dateTimeLabelFormats, _dateTimeLabelFormats, a_dateTimeLabelFormats);
-  }
-  @reflectable Map get dateTimeLabelFormats => _dateTimeLabelFormats;
-  
-  
-  bool _endOnTick;
+  external JsObject get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+
   /**
    * Whether to force the axis to end on a tick. Use this option with the maxPadding option to control the axis end. Defaults to false.
    */
-  @reflectable set endOnTick (bool a_endOnTick) {
-    _endOnTick = configureNotifiers(#endOnTick, _endOnTick, a_endOnTick);
-  }
-  @reflectable bool get endOnTick => _endOnTick;
-  
-  Map _events;
+  external bool get endOnTick;
+  external void set endOnTick (bool a_endOnTick);
+
   /**
    * Event handlers for the axis
    */
-  @reflectable set events (Map a_events) {
-    _events = configureNotifiers(#events, _events, a_events);
-  }
-  @reflectable Map get events => _events;
-  
-  
-  num _floor;
+  external JsObject get events;
+  external void set events (JsObject a_events);
+
   /**
    * The lowest allowed value for automatically computed axis extremes. Defaults to null.
    */
-  @reflectable set floor (num a_floor) {
-    _floor = configureNotifiers(#floor, _floor, a_floor);
-  }
-  @reflectable num get floor => _floor;
-  
-  String _gridLineColor;
+  external num get floor;
+  external void set floor (num a_floor);
+
   /**
    * Color of the grid lines extending the ticks across the plot area. Defaults to #C0C0C0.
    */
-  @reflectable set gridLineColor (String a_gridLineColor) {
-    _gridLineColor = configureNotifiers(#gridLineColor, _gridLineColor, a_gridLineColor);
-  }
-  @reflectable String get gridLineColor => _gridLineColor;
-  
-  String _gridLineDashStyle;
+  external String get gridLineColor;
+  external void set gridLineColor (String a_gridLineColor);
+
   /**
    * The dash or dot style of the grid lines. For possible values, see this demonstration. Defaults to Solid.
    */
-  @reflectable set gridLineDashStyle (String a_gridLineDashStyle) {
-    _gridLineDashStyle = configureNotifiers(#gridLineDashStyle, _gridLineDashStyle, a_gridLineDashStyle);
-  }
-  @reflectable String get gridLineDashStyle => _gridLineDashStyle;
-  
-  num _gridLineWidth;
+  external String get gridLineDashStyle;
+  external void set gridLineDashStyle (String a_gridLineDashStyle);
+
   /**
    * The width of the grid lines extending the ticks across the plot area. Defaults to 0.
    */
-  @reflectable set gridLineWidth (num a_gridLineWidth) {
-    _gridLineWidth = configureNotifiers(#gridLineWidth, _gridLineWidth, a_gridLineWidth);
-  }
-  @reflectable num get gridLineWidth => _gridLineWidth;
-  
-  
-  num _gridZIndex;
+  external num get gridLineWidth;
+  external void set gridLineWidth (num a_gridLineWidth);
+
   /**
    * The Z index of the grid lines. Defaults to 1.
    */
-  @reflectable set gridZIndex (num a_gridZIndex) {
-    _gridZIndex = configureNotifiers(#gridZIndex, _gridZIndex, a_gridZIndex);
-  }
-  @reflectable num get gridZIndex => _gridZIndex;
-  
-  
-  String _id = OptionsObject.uidGen.v4();
+  external num get gridZIndex;
+  external void set gridZIndex (num a_gridZIndex);
+
   /**
    * An id for the axis. This can be used after render time to get a pointer to the axis object through chart.get().
    */
-  @reflectable set id (String a_id) {
-    _id = configureNotifiers(#id, _id, a_id);
-  }
-  @reflectable String get id => _id;
-  
-  
-  Map _labels;
+  String id = OptionsObject.uidGen.v4();
+
   /**
    * The axis labels show the number or category for each tick.
    */
-  @reflectable set labels (Map a_labels) {
-    _labels = configureNotifiers(#labels, _labels, a_labels);
-  }
-  @reflectable Map get labels => _labels;
-  
-  
-  String _color;
+  external JsObject get labels;
+  external void set labels (JsObject a_labels);
+
   /**
    * The color of the line marking the axis itself. Defaults to #C0D0E0.
    */
-  @reflectable set color (String a_color) {
-    _color = configureNotifiers(#color, _color, a_color);
-  }
-  @reflectable String get color => _color;
-  
-  
-  num _lineWidth;
+  external String get color;
+  external void set color (String a_color);
+
   /**
    * The width of the line marking the axis itself. Defaults to 1.
    */
-  @reflectable set lineWidth (num a_lineWidth) {
-    _lineWidth = configureNotifiers(#lineWidth, _lineWidth, a_lineWidth);
-  }
-  @reflectable num get lineWidth => _lineWidth;
-  
-  
-  num _linkedTo;
+  external num get lineWidth;
+  external void set lineWidth (num a_lineWidth);
+
   /**
    * Index of another axis that this axis is linked to. When an axis is linked to a master axis, it will take the same extremes as the master, but as assigned by min or max or by setExtremes. It can be used to show additional info, or to ease reading the chart by duplicating the scales.
    */
-  @reflectable set linkedTo (num a_linkedTo) {
-    _linkedTo = configureNotifiers(#linkedTo, _linkedTo, a_linkedTo);
-  }
-  @reflectable num get linkedTo => _linkedTo;
-  
-  
-  num _max;
+  external num get linkedTo;
+  external void set linkedTo (num a_linkedTo);
+
   /**
    * The maximum value of the axis. If null, the max value is automatically calculated. If the endOnTick option is true, the max value might be rounded up. The actual maximum value is also influenced by chart.alignTicks.
    */
-  @reflectable set max (num a_max) {
-    _max = configureNotifiers(#max, _max, a_max);
-  }
-  @reflectable num get max => _max;
-  
-  num _maxPadding;
+  external num get max;
+  external void set max (num a_max);
+
   /**
    * Padding of the max value relative to the length of the axis. A padding of 0.05 will make a 100px axis 5px longer. This is useful when you don't want the highest data value to appear on the edge of the plot area. When the axis' max option is set or a max extreme is set using axis.setExtremes(), the maxPadding will be ignored. Defaults to 0.01.
    */
-  @reflectable set maxPadding (num a_maxPadding) {
-    _maxPadding = configureNotifiers(#maxPadding, _maxPadding, a_maxPadding);
-  }
-  @reflectable num get maxPadding => _maxPadding;
-  
-  
-  num _min;
+  external num get maxPadding;
+  external void set maxPadding (num a_maxPadding);
+
   /**
    * The minimum value of the axis. If null the min value is automatically calculated. If the startOnTick option is true, the min value might be rounded down.
    */
-  @reflectable set min (num a_min) {
-    _min = configureNotifiers(#min, _min, a_min);
-  }
-  @reflectable num get min => _min;
-  
-  
-  num _minPadding;
+  external num get min;
+  external void set min (num a_min);
+
   /**
    * Padding of the min value relative to the length of the axis. A padding of 0.05 will make a 100px axis 5px longer. This is useful when you don't want the lowest data value to appear on the edge of the plot area. When the axis' min option is set or a min extreme is set using axis.setExtremes(), the minPadding will be ignored. Defaults to 0.01.
    */
-  @reflectable set minPadding (num a_minPadding) {
-    _minPadding = configureNotifiers(#minPadding, _minPadding, a_minPadding);
-  }
-  @reflectable num get minPadding => _minPadding;
-  
-  
-  num _minRange;
+  external num get minPadding;
+  external void set minPadding (num a_minPadding);
+
   /**
    * The minimum range to display on this axis. The entire axis will not be allowed to span over a smaller interval than this. For example, for a datetime axis the main unit is milliseconds. If minRange is set to 3600000, you can't zoom in more than to one hour.
    * The default minRange for the x axis is five times the smallest interval between any of the data points.
    * On a logarithmic axis, the unit for the minimum range is the power. So a minRange of 1 means that the axis can be zoomed to 10-100, 100-1000, 1000-10000 etc.
    */
-  @reflectable set minRange (num a_minRange) {
-    _minRange = configureNotifiers(#minRange, _minRange, a_minRange);
-  }
-  @reflectable num get minRange => _minRange;
-  
-  num _minTickInterval;
+  external num get minRange;
+  external void set minRange (num a_minRange);
+
   /**
    * The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours.
    */
-  @reflectable set minTickInterval (num a_minTickInterval) {
-    _minTickInterval = configureNotifiers(#minTickInterval, _minTickInterval, a_minTickInterval);
-  }
-  @reflectable num get minTickInterval => _minTickInterval;
-  
-  
-  String _minorGridLineColor;
+  external num get minTickInterval;
+  external void set minTickInterval (num a_minTickInterval);
+
   /**
    * Color of the minor, secondary grid lines. Defaults to #E0E0E0.
    */
-  @reflectable set minorGridLineColor (String a_minorGridLineColor) {
-    _minorGridLineColor = configureNotifiers(#minorGridLineColor, _minorGridLineColor, a_minorGridLineColor);
-  }
-  @reflectable String get minorGridLineColor => _minorGridLineColor;
-  
-  
-  String _minorGridLineDashStyle;
+  external String get minorGridLineColor;
+  external void set minorGridLineColor (String a_minorGridLineColor);
+
   /**
    * The dash or dot style of the minor grid lines. For possible values, see this demonstration. Defaults to Solid.
    */
-  @reflectable set minorGridLineDashStyle (String a_minorGridLineDashStyle) {
-    _minorGridLineDashStyle = configureNotifiers(#minorGridLineDashStyle, _minorGridLineDashStyle, a_minorGridLineDashStyle);
-  }
-  @reflectable String get minorGridLineDashStyle => _minorGridLineDashStyle;
-  
-  
-  num _minorGridLineWidth;
+  external String get minorGridLineDashStyle;
+  external void set minorGridLineDashStyle (String a_minorGridLineDashStyle);
+
   /**
    * Width of the minor, secondary grid lines. Defaults to 1.
    */
-  @reflectable set minorGridLineWidth (num a_minorGridLineWidth) {
-    _minorGridLineWidth = configureNotifiers(#minorGridLineWidth, _minorGridLineWidth, a_minorGridLineWidth);
-  }
-  @reflectable num get minorGridLineWidth => _minorGridLineWidth;
-  
-  
-  String _minorTickColor;
+  external num get minorGridLineWidth;
+  external void set minorGridLineWidth (num a_minorGridLineWidth);
+
   /**
    * Color for the minor tick marks. Defaults to #A0A0A0.
    */
-  @reflectable set minorTickColor (String a_minorTickColor) {
-    _minorTickColor = configureNotifiers(#minorTickColor, _minorTickColor, a_minorTickColor);
-  }
-  @reflectable String get minorTickColor => _minorTickColor;
-  
-  
-  num _minorTickInterval;
+  external String get minorTickColor;
+  external void set minorTickColor (String a_minorTickColor);
+
   /**
    * Tick interval in scale units for the minor ticks. On a linear axis, if "auto", the minor tick interval is calculated as a fifth of the tickInterval. If null, minor ticks are not shown.
    * On logarithmic axes, the unit is the power of the value. For example, setting the minorTickInterval to 1 puts one tick on each of 0.1, 1, 10, 100 etc. Setting the minorTickInterval to 0.1 produces 9 ticks between 1 and 10, 10 and 100 etc. A minorTickInterval of "auto" on a log axis results in a best guess, attempting to enter approximately 5 minor ticks between each major tick.
    * On axes using categories, minor ticks are not supported.
    */
-  @reflectable set minorTickInterval (num a_minorTickInterval) {
-    _minorTickInterval = configureNotifiers(#minorTickInterval, _minorTickInterval, a_minorTickInterval);
-  }
-  @reflectable num get minorTickInterval => _minorTickInterval;
-  
-  num _minorTickLength;
+  external num get minorTickInterval;
+  external void set minorTickInterval (num a_minorTickInterval);
+
   /**
    * The pixel length of the minor tick marks. Defaults to 2.
    */
-  @reflectable set minorTickLength (num a_minorTickLength) {
-    _minorTickLength = configureNotifiers(#minorTickLength, _minorTickLength, a_minorTickLength);
-  }
-  @reflectable num get minorTickLength => _minorTickLength;
-  
-  
-  String _minorTickPosition;
+  external num get minorTickLength;
+  external void set minorTickLength (num a_minorTickLength);
+
   /**
    * The position of the minor tick marks relative to the axis line. Can be one of inside and outside. Defaults to outside.
    */
-  @reflectable set minorTickPosition (String a_minorTickPosition) {
-    _minorTickPosition = configureNotifiers(#minorTickPosition, _minorTickPosition, a_minorTickPosition);
-  }
-  @reflectable String get minorTickPosition => _minorTickPosition;
-  
-  
-  num _minorTickWidth;
+  external String get minorTickPosition;
+  external void set minorTickPosition (String a_minorTickPosition);
+
   /**
    * The pixel width of the minor tick mark. Defaults to 0.
    */
-  @reflectable set minorTickWidth (num a_minorTickWidth) {
-    _minorTickWidth = configureNotifiers(#minorTickWidth, _minorTickWidth, a_minorTickWidth);
-  }
-  @reflectable num get minorTickWidth => _minorTickWidth;
-  
-  
-  int _offset;
+  external num get minorTickWidth;
+  external void set minorTickWidth (num a_minorTickWidth);
+
   /**
    * The distance in pixels from the plot area to the axis line. A positive offset moves the axis with it's line, labels and ticks away from the plot area. This is typically used when two or more axes are displayed on the same side of the plot. Defaults to 0.
    */
-  @reflectable set offset (int a_offset) {
-    _offset = configureNotifiers(#offset, _offset, a_offset);
-  }
-  @reflectable int get offset => _offset;
-  
-  
-  bool _opposite;
+  external int get offset;
+  external void set offset (int a_offset);
+
   /**
    * Whether to display the axis on the opposite side of the normal. The normal is on the left side for vertical axes and bottom for horizontal, so the opposite sides will be right and top respectively. This is typically used with dual or multiple axes. Defaults to false.
    */
-  @reflectable set opposite (bool a_opposite) {
-    _opposite = configureNotifiers(#opposite, _opposite, a_opposite);
-  }
-  @reflectable bool get opposite => _opposite;
-  
-  
-  List<Map> _plotBands;
+  external bool get opposite;
+  external void set opposite (bool a_opposite);
+
   /**
    * An array of colored bands stretching across the plot area marking an interval on the axis.
    * In a gauge, a plot band on the Y axis (value axis) will stretch along the perimiter of the gauge.
    */
-  @reflectable set plotBands (List<Map> a_plotBands) {
-    _plotBands = configureNotifiers(#plotBands, _plotBands, a_plotBands);
-  }
-  @reflectable List<Map> get plotBands => _plotBands;
-  
-  
-  List<PlotLines> _plotLines;
+  external List<JsObject> get plotBands;
+  external void set plotBands (List<JsObject> a_plotBands);
+
   /**
    * An array of lines streching across the plot area, marking a specific value on one of the axes.
    */
-  @reflectable set plotLines (List<PlotLines> a_plotLines) {
-    _plotLines = configureNotifiers(#plotLines, _plotLines, a_plotLines);
-  }
-  @reflectable List<PlotLines> get plotLines => _plotLines;
-  
-  
-  bool _reversed;
+  external List<PlotLines> get plotLines;
+  external void set plotLines (List<PlotLines> a_plotLines);
+
   /**
    * Whether to reverse the axis so that the highest number is closest to the origin. If the chart is inverted, the x axis is reversed by default. Defaults to false.
    */
-  @reflectable set reversed (bool a_reversed) {
-    _reversed = configureNotifiers(#reversed, _reversed, a_reversed);
-  }
-  @reflectable bool get reversed => _reversed;
-  
-  
-  bool _showEmpty;
+  external bool get reversed;
+  external void set reversed (bool a_reversed);
+
   /**
    * Whether to show the axis line and title when the axis has no data. Defaults to true.
    */
-  @reflectable set showEmpty (bool a_showEmpty) {
-    _showEmpty = configureNotifiers(#showEmpty, _showEmpty, a_showEmpty);
-  }
-  @reflectable bool get showEmpty => _showEmpty;
-  
-  
-  bool _showFirstLabel;
+  external bool get showEmpty;
+  external void set showEmpty (bool a_showEmpty);
+
   /**
    * Whether to show the first tick label. Defaults to true.
    */
-  @reflectable set showFirstLabel (bool a_showFirstLabel) {
-    _showFirstLabel = configureNotifiers(#showFirstLabel, _showFirstLabel, a_showFirstLabel);
-  }
-  @reflectable bool get showFirstLabel => _showFirstLabel;
-  
-  bool _showLastLabel;
+  external bool get showFirstLabel;
+  external void set showFirstLabel (bool a_showFirstLabel);
+
   /**
    * Whether to show the last tick label. Defaults to true.
    */
-  @reflectable set showLastLabel (bool a_showLastLabel) {
-    _showLastLabel = configureNotifiers(#showLastLabel, _showLastLabel, a_showLastLabel);
-  }
-  @reflectable bool get showLastLabel => _showLastLabel;
-  
-  
-  int _startOfWeek;
+  external bool get showLastLabel;
+  external void set showLastLabel (bool a_showLastLabel);
+
   /**
    * For datetime axes, this decides where to put the tick between weeks. 0 = Sunday, 1 = Monday. Defaults to 1.
    */
-  @reflectable set startOfWeek (int a_startOfWeek) {
-    _startOfWeek = configureNotifiers(#startOfWeek, _startOfWeek, a_startOfWeek);
-  }
-  @reflectable int get startOfWeek => _startOfWeek;
-  
-  
-  bool _startOnTick;
+  external int get startOfWeek;
+  external void set startOfWeek (int a_startOfWeek);
+
   /**
    * Whether to force the axis to start on a tick. Use this option with the maxPadding option to control the axis start. Defaults to false.
    */
-  @reflectable set startOnTick (bool a_startOnTick) {
-    _startOnTick = configureNotifiers(#startOnTick, _startOnTick, a_startOnTick);
-  }
-  @reflectable bool get startOnTick => _startOnTick;
-  
-  
-  String _tickColor;
+  external bool get startOnTick;
+  external void set startOnTick (bool a_startOnTick);
+
   /**
    * Color for the main tick marks. Defaults to #C0D0E0.
    */
-  @reflectable set tickColor (String a_tickColor) {
-    _tickColor = configureNotifiers(#tickColor, _tickColor, a_tickColor);
-  }
-  @reflectable String get tickColor => _tickColor;
-  
-  num _tickInterval;
+  external String get tickColor;
+  external void set tickColor (String a_tickColor);
+
   /**
    * The interval of the tick marks in axis units. When null, the tick interval is computed to approximately follow the tickPixelInterval on linear and datetime axes. On categorized axes, a null tickInterval will default to 1, one category. Note that datetime axes are based on milliseconds, so for example an interval of one day is expressed as 24 * 3600 * 1000.
    * On logarithmic axes, the tickInterval is based on powers, so a tickInterval of 1 means one tick on each of 0.1, 1, 10, 100 etc. A tickInterval of 2 means a tick of 0.1, 10, 1000 etc. A tickInterval of 0.2 puts a tick on 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 etc.
    */
-  @reflectable set tickInterval (num a_tickInterval) {
-    _tickInterval = configureNotifiers(#tickInterval, _tickInterval, a_tickInterval);
-  }
-  @reflectable num get tickInterval => _tickInterval;
+  external num get tickInterval;
+  external void set tickInterval (num a_tickInterval);
   
-  
-  int _tickLength;
+
   /**
    * The pixel length of the main tick marks. Defaults to 10. 
    */
-  @reflectable set tickLength (int a_tickLength) {
-    _tickLength = configureNotifiers(#tickLength, _tickLength, a_tickLength);
-  }
-  @reflectable int get tickLength => _tickLength;
-  
-  
-  int _tickPixelInterval;
+  external int get tickLength;
+  external void set tickLength (int a_tickLength);
+
   /**
    * If tickInterval is null this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis. Defaults to 72 for the Y axis and 100 for the X axis.
    */
-  @reflectable set tickPixelInterval (int a_tickPixelInterval) {
-    _tickPixelInterval = configureNotifiers(#tickPixelInterval, _tickPixelInterval, a_tickPixelInterval);
-  }
-  @reflectable int get tickPixelInterval => _tickPixelInterval;
-  
-  
-  String _tickPosition;
+  external int get tickPixelInterval;
+  external void set tickPixelInterval (int a_tickPixelInterval);
+
   /**
    * The position of the major tick marks relative to the axis line. Can be one of inside and outside. Defaults to outside.
    */
-  @reflectable set tickPosition (String a_tickPosition) {
-    _tickPosition = configureNotifiers(#tickPosition, _tickPosition, a_tickPosition);
-  }
-  @reflectable String get tickPosition => _tickPosition;
-  
-  Function _tickPositioner;
+  external String get tickPosition;
+  external void set tickPosition (String a_tickPosition);
+
   /**
    * A callback function returning array defining where the ticks are laid out on the axis. This overrides the default behaviour of tickPixelInterval and tickInterval. Defaults to null.
    */
-  void set tickPositioner (Function f) {
-    _tickPositioner = notifyPropertyChange(#tickPositioner,  _tickPositioner,  f);
-  }
-  Function get tickPositioner => _tickPositioner;
-  
-  List<int> _tickPositions;
+  external Function get tickPositioner;
+  external void set tickPositioner (Function a_tickPositioner);
+
   /**
    * An array defining where the ticks are laid out on the axis. This overrides the default behaviour of tickPixelInterval and tickInterval. Defaults to null.
    */
-  @reflectable set tickPositions (List<int> a_tickPositions) {
-    _tickPositions = configureNotifiers(#tickPositions, _tickPositions, a_tickPositions);
-  }
-  @reflectable List<int> get tickPositions => _tickPositions;
-  
-  int _tickWidth;
+  external List<int> get tickPositions;
+  external void set tickPositions (List<int> a_tickPositions);
+
   /**
    * The pixel width of the major tick marks. Defaults to 1.
    */
-  @reflectable set tickWidth (int a_tickWidth) {
-    _tickWidth = configureNotifiers(#tickWidth, _tickWidth, a_tickWidth);
-  }
-  @reflectable int get tickWidth => _tickWidth;
-  
-  
-  String _tickmarkPlacement;
+  external int get tickWidth;
+  external void set tickWidth (int a_tickWidth);
+
   /**
    * For categorized axes only. If "on" the tick mark is placed in the center of the category, if "between" the tick mark is placed between categories. Defaults to between.
    */
-  @reflectable set tickmarkPlacement (String a_tickmarkPlacement) {
-    _tickmarkPlacement = configureNotifiers(#tickmarkPlacement, _tickmarkPlacement, a_tickmarkPlacement);
-  }
-  @reflectable String get tickmarkPlacement => _tickmarkPlacement;
-  
-  
-  AxisTitle _title;
+  external String get tickmarkPlacement;
+  external void set tickmarkPlacement (String a_tickmarkPlacement);
+
   /**
    * The axis title, showing next to the axis line.
    */
-  @reflectable set title (AxisTitle a_title) {
-    _title = configureNotifiers(#title, _title, a_title);
-  }
-  @reflectable AxisTitle get title => _title;
-  
-  
-  String _type;
+  external AxisTitle get title;
+  external void set title (AxisTitle a_title);
+
   /**
    * The type of axis. Can be one of "linear", "logarithmic", "datetime" or "category". In a datetime axis, the numbers are given in milliseconds, and tick marks are placed on appropriate values like full hours or days. In a category axis, the point names of the chart's series are used for categories, if not a categories array is defined. Defaults to linear.
    */
-  @reflectable set type (String a_type) {
-    _type = configureNotifiers(#type, _type, a_type);
-  }
-  @reflectable String get type => _type;
-  
-  
-  Map toMap () {
-    Map map = new Map ();
-    addMapValue(map, 'allowDecimals', this.allowDecimals);
-    addMapValue(map, 'alternateGridColor', this.alternateGridColor);
-    addMapValue(map, 'categories', this.categories);
-    addMapValue(map, 'ceiling', this.ceiling);
-    addMapValue(map, 'dateTimeLabelFormats', this.dateTimeLabelFormats);
-    addMapValue(map, 'endOnTick', this.endOnTick);
-    addMapValue(map, 'events', this.events);
-    addMapValue(map, 'floor', this.floor);
-    addMapValue(map, 'gridLineColor', this.gridLineColor);
-    addMapValue(map, 'gridLineDashStyle', this.gridLineDashStyle);
-    addMapValue(map, 'gridLineWidth', this.gridLineWidth);
-    addMapValue(map, 'gridZIndex', this.gridZIndex);
-    addMapValue(map, 'id', this.id);
-    addMapValue(map, 'labels', this.labels);
-    addMapValue(map, 'color', this.color);
-    addMapValue(map, 'lineWidth', this.lineWidth);
-    addMapValue(map, 'linkedTo', this.linkedTo);
-    addMapValue(map, 'max', this.max);
-    addMapValue(map, 'maxPadding', this.maxPadding);
-    addMapValue(map, 'min', this.min);
-    addMapValue(map, 'minPadding', this.minPadding);
-    addMapValue(map, 'minRange', this.minRange);
-    addMapValue(map, 'minTickInterval', this.minTickInterval);
-    addMapValue(map, 'minorGridLineColor', this.minorGridLineColor);
-    addMapValue(map, 'minorGridLineDashStyle', this.minorGridLineDashStyle);
-    addMapValue(map, 'minorGridLineWidth', this.minorGridLineWidth);
-    addMapValue(map, 'minorTickColor', this.minorTickColor);
-    addMapValue(map, 'minorTickInterval', this.minorTickInterval);
-    addMapValue(map, 'minorTickLength', this.minorTickLength);
-    addMapValue(map, 'minorTickPosition', this.minorTickPosition);
-    addMapValue(map, 'minorTickWidth', this.minorTickWidth);
-    addMapValue(map, 'offset', this.offset);
-    addMapValue(map, 'opposite', this.opposite);
-    addMapValue(map, 'plotBands', this.plotBands);
-    addMapValue(map, 'plotLines', this.plotLines);
-    addMapValue(map, 'reversed', this.reversed);
-    addMapValue(map, 'showEmpty', this.showEmpty);
-    addMapValue(map, 'showFirstLabel', this.showFirstLabel);
-    addMapValue(map, 'showLastLabel', this.showLastLabel);
-    addMapValue(map, 'startOfWeek', this.startOfWeek);
-    addMapValue(map, 'startOnTick', this.startOnTick);
-    addMapValue(map, 'tickColor', this.tickColor);
-    addMapValue(map, 'tickInterval', this.tickInterval);
-    addMapValue(map, 'tickLength', this.tickLength);
-    addMapValue(map, 'tickPixelInterval', this.tickPixelInterval);
-    addMapValue(map, 'tickPosition', this.tickPosition);
-    addMapValue(map, 'tickPositioner', this.tickPositioner);
-    addMapValue(map, 'tickPositions', this.tickPositions);
-    addMapValue(map, 'tickWidth', this.tickWidth);
-    addMapValue(map, 'tickmarkPlacement', this.tickmarkPlacement);
-    addMapValue(map, 'title', this.title);
-    addMapValue(map, 'type', this.type);
-    if (moreOptions != null) {
-      map.addAll(moreOptions);
-    }
-    return map;
-  }
-  
+  external String get type;
+  external void set type (String a_type);
+
+  /* TODO: ¿Esto por qué?
   bool same (o) {
     return o is XAxis &&
         o.allowDecimals == this.allowDecimals &&
@@ -1866,10 +1315,10 @@ class XAxis extends OptionsObject  implements ToMap {
         o.tickPositions == this.tickPositions &&
         o.tickWidth == this.tickWidth &&
         o.tickmarkPlacement == this.tickmarkPlacement &&
-        /*o.title == this.title &&   TODO: equals de AxisTitle */
+        //o.title == this.title &&   TODO: equals de AxisTitle 
         o.type == this.type &&
         o.moreOptions == this.moreOptions;
-  }
+  }*/
   
 }
 
