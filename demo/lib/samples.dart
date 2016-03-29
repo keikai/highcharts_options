@@ -1,6 +1,7 @@
 library highcharts_options.samples;
 
 import 'dart:js';
+import 'package:js/js.dart';
 import 'dart:html';
 import 'package:highcharts_options/chart_options.dart';
 import 'dart:async';
@@ -18,3 +19,6 @@ void clearOutput () {
   DivElement output = querySelector("#output");
   output.children.clear();
 }
+
+@JS()
+external consoleDebug (dynamic obj);

@@ -1,9 +1,12 @@
-library highcharts.options;
+library highcharts;
 
 import 'package:uuid/uuid.dart';
 import 'dart:js';
 import 'package:js/js.dart';
 import 'dart:html';
+
+@JS("Date.UTC")
+external DateTime dateUTC (year, month, day);
 
 @JS('Highcharts.Chart')
 class HighchartsChart extends OptionsObject with Chart {

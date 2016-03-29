@@ -1,10 +1,11 @@
-name: highcharts_options
-version: 0.2.1+3
+name: highcharts
+version: 0.5.0
 author: Gonzalo Pezzi <gonzalopezzi@gmail.com>
-description: Highcharts Options contains base classes for wrapping the highcharts js api. If you want to use highcharts in Dart, use the highcharts packages for polymer or angular. I strongly recommend you using the Polymer version.
+description: Highcharts API wrapped via JS interop (js package).
 homepage: https://github.com/gonzalopezzi
+environment:
+  sdk: ">=1.8.0 <2.0.0"
 dependencies:
-  polymer: '>=0.15.0 <0.16.0'
   uuid: '>=0.5.0 <0.6.0'
   js: "^0.6.0"
 dev_dependencies:
