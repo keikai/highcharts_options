@@ -3,7 +3,7 @@ library highcharts_options.samples;
 import 'dart:js';
 import 'package:js/js.dart';
 import 'dart:html';
-import 'package:highcharts_options/chart_options.dart';
+import 'package:highcharts/highcharts.dart';
 import 'dart:async';
 import 'dart:convert';
 

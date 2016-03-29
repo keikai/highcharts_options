@@ -9,10 +9,401 @@ import 'dart:html';
 external DateTime dateUTC (year, month, day);
 
 @JS('Highcharts.Chart')
-class HighchartsChart extends OptionsObject with Chart {
+class HighchartsChart {
   external HighchartsChart (ChartOptions options);
   external List<Series> get series;
   external List<Axis> get axes;
+
+  /**
+   * When using multiple axis, the ticks of two or more opposite axes will  automatically be aligned by adding ticks to the axis or axes with the least ticks. This can be prevented by setting <code>alignTicks</code> to false. If the grid lines look messy, it's a good idea to hide them for the secondary axis by setting <code>gridLineWidth</code> to 0.
+   */
+  external bool get alignTicks;
+  external void set alignTicks (bool a_alignTicks);
+  /**
+   * <p>Set the overall animation for all chart updating. Animation can be disabled throughout
+
+      the chart by setting it to false here. It can be overridden for each individual
+
+      API method as a function parameter. The only animation not affected by this option is the
+
+      initial series animation, see <a class="internal" href="#plotOptions.series.animation">plotOptions.series.animation</a>.</p>
+
+
+
+      <p>The animation can either be set as a boolean or a configuration object. If <code>true</code>,
+
+      it will use the 'swing' jQuery easing and a duration of 500 ms. If used as a configuration object,
+
+      the following properties are supported:
+
+      </p><dl>
+
+      <dt>duration</dt>
+
+      <dd>The duration of the animation in milliseconds.</dd>
+
+
+
+      <dt>easing</dt>
+
+      <dd>A string reference to an easing function set on the <code>Math</code> object. See <a href="http://jsfiddle.net/gh/get/jquery/1.7.2/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-animation-easing/">the easing demo</a>.</dd>
+
+      </dl>
+   */
+  external dynamic get animation;
+  external void set animation (dynamic a_animation);
+  /**
+   * The background color or gradient for the outer chart area.
+   */
+  external dynamic get backgroundColor;
+  external void set backgroundColor (dynamic a_backgroundColor);
+  /**
+   * The color of the outer chart border.
+   */
+  external dynamic get borderColor;
+  external void set borderColor (dynamic a_borderColor);
+  /**
+   * The corner radius of the outer chart border.
+   */
+  external num get borderRadius;
+  external void set borderRadius (num a_borderRadius);
+  /**
+   * The pixel width of the outer chart border.
+   */
+  external num get borderWidth;
+  external void set borderWidth (num a_borderWidth);
+  /**
+   * A CSS class name to apply to the charts container <code>div</code>, allowing unique CSS styling for each chart.
+   */
+  external String get className;
+  external void set className (String a_className);
+  /**
+   * Alias of <code>type</code>.
+   */
+  @deprecated
+  external String get defaultSeriesType;
+  @deprecated
+  external void set defaultSeriesType (String a_defaultSeriesType);
+  /**
+   * Event listeners for the chart.
+   */
+  external ChartEvents get events;
+  external void set events (ChartEvents a_events);
+  /**
+   * An explicit height for the chart. By default the height is calculated from the offset height of the containing element, or 400 pixels if the containing element's height is 0.
+   */
+  external num get height;
+  external void set height (num a_height);
+  /**
+   * If true, the axes will scale to the remaining visible series once one series is hidden. If false, hiding and showing a series will not affect the axes or the other series. For stacks, once one series within the stack is hidden, the rest of the stack will close in around it even if the axis is not affected.
+   */
+  external bool get ignoreHiddenSeries;
+  external void set ignoreHiddenSeries (bool a_ignoreHiddenSeries);
+  /**
+   * Whether to invert the axes so that the x axis is vertical and y axis is horizontal.
+      When true, the x axis is reversed by default. If a bar series is present in the chart,
+      it will be inverted automatically.
+   */
+  external bool get inverted;
+  external void set inverted (bool a_inverted);
+  /**
+   * <p>The margin between the outer edge of the chart and the plot area. The numbers in the array designate top, right, bottom and left respectively. Use the options <code>marginTop</code>, <code>marginRight</code>, <code>marginBottom</code> and <code>marginLeft</code> for shorthand setting of one option.</p> <p>Since version 2.1, the margin is 0 by default. The actual space is dynamically calculated  from the offset of axis labels, axis title, title, subtitle and legend in addition to the <code>spacingTop</code>, <code>spacingRight</code>, <code>spacingBottom</code> and <code>spacingLeft</code> options.</p>
+      Defaults to <code>[null]</code>.
+   */
+  external List get margin;
+  external void set margin (List a_margin);
+  /**
+   * The margin between the bottom outer edge of the chart and the plot area. Use this to set a fixed
+      pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingBottom</code>.
+   */
+  external num get marginBottom;
+  external void set marginBottom (num a_marginBottom);
+  /**
+   * The margin between the left outer edge of the chart and the plot area. Use this to set a fixed
+      pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingLeft</code>.
+   */
+  external num get marginLeft;
+  external void set marginLeft (num a_marginLeft);
+  /**
+   * The margin between the right outer edge of the chart and the plot area. Use this to set a fixed
+      pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingRight</code>.
+   */
+  external num get marginRight;
+  external void set marginRight (num a_marginRight);
+  /**
+   * The margin between the top outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingTop</code>.
+   */
+  external num get marginTop;
+  external void set marginTop (num a_marginTop);
+  /**
+   * Options to render charts in 3 dimensions. This feature requires <code>highcharts-3d.js</code>, found in the download package or online at <a href="http://code.highcharts.com/highcharts-3d.js">code.highcharts.com/highcharts-3d.js</a>.
+   */
+  external ChartOptions3d get options3d;
+  external void set options3d (ChartOptions3d a_options3d);
+  /**
+   * Allows setting a key to switch between zooming and panning.
+   */
+  external String get panKey;
+  external void set panKey (String a_panKey);
+  /**
+   * Allow panning in a chart. Best used with <a href="#chart.panKey">panKey</a> to combine zooming and panning.
+   */
+  external bool get panning;
+  external void set panning (bool a_panning);
+  /**
+   * Equivalent to <a href="#chart.zoomType">zoomType</a>, but for multitouch gestures only. By default, the <code>pinchType</code> is the same as the <code>zoomType</code> setting. However, pinching can be enabled separately in some cases, for example in stock charts where a mouse drag pans the chart, while pinching is enabled.
+   */
+  external String get pinchType;
+  external void set pinchType (String a_pinchType);
+  /**
+   * The background color or gradient for the plot area.
+   */
+  external dynamic get plotBackgroundColor;
+  external void set plotBackgroundColor (dynamic a_plotBackgroundColor);
+  /**
+   * The URL for an image to use as the plot background. To set an image as the background for the entire chart, set a CSS background image to the container element. Note that for the image to be applied to exported charts, its URL needs to be accessible by the export server.
+   */
+  external String get plotBackgroundImage;
+  external void set plotBackgroundImage (String a_plotBackgroundImage);
+  /**
+   * The color of the inner chart or plot area border.
+   */
+  external dynamic get plotBorderColor;
+  external void set plotBorderColor (dynamic a_plotBorderColor);
+  /**
+   * The pixel width of the plot area border.
+   */
+  external num get plotBorderWidth;
+  external void set plotBorderWidth (num a_plotBorderWidth);
+  /**
+   * Whether to apply a drop shadow to the plot area. Requires that plotBackgroundColor be set. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+   */
+  external dynamic get plotShadow;
+  external void set plotShadow (dynamic a_plotShadow);
+  /**
+   * When true, cartesian charts like line, spline, area and column are transformed into the polar coordinate system. Requires <code>highcharts-more.js</code>.
+   */
+  external bool get polar;
+  external void set polar (bool a_polar);
+  /**
+   * Whether to reflow the chart to fit the width of the container div on resizing the window.
+   */
+  external bool get reflow;
+  external void set reflow (bool a_reflow);
+  /**
+   * The HTML element where the chart will be rendered. If it is a string, the element by that id is used. The HTML element can also be passed by direct reference.
+   */
+  external dynamic get renderTo;
+  external void set renderTo (dynamic a_renderTo);
+  /**
+   * The button that appears after a selection zoom, allowing the user to reset zoom.
+   */
+  external ChartResetZoomButton get resetZoomButton;
+  external void set resetZoomButton (ChartResetZoomButton a_resetZoomButton);
+  /**
+   * The background color of the marker square when selecting (zooming in on) an area of the chart.
+   */
+  external dynamic get selectionMarkerFill;
+  external void set selectionMarkerFill (dynamic a_selectionMarkerFill);
+  /**
+   * Whether to apply a drop shadow to the outer chart area. Requires that
+      backgroundColor be set. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>.
+   */
+  external dynamic get shadow;
+  external void set shadow (dynamic a_shadow);
+  /**
+   * Whether to show the axes initially. This only applies to empty charts where series are added dynamically, as axes are automatically added to cartesian series.
+   */
+  external bool get showAxes;
+  external void set showAxes (bool a_showAxes);
+  /**
+   * The distance between the outer edge of the chart and the content, like title, legend, axis title or labels. The numbers in the array designate top, right, bottom and left respectively. Use the options spacingTop, spacingRight, spacingBottom and spacingLeft options for shorthand setting of one option.
+   */
+  external List<num> get spacing;
+  external void set spacing (List<num> a_spacing);
+  /**
+   * <p>The space between the bottom edge of the chart and the content (plot area, axis title and labels, title, subtitle or
+      legend in top position).</p>
+   */
+  external num get spacingBottom;
+  external void set spacingBottom (num a_spacingBottom);
+  /**
+   * <p>The space between the left edge of the chart and the content (plot area, axis title and labels, title, subtitle or
+      legend in top position).</p>
+   */
+  external num get spacingLeft;
+  external void set spacingLeft (num a_spacingLeft);
+  /**
+   * <p>The space between the right edge of the chart and the content (plot area, axis title and labels, title, subtitle or
+      legend in top position).</p>
+   */
+  external num get spacingRight;
+  external void set spacingRight (num a_spacingRight);
+  /**
+   * <p>The space between the top edge of the chart and the content (plot area, axis title and labels, title, subtitle or
+
+      legend in top position).</p>
+   */
+  external num get spacingTop;
+  external void set spacingTop (num a_spacingTop);
+  /**
+   * Additional CSS styles to apply inline to the container <code>div</code>. Note that since the default font styles are applied in the renderer, it is ignorant of the individual chart  options and must be set globally. Defaults to:
+      <pre>style: {
+      fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
+      fontSize: '12px'
+      }</pre>
+   */
+  external dynamic get style;
+  external void set style (dynamic a_style);
+  /**
+   * The default series type for the chart. Can be any of the chart types listed under <a href="#plotOptions">plotOptions</a>.
+   */
+  external String get type;
+  external void set type (String a_type);
+  /**
+   * An explicit width for the chart. By default the width is calculated from the offset width of the containing element.
+   */
+  external num get width;
+  external void set width (num a_width);
+  /**
+   * Decides in what dimensions the user can zoom by dragging the mouse. Can be one of <code>x</code>, <code>y</code> or <code>xy</code>.
+   */
+  external String get zoomType;
+  external void set zoomType (String a_zoomType);
+  /**
+   * options: Object<br>
+
+      The Axis options, as documented under <a href="#xAxis">xAxis</a> and <a href="#yAxis">yAxis</a>.||
+
+
+
+      isX: Boolean<br>
+
+      Whether it is an X axis or Y axis.||
+
+
+
+      redraw: Boolean<br>
+
+      Defaults to <code>true</code>. Whether to redraw the chart after the series is added. See the <code>redraw()</code> method below.||
+
+
+
+      animation: Mixed<br>
+
+      Defaults to true. When true, the series' updating will be animated with default animation options. The animation can also be a configuration object with properties <code>duration</code> and <code>easing</code>.
+   */
+  external void addAxis ( dynamic options, bool isX, bool redraw, dynamic animation);
+  /**
+   * options: Object<br>
+
+      The series options, as documented under <a href="#plotOptions.series">plotOptions.series</a> and under the plotOptions for each series type.||
+
+
+
+      redraw: Boolean<br>
+
+      Defaults to <code>true</code>. Whether to redraw the chart after the series is added. See the <code>redraw()</code> method below.||
+
+
+
+      animation: Mixed<br>
+
+      Defaults to true. When true, the series' updating will be animated with default animation options. The animation can also be a configuration object with properties <code>duration</code> and <code>easing</code>.
+   */
+  external dynamic addSeries ( dynamic options, bool redraw, dynamic animation);
+  /**
+   * point: Object<br>
+
+      The existing Point object from which the drilldown will start.||
+
+
+
+      seriesOptions: Object<br>
+
+      The series options, as documented under <a href="#plotOptions.series">plotOptions.series</a> and under the plotOptions for each series type.
+   */
+  external void addSeriesAsDrilldown ( dynamic point, dynamic seriesOptions);
+  /**
+   *
+   */
+  external void destroy ();
+  /**
+   *
+   */
+  external void drillUp ();
+  /**
+   * options: Object<br>Exporting options. Out of the <a class="internal" href="#exporting">exporting</a> options, the following options can be given as parameters to the exportChart method. All options default to the values given in the exporting config options.
+
+      <code>filename</code>: the filename for the export without extension,
+
+      <code>url</code>: the URL for the server module to do the conversion,
+
+      <code>width</code>: the width of the PNG or JPEG image generated on the server,
+
+      <code>type</code>: the MIME type of the converted image,
+
+      <code>sourceWidth</code>: the width of the source (in-page) chart,
+
+      <code>sourceHeight</code>: the height of the source chart.||
+
+
+
+      chartOptions: Object<br>Additional chart options for the exported chart. For example a different background color can be added here.
+   */
+  external void exportChart ( dynamic options, dynamic chartOptions);
+  /**
+   * See <a href="#Chart.exportChart">exportChart</a> for parameter description.
+   */
+  external void exportChartLocal ( dynamic options, dynamic chartOptions);
+  /**
+   * id: String<br>The id of the axis, series or point to get.
+   */
+  external dynamic get ( String id);
+  /**
+   * additionalOptions: Object<br>Chart options to add to the exported chart in addition to the options given for the original chart. For example if series.lineWidth should be greater in the exported chart than in the original, or the chart should have a different background color, this is added here.
+   */
+  external String getSVG ( dynamic additionalOptions);
+  /**
+   * An array of the selected points.
+   */
+  external dynamic getSelectedPoints ();
+  /**
+   * An array of the selected Series items.
+   */
+  external dynamic getSelectedSeries ();
+  /**
+   *
+   */
+  external void hideLoading ();
+  /**
+   *
+   */
+  external void print ();
+  /**
+   * animation: Mixed<br>Defaults to true. When true, the update will be animated with default animation options. The animation can also be a configuration object with properties <code>duration</code> and <code>easing</code>.
+   */
+  external void redraw ( dynamic animation);
+  /**
+   * width: Number<br>The new pixel width of the chart.||height: Number<br>The new pixel height of the chart.||animation: Mixed<br>Defaults to true. When true, the resize will be animated with default animation options. The animation can also be a configuration object with properties <code>duration</code> and <code>easing</code>.
+   */
+  external void setSize ( num width, num height, dynamic animation);
+  /**
+   * title: Object<br>A configuration object for the new title as defined at <a class="internal" href="#title">#title</a>.||
+
+      subtitle: Object<br>A configuration object for the new subtitle as defined at <a class="internal" href="#subtitle">#subtitle</a>.||
+
+      redraw: Boolean<br>Whether to redraw the chart. Defaults to true.
+   */
+  external void setTitle ( dynamic title, dynamic subtitle, bool redraw);
+  /**
+   *
+   */
+  external dynamic showLoading ( String str);
+  /**
+   *
+   */
+  external void updatePosition ();
 }
 
 @JS()
@@ -24,12 +415,12 @@ class OptionsObject {
 
 @JS()
 @anonymous
-class Axis extends OptionsObject {
+class Axis {
 }
 
 @JS()
 @anonymous
-class ChartOptions extends OptionsObject {
+class ChartOptions {
   external factory ChartOptions ();
 
   external Chart get chart;
@@ -93,7 +484,7 @@ class ChartOptions extends OptionsObject {
 
 @JS()
 @anonymous
-class Chart extends OptionsObject {
+class Chart {
   external factory Chart ();
   /**
    * When using multiple axis, the ticks of two or more opposite axes will  automatically be aligned by adding ticks to the axis or axes with the least ticks. This can be prevented by setting <code>alignTicks</code> to false. If the grid lines look messy, it's a good idea to hide them for the secondary axis by setting <code>gridLineWidth</code> to 0.
@@ -488,7 +879,7 @@ class Chart extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartEvents extends OptionsObject {
+class ChartEvents {
   external factory ChartEvents ();
   /**
    * Fires when a series is added to the chart after load time, using the <code>addSeries</code> method. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts. Through <code>event.options</code> you can access the series options that was passed to the <code>addSeries</code>  method. Returning false prevents the series from being added.
@@ -606,7 +997,7 @@ class ChartEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartOptions3d extends OptionsObject {
+class ChartOptions3d {
   external factory ChartOptions3d ();
   /**
    * One of the two rotation angles for the chart.
@@ -643,7 +1034,7 @@ class ChartOptions3d extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartOptions3dFrame extends OptionsObject {
+class ChartOptions3dFrame {
   external factory ChartOptions3dFrame ();
   /**
    * Defines the back panel of the frame around 3D charts.
@@ -663,7 +1054,7 @@ class ChartOptions3dFrame extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartOptions3dFrameBack extends OptionsObject {
+class ChartOptions3dFrameBack {
   external factory ChartOptions3dFrameBack ();
   /**
    * The color of the panel.
@@ -678,7 +1069,7 @@ class ChartOptions3dFrameBack extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartOptions3dFrameBottom extends OptionsObject {
+class ChartOptions3dFrameBottom {
   external factory ChartOptions3dFrameBottom ();
   /**
    * The color of the panel.
@@ -693,7 +1084,7 @@ class ChartOptions3dFrameBottom extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartOptions3dFrameSide extends OptionsObject {
+class ChartOptions3dFrameSide {
   external factory ChartOptions3dFrameSide ();
   /**
    * The color of the panel.
@@ -708,7 +1099,7 @@ class ChartOptions3dFrameSide extends OptionsObject {
 }
 @JS()
 @anonymous
-class ChartResetZoomButton extends OptionsObject {
+class ChartResetZoomButton {
   external factory ChartResetZoomButton ();
   /**
    * The position of the button. This is an object that can hold the properties <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>.
@@ -728,7 +1119,7 @@ class ChartResetZoomButton extends OptionsObject {
 }
 @JS()
 @anonymous
-class Credits extends OptionsObject {
+class Credits {
   external factory Credits ();
   /**
    * Whether to show the credits text.
@@ -782,7 +1173,7 @@ class Credits extends OptionsObject {
 }
 @JS()
 @anonymous
-class Data extends OptionsObject {
+class Data {
   external factory Data ();
   /**
    * A two-dimensional array representing the input data on tabular form. This input can be used when the data is already parsed, for example from a grid view component. Each cell can be a string or number. If not switchRowsAndColumns is set, the columns are interpreted as series.
@@ -907,7 +1298,7 @@ class Data extends OptionsObject {
 }
 @JS()
 @anonymous
-class Drilldown extends OptionsObject {
+class Drilldown {
   external factory Drilldown ();
   /**
    * Additional styles to apply to the X axis label for a point that has drilldown data. By default it is underlined and blue to invite to interaction. Defaults to:
@@ -988,7 +1379,7 @@ class Drilldown extends OptionsObject {
 }
 @JS()
 @anonymous
-class DrilldownDrillUpButton extends OptionsObject {
+class DrilldownDrillUpButton {
   external factory DrilldownDrillUpButton ();
   /**
    * Positioning options for the button within the <code>relativeTo</code> box. Available properties are <code>x</code>, <code>y</code>, <code>align</code> and <code>verticalAlign</code>.
@@ -1008,7 +1399,7 @@ class DrilldownDrillUpButton extends OptionsObject {
 }
 @JS()
 @anonymous
-class Exporting extends OptionsObject {
+class Exporting {
   external factory Exporting ();
   /**
    * <p>Experimental setting to allow HTML inside the chart (added through the <code>useHTML</code> options), directly in the exported image. This allows you to preserve complicated HTML structures like tables or bi-directional text in exported charts.</p>
@@ -1082,7 +1473,7 @@ class Exporting extends OptionsObject {
 }
 @JS()
 @anonymous
-class ExportingButtons extends OptionsObject {
+class ExportingButtons {
   external factory ExportingButtons ();
   /**
    * Options for the export button.
@@ -1092,7 +1483,7 @@ class ExportingButtons extends OptionsObject {
 }
 @JS()
 @anonymous
-class ExportingButtonsContextButton extends OptionsObject {
+class ExportingButtonsContextButton {
   external factory ExportingButtonsContextButton ();
   /**
    * Alignment for the buttons.
@@ -1197,7 +1588,7 @@ class ExportingButtonsContextButton extends OptionsObject {
 }
 @JS()
 @anonymous
-class Labels extends OptionsObject {
+class Labels {
   external factory Labels ();
   /**
    * A HTML label that can be positioned anywhere in the chart area.
@@ -1215,7 +1606,7 @@ class Labels extends OptionsObject {
 }
 @JS()
 @anonymous
-class LabelsItems extends OptionsObject {
+class LabelsItems {
   external factory LabelsItems ();
   /**
    * Inner HTML or text for the label.
@@ -1234,7 +1625,7 @@ class LabelsItems extends OptionsObject {
 }
 @JS()
 @anonymous
-class Legend extends OptionsObject {
+class Legend {
   external factory Legend ();
   /**
    * <p>The horizontal alignment of the legend box within the chart area. Valid values are <code>left</code>, <code>center</code> and <code>right</code>.</p>
@@ -1442,7 +1833,7 @@ class Legend extends OptionsObject {
 }
 @JS()
 @anonymous
-class LegendNavigation extends OptionsObject {
+class LegendNavigation {
   external factory LegendNavigation ();
   /**
    * The color for the active up or down arrow in the legend page navigation.
@@ -1472,7 +1863,7 @@ class LegendNavigation extends OptionsObject {
 }
 @JS()
 @anonymous
-class LegendTitle extends OptionsObject {
+class LegendTitle {
   external factory LegendTitle ();
   /**
    * Generic CSS styles for the legend title.
@@ -1487,7 +1878,7 @@ class LegendTitle extends OptionsObject {
 }
 @JS()
 @anonymous
-class Loading extends OptionsObject {
+class Loading {
   external factory Loading ();
   /**
    * The duration in milliseconds of the fade out effect.
@@ -1518,7 +1909,7 @@ class Loading extends OptionsObject {
 }
 @JS()
 @anonymous
-class Navigation extends OptionsObject {
+class Navigation {
   external factory Navigation ();
   /**
    * A collection of options for buttons appearing in the exporting module.
@@ -1556,7 +1947,7 @@ class Navigation extends OptionsObject {
 }
 @JS()
 @anonymous
-class NavigationButtonOptions extends OptionsObject {
+class NavigationButtonOptions {
   external factory NavigationButtonOptions ();
   /**
    * Alignment for the buttons.
@@ -1631,7 +2022,7 @@ class NavigationButtonOptions extends OptionsObject {
 }
 @JS()
 @anonymous
-class NoData extends OptionsObject {
+class NoData {
   external factory NoData ();
   /**
    * An object of additional SVG attributes for the no-data label.
@@ -1656,7 +2047,7 @@ class NoData extends OptionsObject {
 }
 @JS()
 @anonymous
-class Pane extends OptionsObject {
+class Pane {
   external factory Pane ();
   /**
    * An object, or array of objects, for backgrounds. Sub options include <code>backgroundColor</code> (can be solid or gradient), <code>shape</code> ("solid" or "arc"), <code>innerWidth</code>, <code>outerWidth</code>, <code>borderWidth</code>, <code>borderColor</code>.
@@ -1686,7 +2077,7 @@ class Pane extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptions extends OptionsObject {
+class PlotOptions {
   external factory PlotOptions ();
   /**
    * null
@@ -1812,7 +2203,7 @@ class PlotOptions extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArea extends OptionsObject {
+class PlotOptionsArea {
   external factory PlotOptionsArea ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -2101,7 +2492,7 @@ class PlotOptionsArea extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaDataLabels extends OptionsObject {
+class PlotOptionsAreaDataLabels {
   external factory PlotOptionsAreaDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -2287,7 +2678,7 @@ class PlotOptionsAreaDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaEvents extends OptionsObject {
+class PlotOptionsAreaEvents {
   external factory PlotOptionsAreaEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -2332,7 +2723,7 @@ class PlotOptionsAreaEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaMarker extends OptionsObject {
+class PlotOptionsAreaMarker {
   external factory PlotOptionsAreaMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -2390,7 +2781,7 @@ class PlotOptionsAreaMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaMarkerStates extends OptionsObject {
+class PlotOptionsAreaMarkerStates {
   external factory PlotOptionsAreaMarkerStates ();
   /**
    * null
@@ -2406,7 +2797,7 @@ class PlotOptionsAreaMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaMarkerStatesHover extends OptionsObject {
+class PlotOptionsAreaMarkerStatesHover {
   external factory PlotOptionsAreaMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -2446,7 +2837,7 @@ class PlotOptionsAreaMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaMarkerStatesSelect extends OptionsObject {
+class PlotOptionsAreaMarkerStatesSelect {
   external factory PlotOptionsAreaMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -2477,7 +2868,7 @@ class PlotOptionsAreaMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaPoint extends OptionsObject {
+class PlotOptionsAreaPoint {
   external factory PlotOptionsAreaPoint ();
   /**
    * Events for each single point
@@ -2487,7 +2878,7 @@ class PlotOptionsAreaPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaPointEvents extends OptionsObject {
+class PlotOptionsAreaPointEvents {
   external factory PlotOptionsAreaPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -2527,7 +2918,7 @@ class PlotOptionsAreaPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaStates extends OptionsObject {
+class PlotOptionsAreaStates {
   external factory PlotOptionsAreaStates ();
   /**
    * Options for the hovered series
@@ -2537,7 +2928,7 @@ class PlotOptionsAreaStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaStatesHover extends OptionsObject {
+class PlotOptionsAreaStatesHover {
   external factory PlotOptionsAreaStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -2567,7 +2958,7 @@ class PlotOptionsAreaStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaStatesHoverHalo extends OptionsObject {
+class PlotOptionsAreaStatesHoverHalo {
   external factory PlotOptionsAreaStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -2587,7 +2978,7 @@ class PlotOptionsAreaStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaStatesHoverMarker extends OptionsObject {
+class PlotOptionsAreaStatesHoverMarker {
   external factory PlotOptionsAreaStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -2645,7 +3036,7 @@ class PlotOptionsAreaStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaTooltip extends OptionsObject {
+class PlotOptionsAreaTooltip {
   external factory PlotOptionsAreaTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -2741,7 +3132,7 @@ class PlotOptionsAreaTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaZones extends OptionsObject {
+class PlotOptionsAreaZones {
   external factory PlotOptionsAreaZones ();
   /**
    * Defines the color of the series.
@@ -2766,7 +3157,7 @@ class PlotOptionsAreaZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearange extends OptionsObject {
+class PlotOptionsArearange {
   external factory PlotOptionsArearange ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -3025,7 +3416,7 @@ class PlotOptionsArearange extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeDataLabels extends OptionsObject {
+class PlotOptionsArearangeDataLabels {
   external factory PlotOptionsArearangeDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -3221,7 +3612,7 @@ class PlotOptionsArearangeDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeEvents extends OptionsObject {
+class PlotOptionsArearangeEvents {
   external factory PlotOptionsArearangeEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -3266,7 +3657,7 @@ class PlotOptionsArearangeEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangePoint extends OptionsObject {
+class PlotOptionsArearangePoint {
   external factory PlotOptionsArearangePoint ();
   /**
    * Events for each single point
@@ -3276,7 +3667,7 @@ class PlotOptionsArearangePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangePointEvents extends OptionsObject {
+class PlotOptionsArearangePointEvents {
   external factory PlotOptionsArearangePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -3316,7 +3707,7 @@ class PlotOptionsArearangePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeStates extends OptionsObject {
+class PlotOptionsArearangeStates {
   external factory PlotOptionsArearangeStates ();
   /**
    * Options for the hovered series
@@ -3326,7 +3717,7 @@ class PlotOptionsArearangeStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeStatesHover extends OptionsObject {
+class PlotOptionsArearangeStatesHover {
   external factory PlotOptionsArearangeStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -3356,7 +3747,7 @@ class PlotOptionsArearangeStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeStatesHoverHalo extends OptionsObject {
+class PlotOptionsArearangeStatesHoverHalo {
   external factory PlotOptionsArearangeStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -3376,7 +3767,7 @@ class PlotOptionsArearangeStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeStatesHoverMarker extends OptionsObject {
+class PlotOptionsArearangeStatesHoverMarker {
   external factory PlotOptionsArearangeStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -3434,7 +3825,7 @@ class PlotOptionsArearangeStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeTooltip extends OptionsObject {
+class PlotOptionsArearangeTooltip {
   external factory PlotOptionsArearangeTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -3530,7 +3921,7 @@ class PlotOptionsArearangeTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsArearangeZones extends OptionsObject {
+class PlotOptionsArearangeZones {
   external factory PlotOptionsArearangeZones ();
   /**
    * Defines the color of the series.
@@ -3555,7 +3946,7 @@ class PlotOptionsArearangeZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreaspline extends OptionsObject {
+class PlotOptionsAreaspline {
   external factory PlotOptionsAreaspline ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -3839,7 +4230,7 @@ class PlotOptionsAreaspline extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineDataLabels extends OptionsObject {
+class PlotOptionsAreasplineDataLabels {
   external factory PlotOptionsAreasplineDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -4025,7 +4416,7 @@ class PlotOptionsAreasplineDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineEvents extends OptionsObject {
+class PlotOptionsAreasplineEvents {
   external factory PlotOptionsAreasplineEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -4070,7 +4461,7 @@ class PlotOptionsAreasplineEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineMarker extends OptionsObject {
+class PlotOptionsAreasplineMarker {
   external factory PlotOptionsAreasplineMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -4128,7 +4519,7 @@ class PlotOptionsAreasplineMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineMarkerStates extends OptionsObject {
+class PlotOptionsAreasplineMarkerStates {
   external factory PlotOptionsAreasplineMarkerStates ();
   /**
    * null
@@ -4144,7 +4535,7 @@ class PlotOptionsAreasplineMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineMarkerStatesHover extends OptionsObject {
+class PlotOptionsAreasplineMarkerStatesHover {
   external factory PlotOptionsAreasplineMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -4184,7 +4575,7 @@ class PlotOptionsAreasplineMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineMarkerStatesSelect extends OptionsObject {
+class PlotOptionsAreasplineMarkerStatesSelect {
   external factory PlotOptionsAreasplineMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -4215,7 +4606,7 @@ class PlotOptionsAreasplineMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinePoint extends OptionsObject {
+class PlotOptionsAreasplinePoint {
   external factory PlotOptionsAreasplinePoint ();
   /**
    * Events for each single point
@@ -4225,7 +4616,7 @@ class PlotOptionsAreasplinePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinePointEvents extends OptionsObject {
+class PlotOptionsAreasplinePointEvents {
   external factory PlotOptionsAreasplinePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -4265,7 +4656,7 @@ class PlotOptionsAreasplinePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineStates extends OptionsObject {
+class PlotOptionsAreasplineStates {
   external factory PlotOptionsAreasplineStates ();
   /**
    * Options for the hovered series
@@ -4275,7 +4666,7 @@ class PlotOptionsAreasplineStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineStatesHover extends OptionsObject {
+class PlotOptionsAreasplineStatesHover {
   external factory PlotOptionsAreasplineStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -4305,7 +4696,7 @@ class PlotOptionsAreasplineStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineStatesHoverHalo extends OptionsObject {
+class PlotOptionsAreasplineStatesHoverHalo {
   external factory PlotOptionsAreasplineStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -4325,7 +4716,7 @@ class PlotOptionsAreasplineStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineStatesHoverMarker extends OptionsObject {
+class PlotOptionsAreasplineStatesHoverMarker {
   external factory PlotOptionsAreasplineStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -4383,7 +4774,7 @@ class PlotOptionsAreasplineStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineTooltip extends OptionsObject {
+class PlotOptionsAreasplineTooltip {
   external factory PlotOptionsAreasplineTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -4479,7 +4870,7 @@ class PlotOptionsAreasplineTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplineZones extends OptionsObject {
+class PlotOptionsAreasplineZones {
   external factory PlotOptionsAreasplineZones ();
   /**
    * Defines the color of the series.
@@ -4504,7 +4895,7 @@ class PlotOptionsAreasplineZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerange extends OptionsObject {
+class PlotOptionsAreasplinerange {
   external factory PlotOptionsAreasplinerange ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -4758,7 +5149,7 @@ class PlotOptionsAreasplinerange extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeDataLabels extends OptionsObject {
+class PlotOptionsAreasplinerangeDataLabels {
   external factory PlotOptionsAreasplinerangeDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -4954,7 +5345,7 @@ class PlotOptionsAreasplinerangeDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeEvents extends OptionsObject {
+class PlotOptionsAreasplinerangeEvents {
   external factory PlotOptionsAreasplinerangeEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -4999,7 +5390,7 @@ class PlotOptionsAreasplinerangeEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangePoint extends OptionsObject {
+class PlotOptionsAreasplinerangePoint {
   external factory PlotOptionsAreasplinerangePoint ();
   /**
    * Events for each single point
@@ -5009,7 +5400,7 @@ class PlotOptionsAreasplinerangePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangePointEvents extends OptionsObject {
+class PlotOptionsAreasplinerangePointEvents {
   external factory PlotOptionsAreasplinerangePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -5049,7 +5440,7 @@ class PlotOptionsAreasplinerangePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeStates extends OptionsObject {
+class PlotOptionsAreasplinerangeStates {
   external factory PlotOptionsAreasplinerangeStates ();
   /**
    * Options for the hovered series
@@ -5059,7 +5450,7 @@ class PlotOptionsAreasplinerangeStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeStatesHover extends OptionsObject {
+class PlotOptionsAreasplinerangeStatesHover {
   external factory PlotOptionsAreasplinerangeStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -5089,7 +5480,7 @@ class PlotOptionsAreasplinerangeStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeStatesHoverHalo extends OptionsObject {
+class PlotOptionsAreasplinerangeStatesHoverHalo {
   external factory PlotOptionsAreasplinerangeStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -5109,7 +5500,7 @@ class PlotOptionsAreasplinerangeStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeStatesHoverMarker extends OptionsObject {
+class PlotOptionsAreasplinerangeStatesHoverMarker {
   external factory PlotOptionsAreasplinerangeStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -5167,7 +5558,7 @@ class PlotOptionsAreasplinerangeStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeTooltip extends OptionsObject {
+class PlotOptionsAreasplinerangeTooltip {
   external factory PlotOptionsAreasplinerangeTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -5263,7 +5654,7 @@ class PlotOptionsAreasplinerangeTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsAreasplinerangeZones extends OptionsObject {
+class PlotOptionsAreasplinerangeZones {
   external factory PlotOptionsAreasplinerangeZones ();
   /**
    * Defines the color of the series.
@@ -5288,7 +5679,7 @@ class PlotOptionsAreasplinerangeZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBar extends OptionsObject {
+class PlotOptionsBar {
   external factory PlotOptionsBar ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -5572,7 +5963,7 @@ class PlotOptionsBar extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarDataLabels extends OptionsObject {
+class PlotOptionsBarDataLabels {
   external factory PlotOptionsBarDataLabels ();
   /**
    * Alignment of the data label relative to the data point.
@@ -5758,7 +6149,7 @@ class PlotOptionsBarDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarEvents extends OptionsObject {
+class PlotOptionsBarEvents {
   external factory PlotOptionsBarEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -5803,7 +6194,7 @@ class PlotOptionsBarEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarPoint extends OptionsObject {
+class PlotOptionsBarPoint {
   external factory PlotOptionsBarPoint ();
   /**
    * Events for each single point
@@ -5813,7 +6204,7 @@ class PlotOptionsBarPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarPointEvents extends OptionsObject {
+class PlotOptionsBarPointEvents {
   external factory PlotOptionsBarPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -5853,7 +6244,7 @@ class PlotOptionsBarPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarStates extends OptionsObject {
+class PlotOptionsBarStates {
   external factory PlotOptionsBarStates ();
   /**
    * Options for the hovered series
@@ -5863,7 +6254,7 @@ class PlotOptionsBarStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarStatesHover extends OptionsObject {
+class PlotOptionsBarStatesHover {
   external factory PlotOptionsBarStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -5883,7 +6274,7 @@ class PlotOptionsBarStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarStatesHoverHalo extends OptionsObject {
+class PlotOptionsBarStatesHoverHalo {
   external factory PlotOptionsBarStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -5903,7 +6294,7 @@ class PlotOptionsBarStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarTooltip extends OptionsObject {
+class PlotOptionsBarTooltip {
   external factory PlotOptionsBarTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -5999,7 +6390,7 @@ class PlotOptionsBarTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBarZones extends OptionsObject {
+class PlotOptionsBarZones {
   external factory PlotOptionsBarZones ();
   /**
    * Defines the color of the series.
@@ -6024,7 +6415,7 @@ class PlotOptionsBarZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplot extends OptionsObject {
+class PlotOptionsBoxplot {
   external factory PlotOptionsBoxplot ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -6283,7 +6674,7 @@ class PlotOptionsBoxplot extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotEvents extends OptionsObject {
+class PlotOptionsBoxplotEvents {
   external factory PlotOptionsBoxplotEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -6328,7 +6719,7 @@ class PlotOptionsBoxplotEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotPoint extends OptionsObject {
+class PlotOptionsBoxplotPoint {
   external factory PlotOptionsBoxplotPoint ();
   /**
    * Events for each single point
@@ -6338,7 +6729,7 @@ class PlotOptionsBoxplotPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotPointEvents extends OptionsObject {
+class PlotOptionsBoxplotPointEvents {
   external factory PlotOptionsBoxplotPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -6378,7 +6769,7 @@ class PlotOptionsBoxplotPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotStates extends OptionsObject {
+class PlotOptionsBoxplotStates {
   external factory PlotOptionsBoxplotStates ();
   /**
    * Options for the hovered series
@@ -6388,7 +6779,7 @@ class PlotOptionsBoxplotStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotStatesHover extends OptionsObject {
+class PlotOptionsBoxplotStatesHover {
   external factory PlotOptionsBoxplotStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -6408,7 +6799,7 @@ class PlotOptionsBoxplotStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotStatesHoverHalo extends OptionsObject {
+class PlotOptionsBoxplotStatesHoverHalo {
   external factory PlotOptionsBoxplotStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -6428,7 +6819,7 @@ class PlotOptionsBoxplotStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotTooltip extends OptionsObject {
+class PlotOptionsBoxplotTooltip {
   external factory PlotOptionsBoxplotTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -6524,7 +6915,7 @@ class PlotOptionsBoxplotTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBoxplotZones extends OptionsObject {
+class PlotOptionsBoxplotZones {
   external factory PlotOptionsBoxplotZones ();
   /**
    * Defines the color of the series.
@@ -6549,7 +6940,7 @@ class PlotOptionsBoxplotZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubble extends OptionsObject {
+class PlotOptionsBubble {
   external factory PlotOptionsBubble ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -6806,7 +7197,7 @@ class PlotOptionsBubble extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleDataLabels extends OptionsObject {
+class PlotOptionsBubbleDataLabels {
   external factory PlotOptionsBubbleDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -6992,7 +7383,7 @@ class PlotOptionsBubbleDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleEvents extends OptionsObject {
+class PlotOptionsBubbleEvents {
   external factory PlotOptionsBubbleEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -7037,7 +7428,7 @@ class PlotOptionsBubbleEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleMarker extends OptionsObject {
+class PlotOptionsBubbleMarker {
   external factory PlotOptionsBubbleMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -7095,7 +7486,7 @@ class PlotOptionsBubbleMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleMarkerStates extends OptionsObject {
+class PlotOptionsBubbleMarkerStates {
   external factory PlotOptionsBubbleMarkerStates ();
   /**
    * null
@@ -7111,7 +7502,7 @@ class PlotOptionsBubbleMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleMarkerStatesHover extends OptionsObject {
+class PlotOptionsBubbleMarkerStatesHover {
   external factory PlotOptionsBubbleMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -7151,7 +7542,7 @@ class PlotOptionsBubbleMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleMarkerStatesSelect extends OptionsObject {
+class PlotOptionsBubbleMarkerStatesSelect {
   external factory PlotOptionsBubbleMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -7182,7 +7573,7 @@ class PlotOptionsBubbleMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubblePoint extends OptionsObject {
+class PlotOptionsBubblePoint {
   external factory PlotOptionsBubblePoint ();
   /**
    * Events for each single point
@@ -7192,7 +7583,7 @@ class PlotOptionsBubblePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubblePointEvents extends OptionsObject {
+class PlotOptionsBubblePointEvents {
   external factory PlotOptionsBubblePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -7232,7 +7623,7 @@ class PlotOptionsBubblePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleStates extends OptionsObject {
+class PlotOptionsBubbleStates {
   external factory PlotOptionsBubbleStates ();
   /**
    * Options for the hovered series
@@ -7242,7 +7633,7 @@ class PlotOptionsBubbleStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleStatesHover extends OptionsObject {
+class PlotOptionsBubbleStatesHover {
   external factory PlotOptionsBubbleStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -7272,7 +7663,7 @@ class PlotOptionsBubbleStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleStatesHoverHalo extends OptionsObject {
+class PlotOptionsBubbleStatesHoverHalo {
   external factory PlotOptionsBubbleStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -7292,7 +7683,7 @@ class PlotOptionsBubbleStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleStatesHoverMarker extends OptionsObject {
+class PlotOptionsBubbleStatesHoverMarker {
   external factory PlotOptionsBubbleStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -7350,7 +7741,7 @@ class PlotOptionsBubbleStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleTooltip extends OptionsObject {
+class PlotOptionsBubbleTooltip {
   external factory PlotOptionsBubbleTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -7446,7 +7837,7 @@ class PlotOptionsBubbleTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsBubbleZones extends OptionsObject {
+class PlotOptionsBubbleZones {
   external factory PlotOptionsBubbleZones ();
   /**
    * Defines the color of the series.
@@ -7471,7 +7862,7 @@ class PlotOptionsBubbleZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumn extends OptionsObject {
+class PlotOptionsColumn {
   external factory PlotOptionsColumn ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -7755,7 +8146,7 @@ class PlotOptionsColumn extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnDataLabels extends OptionsObject {
+class PlotOptionsColumnDataLabels {
   external factory PlotOptionsColumnDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -7941,7 +8332,7 @@ class PlotOptionsColumnDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnEvents extends OptionsObject {
+class PlotOptionsColumnEvents {
   external factory PlotOptionsColumnEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -7986,7 +8377,7 @@ class PlotOptionsColumnEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnPoint extends OptionsObject {
+class PlotOptionsColumnPoint {
   external factory PlotOptionsColumnPoint ();
   /**
    * Events for each single point
@@ -7996,7 +8387,7 @@ class PlotOptionsColumnPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnPointEvents extends OptionsObject {
+class PlotOptionsColumnPointEvents {
   external factory PlotOptionsColumnPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -8036,7 +8427,7 @@ class PlotOptionsColumnPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnStates extends OptionsObject {
+class PlotOptionsColumnStates {
   external factory PlotOptionsColumnStates ();
   /**
    * Options for the hovered series
@@ -8046,7 +8437,7 @@ class PlotOptionsColumnStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnStatesHover extends OptionsObject {
+class PlotOptionsColumnStatesHover {
   external factory PlotOptionsColumnStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -8066,7 +8457,7 @@ class PlotOptionsColumnStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnStatesHoverHalo extends OptionsObject {
+class PlotOptionsColumnStatesHoverHalo {
   external factory PlotOptionsColumnStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -8086,7 +8477,7 @@ class PlotOptionsColumnStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnTooltip extends OptionsObject {
+class PlotOptionsColumnTooltip {
   external factory PlotOptionsColumnTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -8182,7 +8573,7 @@ class PlotOptionsColumnTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnZones extends OptionsObject {
+class PlotOptionsColumnZones {
   external factory PlotOptionsColumnZones ();
   /**
    * Defines the color of the series.
@@ -8207,7 +8598,7 @@ class PlotOptionsColumnZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrange extends OptionsObject {
+class PlotOptionsColumnrange {
   external factory PlotOptionsColumnrange ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -8467,7 +8858,7 @@ class PlotOptionsColumnrange extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeDataLabels extends OptionsObject {
+class PlotOptionsColumnrangeDataLabels {
   external factory PlotOptionsColumnrangeDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -8663,7 +9054,7 @@ class PlotOptionsColumnrangeDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeEvents extends OptionsObject {
+class PlotOptionsColumnrangeEvents {
   external factory PlotOptionsColumnrangeEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -8708,7 +9099,7 @@ class PlotOptionsColumnrangeEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangePoint extends OptionsObject {
+class PlotOptionsColumnrangePoint {
   external factory PlotOptionsColumnrangePoint ();
   /**
    * Events for each single point
@@ -8718,7 +9109,7 @@ class PlotOptionsColumnrangePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangePointEvents extends OptionsObject {
+class PlotOptionsColumnrangePointEvents {
   external factory PlotOptionsColumnrangePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -8758,7 +9149,7 @@ class PlotOptionsColumnrangePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeStates extends OptionsObject {
+class PlotOptionsColumnrangeStates {
   external factory PlotOptionsColumnrangeStates ();
   /**
    * Options for the hovered series
@@ -8768,7 +9159,7 @@ class PlotOptionsColumnrangeStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeStatesHover extends OptionsObject {
+class PlotOptionsColumnrangeStatesHover {
   external factory PlotOptionsColumnrangeStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -8788,7 +9179,7 @@ class PlotOptionsColumnrangeStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeStatesHoverHalo extends OptionsObject {
+class PlotOptionsColumnrangeStatesHoverHalo {
   external factory PlotOptionsColumnrangeStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -8808,7 +9199,7 @@ class PlotOptionsColumnrangeStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeTooltip extends OptionsObject {
+class PlotOptionsColumnrangeTooltip {
   external factory PlotOptionsColumnrangeTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -8904,7 +9295,7 @@ class PlotOptionsColumnrangeTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsColumnrangeZones extends OptionsObject {
+class PlotOptionsColumnrangeZones {
   external factory PlotOptionsColumnrangeZones ();
   /**
    * Defines the color of the series.
@@ -8929,7 +9320,7 @@ class PlotOptionsColumnrangeZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbar extends OptionsObject {
+class PlotOptionsErrorbar {
   external factory PlotOptionsErrorbar ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -9153,7 +9544,7 @@ class PlotOptionsErrorbar extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarEvents extends OptionsObject {
+class PlotOptionsErrorbarEvents {
   external factory PlotOptionsErrorbarEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -9198,7 +9589,7 @@ class PlotOptionsErrorbarEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarPoint extends OptionsObject {
+class PlotOptionsErrorbarPoint {
   external factory PlotOptionsErrorbarPoint ();
   /**
    * Events for each single point
@@ -9208,7 +9599,7 @@ class PlotOptionsErrorbarPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarPointEvents extends OptionsObject {
+class PlotOptionsErrorbarPointEvents {
   external factory PlotOptionsErrorbarPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -9248,7 +9639,7 @@ class PlotOptionsErrorbarPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarStates extends OptionsObject {
+class PlotOptionsErrorbarStates {
   external factory PlotOptionsErrorbarStates ();
   /**
    * Options for the hovered series
@@ -9258,7 +9649,7 @@ class PlotOptionsErrorbarStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarStatesHover extends OptionsObject {
+class PlotOptionsErrorbarStatesHover {
   external factory PlotOptionsErrorbarStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -9278,7 +9669,7 @@ class PlotOptionsErrorbarStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarStatesHoverHalo extends OptionsObject {
+class PlotOptionsErrorbarStatesHoverHalo {
   external factory PlotOptionsErrorbarStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -9298,7 +9689,7 @@ class PlotOptionsErrorbarStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarTooltip extends OptionsObject {
+class PlotOptionsErrorbarTooltip {
   external factory PlotOptionsErrorbarTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -9394,7 +9785,7 @@ class PlotOptionsErrorbarTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsErrorbarZones extends OptionsObject {
+class PlotOptionsErrorbarZones {
   external factory PlotOptionsErrorbarZones ();
   /**
    * Defines the color of the series.
@@ -9419,7 +9810,7 @@ class PlotOptionsErrorbarZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnel extends OptionsObject {
+class PlotOptionsFunnel {
   external factory PlotOptionsFunnel ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -9583,7 +9974,7 @@ class PlotOptionsFunnel extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelDataLabels extends OptionsObject {
+class PlotOptionsFunnelDataLabels {
   external factory PlotOptionsFunnelDataLabels ();
   /**
    * The background color or gradient for the data label. Defaults to <code>undefined</code>.
@@ -9784,7 +10175,7 @@ class PlotOptionsFunnelDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelEvents extends OptionsObject {
+class PlotOptionsFunnelEvents {
   external factory PlotOptionsFunnelEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -9829,7 +10220,7 @@ class PlotOptionsFunnelEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelPoint extends OptionsObject {
+class PlotOptionsFunnelPoint {
   external factory PlotOptionsFunnelPoint ();
   /**
    * Events for each single point
@@ -9839,7 +10230,7 @@ class PlotOptionsFunnelPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelPointEvents extends OptionsObject {
+class PlotOptionsFunnelPointEvents {
   external factory PlotOptionsFunnelPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -9884,7 +10275,7 @@ class PlotOptionsFunnelPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelStates extends OptionsObject {
+class PlotOptionsFunnelStates {
   external factory PlotOptionsFunnelStates ();
   /**
    * Options for the hovered series
@@ -9894,7 +10285,7 @@ class PlotOptionsFunnelStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelStatesHover extends OptionsObject {
+class PlotOptionsFunnelStatesHover {
   external factory PlotOptionsFunnelStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -9929,7 +10320,7 @@ class PlotOptionsFunnelStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelStatesHoverHalo extends OptionsObject {
+class PlotOptionsFunnelStatesHoverHalo {
   external factory PlotOptionsFunnelStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -9949,7 +10340,7 @@ class PlotOptionsFunnelStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelStatesHoverMarker extends OptionsObject {
+class PlotOptionsFunnelStatesHoverMarker {
   external factory PlotOptionsFunnelStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -10007,7 +10398,7 @@ class PlotOptionsFunnelStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelTooltip extends OptionsObject {
+class PlotOptionsFunnelTooltip {
   external factory PlotOptionsFunnelTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -10103,7 +10494,7 @@ class PlotOptionsFunnelTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsFunnelZones extends OptionsObject {
+class PlotOptionsFunnelZones {
   external factory PlotOptionsFunnelZones ();
   /**
    * Defines the color of the series.
@@ -10128,7 +10519,7 @@ class PlotOptionsFunnelZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGauge extends OptionsObject {
+class PlotOptionsGauge {
   external factory PlotOptionsGauge ();
   /**
    * <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.		The following properties are supported:</p>
@@ -10279,7 +10670,7 @@ class PlotOptionsGauge extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeDataLabels extends OptionsObject {
+class PlotOptionsGaugeDataLabels {
   external factory PlotOptionsGaugeDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -10465,7 +10856,7 @@ class PlotOptionsGaugeDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeDial extends OptionsObject {
+class PlotOptionsGaugeDial {
   external factory PlotOptionsGaugeDial ();
   /**
    * The background or fill color of the gauge's dial.
@@ -10510,7 +10901,7 @@ class PlotOptionsGaugeDial extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeEvents extends OptionsObject {
+class PlotOptionsGaugeEvents {
   external factory PlotOptionsGaugeEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -10555,7 +10946,7 @@ class PlotOptionsGaugeEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugePivot extends OptionsObject {
+class PlotOptionsGaugePivot {
   external factory PlotOptionsGaugePivot ();
   /**
    * The background color or fill of the pivot.
@@ -10580,7 +10971,7 @@ class PlotOptionsGaugePivot extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugePoint extends OptionsObject {
+class PlotOptionsGaugePoint {
   external factory PlotOptionsGaugePoint ();
   /**
    * Events for each single point
@@ -10590,7 +10981,7 @@ class PlotOptionsGaugePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugePointEvents extends OptionsObject {
+class PlotOptionsGaugePointEvents {
   external factory PlotOptionsGaugePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -10630,7 +11021,7 @@ class PlotOptionsGaugePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeStates extends OptionsObject {
+class PlotOptionsGaugeStates {
   external factory PlotOptionsGaugeStates ();
   /**
    * Options for the hovered series
@@ -10640,7 +11031,7 @@ class PlotOptionsGaugeStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeStatesHover extends OptionsObject {
+class PlotOptionsGaugeStatesHover {
   external factory PlotOptionsGaugeStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -10670,7 +11061,7 @@ class PlotOptionsGaugeStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeStatesHoverHalo extends OptionsObject {
+class PlotOptionsGaugeStatesHoverHalo {
   external factory PlotOptionsGaugeStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -10690,7 +11081,7 @@ class PlotOptionsGaugeStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeStatesHoverMarker extends OptionsObject {
+class PlotOptionsGaugeStatesHoverMarker {
   external factory PlotOptionsGaugeStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -10748,7 +11139,7 @@ class PlotOptionsGaugeStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeTooltip extends OptionsObject {
+class PlotOptionsGaugeTooltip {
   external factory PlotOptionsGaugeTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -10844,7 +11235,7 @@ class PlotOptionsGaugeTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsGaugeZones extends OptionsObject {
+class PlotOptionsGaugeZones {
   external factory PlotOptionsGaugeZones ();
   /**
    * Defines the color of the series.
@@ -10869,7 +11260,7 @@ class PlotOptionsGaugeZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmap extends OptionsObject {
+class PlotOptionsHeatmap {
   external factory PlotOptionsHeatmap ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -11055,7 +11446,7 @@ class PlotOptionsHeatmap extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapDataLabels extends OptionsObject {
+class PlotOptionsHeatmapDataLabels {
   external factory PlotOptionsHeatmapDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -11241,7 +11632,7 @@ class PlotOptionsHeatmapDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapEvents extends OptionsObject {
+class PlotOptionsHeatmapEvents {
   external factory PlotOptionsHeatmapEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -11286,7 +11677,7 @@ class PlotOptionsHeatmapEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapPoint extends OptionsObject {
+class PlotOptionsHeatmapPoint {
   external factory PlotOptionsHeatmapPoint ();
   /**
    * Events for each single point
@@ -11296,7 +11687,7 @@ class PlotOptionsHeatmapPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapPointEvents extends OptionsObject {
+class PlotOptionsHeatmapPointEvents {
   external factory PlotOptionsHeatmapPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -11336,7 +11727,7 @@ class PlotOptionsHeatmapPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapStates extends OptionsObject {
+class PlotOptionsHeatmapStates {
   external factory PlotOptionsHeatmapStates ();
   /**
    * Options for the hovered series
@@ -11346,7 +11737,7 @@ class PlotOptionsHeatmapStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapStatesHover extends OptionsObject {
+class PlotOptionsHeatmapStatesHover {
   external factory PlotOptionsHeatmapStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -11366,7 +11757,7 @@ class PlotOptionsHeatmapStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapStatesHoverHalo extends OptionsObject {
+class PlotOptionsHeatmapStatesHoverHalo {
   external factory PlotOptionsHeatmapStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -11386,7 +11777,7 @@ class PlotOptionsHeatmapStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapTooltip extends OptionsObject {
+class PlotOptionsHeatmapTooltip {
   external factory PlotOptionsHeatmapTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -11482,7 +11873,7 @@ class PlotOptionsHeatmapTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsHeatmapZones extends OptionsObject {
+class PlotOptionsHeatmapZones {
   external factory PlotOptionsHeatmapZones ();
   /**
    * Defines the color of the series.
@@ -11507,7 +11898,7 @@ class PlotOptionsHeatmapZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLine extends OptionsObject {
+class PlotOptionsLine {
   external factory PlotOptionsLine ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -11770,7 +12161,7 @@ class PlotOptionsLine extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineDataLabels extends OptionsObject {
+class PlotOptionsLineDataLabels {
   external factory PlotOptionsLineDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -11956,7 +12347,7 @@ class PlotOptionsLineDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineEvents extends OptionsObject {
+class PlotOptionsLineEvents {
   external factory PlotOptionsLineEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -12001,7 +12392,7 @@ class PlotOptionsLineEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineMarker extends OptionsObject {
+class PlotOptionsLineMarker {
   external factory PlotOptionsLineMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -12059,7 +12450,7 @@ class PlotOptionsLineMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineMarkerStates extends OptionsObject {
+class PlotOptionsLineMarkerStates {
   external factory PlotOptionsLineMarkerStates ();
   /**
    * null
@@ -12075,7 +12466,7 @@ class PlotOptionsLineMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineMarkerStatesHover extends OptionsObject {
+class PlotOptionsLineMarkerStatesHover {
   external factory PlotOptionsLineMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -12115,7 +12506,7 @@ class PlotOptionsLineMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineMarkerStatesSelect extends OptionsObject {
+class PlotOptionsLineMarkerStatesSelect {
   external factory PlotOptionsLineMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -12146,7 +12537,7 @@ class PlotOptionsLineMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLinePoint extends OptionsObject {
+class PlotOptionsLinePoint {
   external factory PlotOptionsLinePoint ();
   /**
    * Events for each single point
@@ -12156,7 +12547,7 @@ class PlotOptionsLinePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLinePointEvents extends OptionsObject {
+class PlotOptionsLinePointEvents {
   external factory PlotOptionsLinePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -12196,7 +12587,7 @@ class PlotOptionsLinePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineStates extends OptionsObject {
+class PlotOptionsLineStates {
   external factory PlotOptionsLineStates ();
   /**
    * Options for the hovered series
@@ -12206,7 +12597,7 @@ class PlotOptionsLineStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineStatesHover extends OptionsObject {
+class PlotOptionsLineStatesHover {
   external factory PlotOptionsLineStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -12236,7 +12627,7 @@ class PlotOptionsLineStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineStatesHoverHalo extends OptionsObject {
+class PlotOptionsLineStatesHoverHalo {
   external factory PlotOptionsLineStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -12256,7 +12647,7 @@ class PlotOptionsLineStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineStatesHoverMarker extends OptionsObject {
+class PlotOptionsLineStatesHoverMarker {
   external factory PlotOptionsLineStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -12314,7 +12705,7 @@ class PlotOptionsLineStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineTooltip extends OptionsObject {
+class PlotOptionsLineTooltip {
   external factory PlotOptionsLineTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -12410,7 +12801,7 @@ class PlotOptionsLineTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsLineZones extends OptionsObject {
+class PlotOptionsLineZones {
   external factory PlotOptionsLineZones ();
   /**
    * Defines the color of the series.
@@ -12435,7 +12826,7 @@ class PlotOptionsLineZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPie extends OptionsObject {
+class PlotOptionsPie {
   external factory PlotOptionsPie ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -12628,7 +13019,7 @@ class PlotOptionsPie extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieDataLabels extends OptionsObject {
+class PlotOptionsPieDataLabels {
   external factory PlotOptionsPieDataLabels ();
   /**
    * The background color or gradient for the data label. Defaults to <code>undefined</code>.
@@ -12829,7 +13220,7 @@ class PlotOptionsPieDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieEvents extends OptionsObject {
+class PlotOptionsPieEvents {
   external factory PlotOptionsPieEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -12874,7 +13265,7 @@ class PlotOptionsPieEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPiePoint extends OptionsObject {
+class PlotOptionsPiePoint {
   external factory PlotOptionsPiePoint ();
   /**
    * Events for each single point
@@ -12884,7 +13275,7 @@ class PlotOptionsPiePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPiePointEvents extends OptionsObject {
+class PlotOptionsPiePointEvents {
   external factory PlotOptionsPiePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -12929,7 +13320,7 @@ class PlotOptionsPiePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieStates extends OptionsObject {
+class PlotOptionsPieStates {
   external factory PlotOptionsPieStates ();
   /**
    * Options for the hovered series
@@ -12939,7 +13330,7 @@ class PlotOptionsPieStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieStatesHover extends OptionsObject {
+class PlotOptionsPieStatesHover {
   external factory PlotOptionsPieStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -12974,7 +13365,7 @@ class PlotOptionsPieStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieStatesHoverHalo extends OptionsObject {
+class PlotOptionsPieStatesHoverHalo {
   external factory PlotOptionsPieStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -12994,7 +13385,7 @@ class PlotOptionsPieStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieStatesHoverMarker extends OptionsObject {
+class PlotOptionsPieStatesHoverMarker {
   external factory PlotOptionsPieStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -13052,7 +13443,7 @@ class PlotOptionsPieStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieTooltip extends OptionsObject {
+class PlotOptionsPieTooltip {
   external factory PlotOptionsPieTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -13148,7 +13539,7 @@ class PlotOptionsPieTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPieZones extends OptionsObject {
+class PlotOptionsPieZones {
   external factory PlotOptionsPieZones ();
   /**
    * Defines the color of the series.
@@ -13173,7 +13564,7 @@ class PlotOptionsPieZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygon extends OptionsObject {
+class PlotOptionsPolygon {
   external factory PlotOptionsPolygon ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -13384,7 +13775,7 @@ class PlotOptionsPolygon extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonDataLabels extends OptionsObject {
+class PlotOptionsPolygonDataLabels {
   external factory PlotOptionsPolygonDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -13570,7 +13961,7 @@ class PlotOptionsPolygonDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonEvents extends OptionsObject {
+class PlotOptionsPolygonEvents {
   external factory PlotOptionsPolygonEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -13615,7 +14006,7 @@ class PlotOptionsPolygonEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonMarker extends OptionsObject {
+class PlotOptionsPolygonMarker {
   external factory PlotOptionsPolygonMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -13673,7 +14064,7 @@ class PlotOptionsPolygonMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonMarkerStates extends OptionsObject {
+class PlotOptionsPolygonMarkerStates {
   external factory PlotOptionsPolygonMarkerStates ();
   /**
    * null
@@ -13689,7 +14080,7 @@ class PlotOptionsPolygonMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonMarkerStatesHover extends OptionsObject {
+class PlotOptionsPolygonMarkerStatesHover {
   external factory PlotOptionsPolygonMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -13729,7 +14120,7 @@ class PlotOptionsPolygonMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonMarkerStatesSelect extends OptionsObject {
+class PlotOptionsPolygonMarkerStatesSelect {
   external factory PlotOptionsPolygonMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -13760,7 +14151,7 @@ class PlotOptionsPolygonMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonPoint extends OptionsObject {
+class PlotOptionsPolygonPoint {
   external factory PlotOptionsPolygonPoint ();
   /**
    * Events for each single point
@@ -13770,7 +14161,7 @@ class PlotOptionsPolygonPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonPointEvents extends OptionsObject {
+class PlotOptionsPolygonPointEvents {
   external factory PlotOptionsPolygonPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -13810,7 +14201,7 @@ class PlotOptionsPolygonPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonStates extends OptionsObject {
+class PlotOptionsPolygonStates {
   external factory PlotOptionsPolygonStates ();
   /**
    * Options for the hovered series
@@ -13820,7 +14211,7 @@ class PlotOptionsPolygonStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonStatesHover extends OptionsObject {
+class PlotOptionsPolygonStatesHover {
   external factory PlotOptionsPolygonStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -13850,7 +14241,7 @@ class PlotOptionsPolygonStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonStatesHoverHalo extends OptionsObject {
+class PlotOptionsPolygonStatesHoverHalo {
   external factory PlotOptionsPolygonStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -13870,7 +14261,7 @@ class PlotOptionsPolygonStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonStatesHoverMarker extends OptionsObject {
+class PlotOptionsPolygonStatesHoverMarker {
   external factory PlotOptionsPolygonStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -13928,7 +14319,7 @@ class PlotOptionsPolygonStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonTooltip extends OptionsObject {
+class PlotOptionsPolygonTooltip {
   external factory PlotOptionsPolygonTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -14024,7 +14415,7 @@ class PlotOptionsPolygonTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPolygonZones extends OptionsObject {
+class PlotOptionsPolygonZones {
   external factory PlotOptionsPolygonZones ();
   /**
    * Defines the color of the series.
@@ -14049,7 +14440,7 @@ class PlotOptionsPolygonZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramid extends OptionsObject {
+class PlotOptionsPyramid {
   external factory PlotOptionsPyramid ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -14203,7 +14594,7 @@ class PlotOptionsPyramid extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidDataLabels extends OptionsObject {
+class PlotOptionsPyramidDataLabels {
   external factory PlotOptionsPyramidDataLabels ();
   /**
    * The background color or gradient for the data label. Defaults to <code>undefined</code>.
@@ -14404,7 +14795,7 @@ class PlotOptionsPyramidDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidEvents extends OptionsObject {
+class PlotOptionsPyramidEvents {
   external factory PlotOptionsPyramidEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -14449,7 +14840,7 @@ class PlotOptionsPyramidEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidPoint extends OptionsObject {
+class PlotOptionsPyramidPoint {
   external factory PlotOptionsPyramidPoint ();
   /**
    * Events for each single point
@@ -14459,7 +14850,7 @@ class PlotOptionsPyramidPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidPointEvents extends OptionsObject {
+class PlotOptionsPyramidPointEvents {
   external factory PlotOptionsPyramidPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -14504,7 +14895,7 @@ class PlotOptionsPyramidPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidStates extends OptionsObject {
+class PlotOptionsPyramidStates {
   external factory PlotOptionsPyramidStates ();
   /**
    * Options for the hovered series
@@ -14514,7 +14905,7 @@ class PlotOptionsPyramidStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidStatesHover extends OptionsObject {
+class PlotOptionsPyramidStatesHover {
   external factory PlotOptionsPyramidStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -14549,7 +14940,7 @@ class PlotOptionsPyramidStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidStatesHoverHalo extends OptionsObject {
+class PlotOptionsPyramidStatesHoverHalo {
   external factory PlotOptionsPyramidStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -14569,7 +14960,7 @@ class PlotOptionsPyramidStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidStatesHoverMarker extends OptionsObject {
+class PlotOptionsPyramidStatesHoverMarker {
   external factory PlotOptionsPyramidStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -14627,7 +15018,7 @@ class PlotOptionsPyramidStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidTooltip extends OptionsObject {
+class PlotOptionsPyramidTooltip {
   external factory PlotOptionsPyramidTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -14723,7 +15114,7 @@ class PlotOptionsPyramidTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsPyramidZones extends OptionsObject {
+class PlotOptionsPyramidZones {
   external factory PlotOptionsPyramidZones ();
   /**
    * Defines the color of the series.
@@ -14748,7 +15139,7 @@ class PlotOptionsPyramidZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatter extends OptionsObject {
+class PlotOptionsScatter {
   external factory PlotOptionsScatter ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -14973,7 +15364,7 @@ class PlotOptionsScatter extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterDataLabels extends OptionsObject {
+class PlotOptionsScatterDataLabels {
   external factory PlotOptionsScatterDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -15159,7 +15550,7 @@ class PlotOptionsScatterDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterEvents extends OptionsObject {
+class PlotOptionsScatterEvents {
   external factory PlotOptionsScatterEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -15204,7 +15595,7 @@ class PlotOptionsScatterEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterMarker extends OptionsObject {
+class PlotOptionsScatterMarker {
   external factory PlotOptionsScatterMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -15262,7 +15653,7 @@ class PlotOptionsScatterMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterMarkerStates extends OptionsObject {
+class PlotOptionsScatterMarkerStates {
   external factory PlotOptionsScatterMarkerStates ();
   /**
    * null
@@ -15278,7 +15669,7 @@ class PlotOptionsScatterMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterMarkerStatesHover extends OptionsObject {
+class PlotOptionsScatterMarkerStatesHover {
   external factory PlotOptionsScatterMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -15318,7 +15709,7 @@ class PlotOptionsScatterMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterMarkerStatesSelect extends OptionsObject {
+class PlotOptionsScatterMarkerStatesSelect {
   external factory PlotOptionsScatterMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -15349,7 +15740,7 @@ class PlotOptionsScatterMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterPoint extends OptionsObject {
+class PlotOptionsScatterPoint {
   external factory PlotOptionsScatterPoint ();
   /**
    * Events for each single point
@@ -15359,7 +15750,7 @@ class PlotOptionsScatterPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterPointEvents extends OptionsObject {
+class PlotOptionsScatterPointEvents {
   external factory PlotOptionsScatterPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -15399,7 +15790,7 @@ class PlotOptionsScatterPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterStates extends OptionsObject {
+class PlotOptionsScatterStates {
   external factory PlotOptionsScatterStates ();
   /**
    * Options for the hovered series
@@ -15409,7 +15800,7 @@ class PlotOptionsScatterStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterStatesHover extends OptionsObject {
+class PlotOptionsScatterStatesHover {
   external factory PlotOptionsScatterStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -15439,7 +15830,7 @@ class PlotOptionsScatterStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterStatesHoverHalo extends OptionsObject {
+class PlotOptionsScatterStatesHoverHalo {
   external factory PlotOptionsScatterStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -15459,7 +15850,7 @@ class PlotOptionsScatterStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterStatesHoverMarker extends OptionsObject {
+class PlotOptionsScatterStatesHoverMarker {
   external factory PlotOptionsScatterStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -15517,7 +15908,7 @@ class PlotOptionsScatterStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterTooltip extends OptionsObject {
+class PlotOptionsScatterTooltip {
   external factory PlotOptionsScatterTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -15613,7 +16004,7 @@ class PlotOptionsScatterTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsScatterZones extends OptionsObject {
+class PlotOptionsScatterZones {
   external factory PlotOptionsScatterZones ();
   /**
    * Defines the color of the series.
@@ -15909,7 +16300,7 @@ class PlotOptionsSeries extends Series {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesDataLabels extends OptionsObject {
+class PlotOptionsSeriesDataLabels {
   external factory PlotOptionsSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -16095,7 +16486,7 @@ class PlotOptionsSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesEvents extends OptionsObject {
+class PlotOptionsSeriesEvents {
   external factory PlotOptionsSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -16140,7 +16531,7 @@ class PlotOptionsSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesMarker extends OptionsObject {
+class PlotOptionsSeriesMarker {
   external factory PlotOptionsSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -16198,7 +16589,7 @@ class PlotOptionsSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesMarkerStates extends OptionsObject {
+class PlotOptionsSeriesMarkerStates {
   external factory PlotOptionsSeriesMarkerStates ();
   /**
    * null
@@ -16214,7 +16605,7 @@ class PlotOptionsSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesMarkerStatesHover extends OptionsObject {
+class PlotOptionsSeriesMarkerStatesHover {
   external factory PlotOptionsSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -16254,7 +16645,7 @@ class PlotOptionsSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesMarkerStatesSelect extends OptionsObject {
+class PlotOptionsSeriesMarkerStatesSelect {
   external factory PlotOptionsSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -16285,7 +16676,7 @@ class PlotOptionsSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesPoint extends OptionsObject {
+class PlotOptionsSeriesPoint {
   external factory PlotOptionsSeriesPoint ();
   /**
    * Events for each single point
@@ -16295,7 +16686,7 @@ class PlotOptionsSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesPointEvents extends OptionsObject {
+class PlotOptionsSeriesPointEvents {
   external factory PlotOptionsSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -16335,7 +16726,7 @@ class PlotOptionsSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesStates extends OptionsObject {
+class PlotOptionsSeriesStates {
   external factory PlotOptionsSeriesStates ();
   /**
    * Options for the hovered series
@@ -16345,7 +16736,7 @@ class PlotOptionsSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesStatesHover extends OptionsObject {
+class PlotOptionsSeriesStatesHover {
   external factory PlotOptionsSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -16375,7 +16766,7 @@ class PlotOptionsSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesStatesHoverHalo extends OptionsObject {
+class PlotOptionsSeriesStatesHoverHalo {
   external factory PlotOptionsSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -16395,7 +16786,7 @@ class PlotOptionsSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesStatesHoverMarker extends OptionsObject {
+class PlotOptionsSeriesStatesHoverMarker {
   external factory PlotOptionsSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -16453,7 +16844,7 @@ class PlotOptionsSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesTooltip extends OptionsObject {
+class PlotOptionsSeriesTooltip {
   external factory PlotOptionsSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -16549,7 +16940,7 @@ class PlotOptionsSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSeriesZones extends OptionsObject {
+class PlotOptionsSeriesZones {
   external factory PlotOptionsSeriesZones ();
   /**
    * Defines the color of the series.
@@ -16574,7 +16965,7 @@ class PlotOptionsSeriesZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgauge extends OptionsObject {
+class PlotOptionsSolidgauge {
   external factory PlotOptionsSolidgauge ();
   /**
    * <p>Enable or disable the initial animation when a series is displayed. The animation can also be set as a configuration object. Please note that this option only applies to the initial animation of the series itself. For other animations, see <a href="#chart.animation">chart.animation</a> and the animation parameter under the API methods.		The following properties are supported:</p>
@@ -16700,7 +17091,7 @@ class PlotOptionsSolidgauge extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeDataLabels extends OptionsObject {
+class PlotOptionsSolidgaugeDataLabels {
   external factory PlotOptionsSolidgaugeDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -16886,7 +17277,7 @@ class PlotOptionsSolidgaugeDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeEvents extends OptionsObject {
+class PlotOptionsSolidgaugeEvents {
   external factory PlotOptionsSolidgaugeEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -16931,7 +17322,7 @@ class PlotOptionsSolidgaugeEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugePoint extends OptionsObject {
+class PlotOptionsSolidgaugePoint {
   external factory PlotOptionsSolidgaugePoint ();
   /**
    * Events for each single point
@@ -16941,7 +17332,7 @@ class PlotOptionsSolidgaugePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugePointEvents extends OptionsObject {
+class PlotOptionsSolidgaugePointEvents {
   external factory PlotOptionsSolidgaugePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -16981,7 +17372,7 @@ class PlotOptionsSolidgaugePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeStates extends OptionsObject {
+class PlotOptionsSolidgaugeStates {
   external factory PlotOptionsSolidgaugeStates ();
   /**
    * Options for the hovered series
@@ -16991,7 +17382,7 @@ class PlotOptionsSolidgaugeStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeStatesHover extends OptionsObject {
+class PlotOptionsSolidgaugeStatesHover {
   external factory PlotOptionsSolidgaugeStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -17021,7 +17412,7 @@ class PlotOptionsSolidgaugeStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeStatesHoverHalo extends OptionsObject {
+class PlotOptionsSolidgaugeStatesHoverHalo {
   external factory PlotOptionsSolidgaugeStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -17041,7 +17432,7 @@ class PlotOptionsSolidgaugeStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeStatesHoverMarker extends OptionsObject {
+class PlotOptionsSolidgaugeStatesHoverMarker {
   external factory PlotOptionsSolidgaugeStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -17099,7 +17490,7 @@ class PlotOptionsSolidgaugeStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeTooltip extends OptionsObject {
+class PlotOptionsSolidgaugeTooltip {
   external factory PlotOptionsSolidgaugeTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -17195,7 +17586,7 @@ class PlotOptionsSolidgaugeTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSolidgaugeZones extends OptionsObject {
+class PlotOptionsSolidgaugeZones {
   external factory PlotOptionsSolidgaugeZones ();
   /**
    * Defines the color of the series.
@@ -17220,7 +17611,7 @@ class PlotOptionsSolidgaugeZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSpline extends OptionsObject {
+class PlotOptionsSpline {
   external factory PlotOptionsSpline ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -17478,7 +17869,7 @@ class PlotOptionsSpline extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineDataLabels extends OptionsObject {
+class PlotOptionsSplineDataLabels {
   external factory PlotOptionsSplineDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -17664,7 +18055,7 @@ class PlotOptionsSplineDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineEvents extends OptionsObject {
+class PlotOptionsSplineEvents {
   external factory PlotOptionsSplineEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -17709,7 +18100,7 @@ class PlotOptionsSplineEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineMarker extends OptionsObject {
+class PlotOptionsSplineMarker {
   external factory PlotOptionsSplineMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -17767,7 +18158,7 @@ class PlotOptionsSplineMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineMarkerStates extends OptionsObject {
+class PlotOptionsSplineMarkerStates {
   external factory PlotOptionsSplineMarkerStates ();
   /**
    * null
@@ -17783,7 +18174,7 @@ class PlotOptionsSplineMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineMarkerStatesHover extends OptionsObject {
+class PlotOptionsSplineMarkerStatesHover {
   external factory PlotOptionsSplineMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -17823,7 +18214,7 @@ class PlotOptionsSplineMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineMarkerStatesSelect extends OptionsObject {
+class PlotOptionsSplineMarkerStatesSelect {
   external factory PlotOptionsSplineMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -17854,7 +18245,7 @@ class PlotOptionsSplineMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplinePoint extends OptionsObject {
+class PlotOptionsSplinePoint {
   external factory PlotOptionsSplinePoint ();
   /**
    * Events for each single point
@@ -17864,7 +18255,7 @@ class PlotOptionsSplinePoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplinePointEvents extends OptionsObject {
+class PlotOptionsSplinePointEvents {
   external factory PlotOptionsSplinePointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -17904,7 +18295,7 @@ class PlotOptionsSplinePointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineStates extends OptionsObject {
+class PlotOptionsSplineStates {
   external factory PlotOptionsSplineStates ();
   /**
    * Options for the hovered series
@@ -17914,7 +18305,7 @@ class PlotOptionsSplineStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineStatesHover extends OptionsObject {
+class PlotOptionsSplineStatesHover {
   external factory PlotOptionsSplineStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -17944,7 +18335,7 @@ class PlotOptionsSplineStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineStatesHoverHalo extends OptionsObject {
+class PlotOptionsSplineStatesHoverHalo {
   external factory PlotOptionsSplineStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -17964,7 +18355,7 @@ class PlotOptionsSplineStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineStatesHoverMarker extends OptionsObject {
+class PlotOptionsSplineStatesHoverMarker {
   external factory PlotOptionsSplineStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -18022,7 +18413,7 @@ class PlotOptionsSplineStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineTooltip extends OptionsObject {
+class PlotOptionsSplineTooltip {
   external factory PlotOptionsSplineTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -18118,7 +18509,7 @@ class PlotOptionsSplineTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsSplineZones extends OptionsObject {
+class PlotOptionsSplineZones {
   external factory PlotOptionsSplineZones ();
   /**
    * Defines the color of the series.
@@ -18143,7 +18534,7 @@ class PlotOptionsSplineZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemap extends OptionsObject {
+class PlotOptionsTreemap {
   external factory PlotOptionsTreemap ();
   /**
    * When enabled the user can click on a point which is a parent and zoom in on its children.
@@ -18356,7 +18747,7 @@ class PlotOptionsTreemap extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapDataLabels extends OptionsObject {
+class PlotOptionsTreemapDataLabels {
   external factory PlotOptionsTreemapDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -18542,7 +18933,7 @@ class PlotOptionsTreemapDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapEvents extends OptionsObject {
+class PlotOptionsTreemapEvents {
   external factory PlotOptionsTreemapEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -18587,7 +18978,7 @@ class PlotOptionsTreemapEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapLevels extends OptionsObject {
+class PlotOptionsTreemapLevels {
   external factory PlotOptionsTreemapLevels ();
   /**
    * Can set borderColor on all points which lies on the same level.
@@ -18636,7 +19027,7 @@ class PlotOptionsTreemapLevels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapPoint extends OptionsObject {
+class PlotOptionsTreemapPoint {
   external factory PlotOptionsTreemapPoint ();
   /**
    * Events for each single point
@@ -18646,7 +19037,7 @@ class PlotOptionsTreemapPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapPointEvents extends OptionsObject {
+class PlotOptionsTreemapPointEvents {
   external factory PlotOptionsTreemapPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -18686,7 +19077,7 @@ class PlotOptionsTreemapPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapStates extends OptionsObject {
+class PlotOptionsTreemapStates {
   external factory PlotOptionsTreemapStates ();
   /**
    * Options for the hovered series
@@ -18696,7 +19087,7 @@ class PlotOptionsTreemapStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapStatesHover extends OptionsObject {
+class PlotOptionsTreemapStatesHover {
   external factory PlotOptionsTreemapStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -18716,7 +19107,7 @@ class PlotOptionsTreemapStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapStatesHoverHalo extends OptionsObject {
+class PlotOptionsTreemapStatesHoverHalo {
   external factory PlotOptionsTreemapStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -18736,7 +19127,7 @@ class PlotOptionsTreemapStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapTooltip extends OptionsObject {
+class PlotOptionsTreemapTooltip {
   external factory PlotOptionsTreemapTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -18829,7 +19220,7 @@ class PlotOptionsTreemapTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsTreemapZones extends OptionsObject {
+class PlotOptionsTreemapZones {
   external factory PlotOptionsTreemapZones ();
   /**
    * Defines the color of the series.
@@ -18854,7 +19245,7 @@ class PlotOptionsTreemapZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfall extends OptionsObject {
+class PlotOptionsWaterfall {
   external factory PlotOptionsWaterfall ();
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
@@ -19156,7 +19547,7 @@ class PlotOptionsWaterfall extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallDataLabels extends OptionsObject {
+class PlotOptionsWaterfallDataLabels {
   external factory PlotOptionsWaterfallDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -19342,7 +19733,7 @@ class PlotOptionsWaterfallDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallEvents extends OptionsObject {
+class PlotOptionsWaterfallEvents {
   external factory PlotOptionsWaterfallEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -19387,7 +19778,7 @@ class PlotOptionsWaterfallEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallPoint extends OptionsObject {
+class PlotOptionsWaterfallPoint {
   external factory PlotOptionsWaterfallPoint ();
   /**
    * Events for each single point
@@ -19397,7 +19788,7 @@ class PlotOptionsWaterfallPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallPointEvents extends OptionsObject {
+class PlotOptionsWaterfallPointEvents {
   external factory PlotOptionsWaterfallPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -19437,7 +19828,7 @@ class PlotOptionsWaterfallPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallStates extends OptionsObject {
+class PlotOptionsWaterfallStates {
   external factory PlotOptionsWaterfallStates ();
   /**
    * Options for the hovered series
@@ -19447,7 +19838,7 @@ class PlotOptionsWaterfallStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallStatesHover extends OptionsObject {
+class PlotOptionsWaterfallStatesHover {
   external factory PlotOptionsWaterfallStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -19467,7 +19858,7 @@ class PlotOptionsWaterfallStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallStatesHoverHalo extends OptionsObject {
+class PlotOptionsWaterfallStatesHoverHalo {
   external factory PlotOptionsWaterfallStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -19487,7 +19878,7 @@ class PlotOptionsWaterfallStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallTooltip extends OptionsObject {
+class PlotOptionsWaterfallTooltip {
   external factory PlotOptionsWaterfallTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -19583,7 +19974,7 @@ class PlotOptionsWaterfallTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PlotOptionsWaterfallZones extends OptionsObject {
+class PlotOptionsWaterfallZones {
   external factory PlotOptionsWaterfallZones ();
   /**
    * Defines the color of the series.
@@ -19823,7 +20214,7 @@ class Series extends PlotOptions {
 }
 @JS()
 @anonymous
-class SeriesData extends OptionsObject {
+class SeriesData {
   external factory SeriesData ();
 }
 @JS()
@@ -20217,7 +20608,7 @@ class AreaSeries extends Series {
 }
 @JS()
 @anonymous
-class AreaSeriesData extends OptionsObject {
+class AreaSeriesData {
   external factory AreaSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -20276,7 +20667,7 @@ class AreaSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataEvents extends OptionsObject {
+class AreaSeriesDataEvents {
   external factory AreaSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -20316,7 +20707,7 @@ class AreaSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataMarker extends OptionsObject {
+class AreaSeriesDataMarker {
   external factory AreaSeriesDataMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -20374,7 +20765,7 @@ class AreaSeriesDataMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataMarkerStates extends OptionsObject {
+class AreaSeriesDataMarkerStates {
   external factory AreaSeriesDataMarkerStates ();
   /**
    * Options for the hovered series
@@ -20384,7 +20775,7 @@ class AreaSeriesDataMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataMarkerStatesHover extends OptionsObject {
+class AreaSeriesDataMarkerStatesHover {
   external factory AreaSeriesDataMarkerStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -20414,7 +20805,7 @@ class AreaSeriesDataMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataMarkerStatesHoverHalo extends OptionsObject {
+class AreaSeriesDataMarkerStatesHoverHalo {
   external factory AreaSeriesDataMarkerStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -20434,7 +20825,7 @@ class AreaSeriesDataMarkerStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataMarkerStatesHoverMarker extends OptionsObject {
+class AreaSeriesDataMarkerStatesHoverMarker {
   external factory AreaSeriesDataMarkerStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -20492,7 +20883,7 @@ class AreaSeriesDataMarkerStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesDataLabels extends OptionsObject {
+class AreaSeriesDataLabels {
   external factory AreaSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -20678,7 +21069,7 @@ class AreaSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesEvents extends OptionsObject {
+class AreaSeriesEvents {
   external factory AreaSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -20723,7 +21114,7 @@ class AreaSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesMarker extends OptionsObject {
+class AreaSeriesMarker {
   external factory AreaSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -20781,7 +21172,7 @@ class AreaSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesMarkerStates extends OptionsObject {
+class AreaSeriesMarkerStates {
   external factory AreaSeriesMarkerStates ();
   /**
    * null
@@ -20797,7 +21188,7 @@ class AreaSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesMarkerStatesHover extends OptionsObject {
+class AreaSeriesMarkerStatesHover {
   external factory AreaSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -20837,7 +21228,7 @@ class AreaSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesMarkerStatesSelect extends OptionsObject {
+class AreaSeriesMarkerStatesSelect {
   external factory AreaSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -20868,7 +21259,7 @@ class AreaSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesPoint extends OptionsObject {
+class AreaSeriesPoint {
   external factory AreaSeriesPoint ();
   /**
    * Events for each single point
@@ -20878,7 +21269,7 @@ class AreaSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesPointEvents extends OptionsObject {
+class AreaSeriesPointEvents {
   external factory AreaSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -20918,7 +21309,7 @@ class AreaSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesStates extends OptionsObject {
+class AreaSeriesStates {
   external factory AreaSeriesStates ();
   /**
    * Options for the hovered series
@@ -20928,7 +21319,7 @@ class AreaSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesStatesHover extends OptionsObject {
+class AreaSeriesStatesHover {
   external factory AreaSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -20958,7 +21349,7 @@ class AreaSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesStatesHoverHalo extends OptionsObject {
+class AreaSeriesStatesHoverHalo {
   external factory AreaSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -20978,7 +21369,7 @@ class AreaSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesStatesHoverMarker extends OptionsObject {
+class AreaSeriesStatesHoverMarker {
   external factory AreaSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -21036,7 +21427,7 @@ class AreaSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesTooltip extends OptionsObject {
+class AreaSeriesTooltip {
   external factory AreaSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -21132,7 +21523,7 @@ class AreaSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreaSeriesZones extends OptionsObject {
+class AreaSeriesZones {
   external factory AreaSeriesZones ();
   /**
    * Defines the color of the series.
@@ -21503,7 +21894,7 @@ class ArearangeSeries extends Series {
 }
 @JS()
 @anonymous
-class ArearangeSeriesData extends OptionsObject {
+class ArearangeSeriesData {
   external factory ArearangeSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -21562,7 +21953,7 @@ class ArearangeSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesDataEvents extends OptionsObject {
+class ArearangeSeriesDataEvents {
   external factory ArearangeSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -21602,7 +21993,7 @@ class ArearangeSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesDataLabels extends OptionsObject {
+class ArearangeSeriesDataLabels {
   external factory ArearangeSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -21798,7 +22189,7 @@ class ArearangeSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesEvents extends OptionsObject {
+class ArearangeSeriesEvents {
   external factory ArearangeSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -21843,7 +22234,7 @@ class ArearangeSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesPoint extends OptionsObject {
+class ArearangeSeriesPoint {
   external factory ArearangeSeriesPoint ();
   /**
    * Events for each single point
@@ -21853,7 +22244,7 @@ class ArearangeSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesPointEvents extends OptionsObject {
+class ArearangeSeriesPointEvents {
   external factory ArearangeSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -21893,7 +22284,7 @@ class ArearangeSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesStates extends OptionsObject {
+class ArearangeSeriesStates {
   external factory ArearangeSeriesStates ();
   /**
    * Options for the hovered series
@@ -21903,7 +22294,7 @@ class ArearangeSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesStatesHover extends OptionsObject {
+class ArearangeSeriesStatesHover {
   external factory ArearangeSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -21933,7 +22324,7 @@ class ArearangeSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesStatesHoverHalo extends OptionsObject {
+class ArearangeSeriesStatesHoverHalo {
   external factory ArearangeSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -21953,7 +22344,7 @@ class ArearangeSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesStatesHoverMarker extends OptionsObject {
+class ArearangeSeriesStatesHoverMarker {
   external factory ArearangeSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -22011,7 +22402,7 @@ class ArearangeSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesTooltip extends OptionsObject {
+class ArearangeSeriesTooltip {
   external factory ArearangeSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -22107,7 +22498,7 @@ class ArearangeSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class ArearangeSeriesZones extends OptionsObject {
+class ArearangeSeriesZones {
   external factory ArearangeSeriesZones ();
   /**
    * Defines the color of the series.
@@ -22516,7 +22907,7 @@ class AreasplineSeries extends Series {
 }
 @JS()
 @anonymous
-class AreasplineSeriesData extends OptionsObject {
+class AreasplineSeriesData {
   external factory AreasplineSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -22575,7 +22966,7 @@ class AreasplineSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataEvents extends OptionsObject {
+class AreasplineSeriesDataEvents {
   external factory AreasplineSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -22615,7 +23006,7 @@ class AreasplineSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataMarker extends OptionsObject {
+class AreasplineSeriesDataMarker {
   external factory AreasplineSeriesDataMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -22673,7 +23064,7 @@ class AreasplineSeriesDataMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataMarkerStates extends OptionsObject {
+class AreasplineSeriesDataMarkerStates {
   external factory AreasplineSeriesDataMarkerStates ();
   /**
    * Options for the hovered series
@@ -22683,7 +23074,7 @@ class AreasplineSeriesDataMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataMarkerStatesHover extends OptionsObject {
+class AreasplineSeriesDataMarkerStatesHover {
   external factory AreasplineSeriesDataMarkerStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -22713,7 +23104,7 @@ class AreasplineSeriesDataMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataMarkerStatesHoverHalo extends OptionsObject {
+class AreasplineSeriesDataMarkerStatesHoverHalo {
   external factory AreasplineSeriesDataMarkerStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -22733,7 +23124,7 @@ class AreasplineSeriesDataMarkerStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataMarkerStatesHoverMarker extends OptionsObject {
+class AreasplineSeriesDataMarkerStatesHoverMarker {
   external factory AreasplineSeriesDataMarkerStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -22791,7 +23182,7 @@ class AreasplineSeriesDataMarkerStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesDataLabels extends OptionsObject {
+class AreasplineSeriesDataLabels {
   external factory AreasplineSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -22977,7 +23368,7 @@ class AreasplineSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesEvents extends OptionsObject {
+class AreasplineSeriesEvents {
   external factory AreasplineSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -23022,7 +23413,7 @@ class AreasplineSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesMarker extends OptionsObject {
+class AreasplineSeriesMarker {
   external factory AreasplineSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -23080,7 +23471,7 @@ class AreasplineSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesMarkerStates extends OptionsObject {
+class AreasplineSeriesMarkerStates {
   external factory AreasplineSeriesMarkerStates ();
   /**
    * null
@@ -23096,7 +23487,7 @@ class AreasplineSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesMarkerStatesHover extends OptionsObject {
+class AreasplineSeriesMarkerStatesHover {
   external factory AreasplineSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -23136,7 +23527,7 @@ class AreasplineSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesMarkerStatesSelect extends OptionsObject {
+class AreasplineSeriesMarkerStatesSelect {
   external factory AreasplineSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -23167,7 +23558,7 @@ class AreasplineSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesPoint extends OptionsObject {
+class AreasplineSeriesPoint {
   external factory AreasplineSeriesPoint ();
   /**
    * Events for each single point
@@ -23177,7 +23568,7 @@ class AreasplineSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesPointEvents extends OptionsObject {
+class AreasplineSeriesPointEvents {
   external factory AreasplineSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -23217,7 +23608,7 @@ class AreasplineSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesStates extends OptionsObject {
+class AreasplineSeriesStates {
   external factory AreasplineSeriesStates ();
   /**
    * Options for the hovered series
@@ -23227,7 +23618,7 @@ class AreasplineSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesStatesHover extends OptionsObject {
+class AreasplineSeriesStatesHover {
   external factory AreasplineSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -23257,7 +23648,7 @@ class AreasplineSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesStatesHoverHalo extends OptionsObject {
+class AreasplineSeriesStatesHoverHalo {
   external factory AreasplineSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -23277,7 +23668,7 @@ class AreasplineSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesStatesHoverMarker extends OptionsObject {
+class AreasplineSeriesStatesHoverMarker {
   external factory AreasplineSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -23335,7 +23726,7 @@ class AreasplineSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesTooltip extends OptionsObject {
+class AreasplineSeriesTooltip {
   external factory AreasplineSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -23431,7 +23822,7 @@ class AreasplineSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplineSeriesZones extends OptionsObject {
+class AreasplineSeriesZones {
   external factory AreasplineSeriesZones ();
   /**
    * Defines the color of the series.
@@ -23797,7 +24188,7 @@ class AreasplinerangeSeries extends Series {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesData extends OptionsObject {
+class AreasplinerangeSeriesData {
   external factory AreasplinerangeSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -23856,7 +24247,7 @@ class AreasplinerangeSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesDataEvents extends OptionsObject {
+class AreasplinerangeSeriesDataEvents {
   external factory AreasplinerangeSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -23896,7 +24287,7 @@ class AreasplinerangeSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesDataLabels extends OptionsObject {
+class AreasplinerangeSeriesDataLabels {
   external factory AreasplinerangeSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -24092,7 +24483,7 @@ class AreasplinerangeSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesEvents extends OptionsObject {
+class AreasplinerangeSeriesEvents {
   external factory AreasplinerangeSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -24137,7 +24528,7 @@ class AreasplinerangeSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesPoint extends OptionsObject {
+class AreasplinerangeSeriesPoint {
   external factory AreasplinerangeSeriesPoint ();
   /**
    * Events for each single point
@@ -24147,7 +24538,7 @@ class AreasplinerangeSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesPointEvents extends OptionsObject {
+class AreasplinerangeSeriesPointEvents {
   external factory AreasplinerangeSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -24187,7 +24578,7 @@ class AreasplinerangeSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesStates extends OptionsObject {
+class AreasplinerangeSeriesStates {
   external factory AreasplinerangeSeriesStates ();
   /**
    * Options for the hovered series
@@ -24197,7 +24588,7 @@ class AreasplinerangeSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesStatesHover extends OptionsObject {
+class AreasplinerangeSeriesStatesHover {
   external factory AreasplinerangeSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -24227,7 +24618,7 @@ class AreasplinerangeSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesStatesHoverHalo extends OptionsObject {
+class AreasplinerangeSeriesStatesHoverHalo {
   external factory AreasplinerangeSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -24247,7 +24638,7 @@ class AreasplinerangeSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesStatesHoverMarker extends OptionsObject {
+class AreasplinerangeSeriesStatesHoverMarker {
   external factory AreasplinerangeSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -24305,7 +24696,7 @@ class AreasplinerangeSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesTooltip extends OptionsObject {
+class AreasplinerangeSeriesTooltip {
   external factory AreasplinerangeSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -24401,7 +24792,7 @@ class AreasplinerangeSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class AreasplinerangeSeriesZones extends OptionsObject {
+class AreasplinerangeSeriesZones {
   external factory AreasplinerangeSeriesZones ();
   /**
    * Defines the color of the series.
@@ -24810,7 +25201,7 @@ class BarSeries extends Series {
 }
 @JS()
 @anonymous
-class BarSeriesData extends OptionsObject {
+class BarSeriesData {
   external factory BarSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -24864,7 +25255,7 @@ class BarSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesDataEvents extends OptionsObject {
+class BarSeriesDataEvents {
   external factory BarSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -24904,7 +25295,7 @@ class BarSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesDataLabels extends OptionsObject {
+class BarSeriesDataLabels {
   external factory BarSeriesDataLabels ();
   /**
    * Alignment of the data label relative to the data point.
@@ -25090,7 +25481,7 @@ class BarSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesEvents extends OptionsObject {
+class BarSeriesEvents {
   external factory BarSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -25135,7 +25526,7 @@ class BarSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesPoint extends OptionsObject {
+class BarSeriesPoint {
   external factory BarSeriesPoint ();
   /**
    * Events for each single point
@@ -25145,7 +25536,7 @@ class BarSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesPointEvents extends OptionsObject {
+class BarSeriesPointEvents {
   external factory BarSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -25185,7 +25576,7 @@ class BarSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesStates extends OptionsObject {
+class BarSeriesStates {
   external factory BarSeriesStates ();
   /**
    * Options for the hovered series
@@ -25195,7 +25586,7 @@ class BarSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesStatesHover extends OptionsObject {
+class BarSeriesStatesHover {
   external factory BarSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -25215,7 +25606,7 @@ class BarSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesStatesHoverHalo extends OptionsObject {
+class BarSeriesStatesHoverHalo {
   external factory BarSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -25235,7 +25626,7 @@ class BarSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesTooltip extends OptionsObject {
+class BarSeriesTooltip {
   external factory BarSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -25331,7 +25722,7 @@ class BarSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class BarSeriesZones extends OptionsObject {
+class BarSeriesZones {
   external factory BarSeriesZones ();
   /**
    * Defines the color of the series.
@@ -25708,7 +26099,7 @@ class BoxplotSeries extends Series {
 }
 @JS()
 @anonymous
-class BoxplotSeriesData extends OptionsObject {
+class BoxplotSeriesData {
   external factory BoxplotSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -25787,7 +26178,7 @@ class BoxplotSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesDataEvents extends OptionsObject {
+class BoxplotSeriesDataEvents {
   external factory BoxplotSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -25827,7 +26218,7 @@ class BoxplotSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesEvents extends OptionsObject {
+class BoxplotSeriesEvents {
   external factory BoxplotSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -25872,7 +26263,7 @@ class BoxplotSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesPoint extends OptionsObject {
+class BoxplotSeriesPoint {
   external factory BoxplotSeriesPoint ();
   /**
    * Events for each single point
@@ -25882,7 +26273,7 @@ class BoxplotSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesPointEvents extends OptionsObject {
+class BoxplotSeriesPointEvents {
   external factory BoxplotSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -25922,7 +26313,7 @@ class BoxplotSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesStates extends OptionsObject {
+class BoxplotSeriesStates {
   external factory BoxplotSeriesStates ();
   /**
    * Options for the hovered series
@@ -25932,7 +26323,7 @@ class BoxplotSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesStatesHover extends OptionsObject {
+class BoxplotSeriesStatesHover {
   external factory BoxplotSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -25952,7 +26343,7 @@ class BoxplotSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesStatesHoverHalo extends OptionsObject {
+class BoxplotSeriesStatesHoverHalo {
   external factory BoxplotSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -25972,7 +26363,7 @@ class BoxplotSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesTooltip extends OptionsObject {
+class BoxplotSeriesTooltip {
   external factory BoxplotSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -26068,7 +26459,7 @@ class BoxplotSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class BoxplotSeriesZones extends OptionsObject {
+class BoxplotSeriesZones {
   external factory BoxplotSeriesZones ();
   /**
    * Defines the color of the series.
@@ -26437,7 +26828,7 @@ class BubbleSeries extends Series {
 }
 @JS()
 @anonymous
-class BubbleSeriesData extends OptionsObject {
+class BubbleSeriesData {
   external factory BubbleSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -26496,7 +26887,7 @@ class BubbleSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesDataEvents extends OptionsObject {
+class BubbleSeriesDataEvents {
   external factory BubbleSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -26536,7 +26927,7 @@ class BubbleSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesDataLabels extends OptionsObject {
+class BubbleSeriesDataLabels {
   external factory BubbleSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -26722,7 +27113,7 @@ class BubbleSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesEvents extends OptionsObject {
+class BubbleSeriesEvents {
   external factory BubbleSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -26767,7 +27158,7 @@ class BubbleSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesMarker extends OptionsObject {
+class BubbleSeriesMarker {
   external factory BubbleSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -26825,7 +27216,7 @@ class BubbleSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesMarkerStates extends OptionsObject {
+class BubbleSeriesMarkerStates {
   external factory BubbleSeriesMarkerStates ();
   /**
    * null
@@ -26841,7 +27232,7 @@ class BubbleSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesMarkerStatesHover extends OptionsObject {
+class BubbleSeriesMarkerStatesHover {
   external factory BubbleSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -26881,7 +27272,7 @@ class BubbleSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesMarkerStatesSelect extends OptionsObject {
+class BubbleSeriesMarkerStatesSelect {
   external factory BubbleSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -26912,7 +27303,7 @@ class BubbleSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesPoint extends OptionsObject {
+class BubbleSeriesPoint {
   external factory BubbleSeriesPoint ();
   /**
    * Events for each single point
@@ -26922,7 +27313,7 @@ class BubbleSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesPointEvents extends OptionsObject {
+class BubbleSeriesPointEvents {
   external factory BubbleSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -26962,7 +27353,7 @@ class BubbleSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesStates extends OptionsObject {
+class BubbleSeriesStates {
   external factory BubbleSeriesStates ();
   /**
    * Options for the hovered series
@@ -26972,7 +27363,7 @@ class BubbleSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesStatesHover extends OptionsObject {
+class BubbleSeriesStatesHover {
   external factory BubbleSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -27002,7 +27393,7 @@ class BubbleSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesStatesHoverHalo extends OptionsObject {
+class BubbleSeriesStatesHoverHalo {
   external factory BubbleSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -27022,7 +27413,7 @@ class BubbleSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesStatesHoverMarker extends OptionsObject {
+class BubbleSeriesStatesHoverMarker {
   external factory BubbleSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -27080,7 +27471,7 @@ class BubbleSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesTooltip extends OptionsObject {
+class BubbleSeriesTooltip {
   external factory BubbleSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -27176,7 +27567,7 @@ class BubbleSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class BubbleSeriesZones extends OptionsObject {
+class BubbleSeriesZones {
   external factory BubbleSeriesZones ();
   /**
    * Defines the color of the series.
@@ -27585,7 +27976,7 @@ class ColumnSeries extends Series {
 }
 @JS()
 @anonymous
-class ColumnSeriesData extends OptionsObject {
+class ColumnSeriesData {
   external factory ColumnSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -27639,7 +28030,7 @@ class ColumnSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesDataEvents extends OptionsObject {
+class ColumnSeriesDataEvents {
   external factory ColumnSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -27679,7 +28070,7 @@ class ColumnSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesDataLabels extends OptionsObject {
+class ColumnSeriesDataLabels {
   external factory ColumnSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -27865,7 +28256,7 @@ class ColumnSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesEvents extends OptionsObject {
+class ColumnSeriesEvents {
   external factory ColumnSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -27910,7 +28301,7 @@ class ColumnSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesPoint extends OptionsObject {
+class ColumnSeriesPoint {
   external factory ColumnSeriesPoint ();
   /**
    * Events for each single point
@@ -27920,7 +28311,7 @@ class ColumnSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesPointEvents extends OptionsObject {
+class ColumnSeriesPointEvents {
   external factory ColumnSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -27960,7 +28351,7 @@ class ColumnSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesStates extends OptionsObject {
+class ColumnSeriesStates {
   external factory ColumnSeriesStates ();
   /**
    * Options for the hovered series
@@ -27970,7 +28361,7 @@ class ColumnSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesStatesHover extends OptionsObject {
+class ColumnSeriesStatesHover {
   external factory ColumnSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -27990,7 +28381,7 @@ class ColumnSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesStatesHoverHalo extends OptionsObject {
+class ColumnSeriesStatesHoverHalo {
   external factory ColumnSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -28010,7 +28401,7 @@ class ColumnSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesTooltip extends OptionsObject {
+class ColumnSeriesTooltip {
   external factory ColumnSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -28106,7 +28497,7 @@ class ColumnSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnSeriesZones extends OptionsObject {
+class ColumnSeriesZones {
   external factory ColumnSeriesZones ();
   /**
    * Defines the color of the series.
@@ -28478,7 +28869,7 @@ class ColumnrangeSeries extends Series {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesData extends OptionsObject {
+class ColumnrangeSeriesData {
   external factory ColumnrangeSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -28537,7 +28928,7 @@ class ColumnrangeSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesDataEvents extends OptionsObject {
+class ColumnrangeSeriesDataEvents {
   external factory ColumnrangeSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -28577,7 +28968,7 @@ class ColumnrangeSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesDataLabels extends OptionsObject {
+class ColumnrangeSeriesDataLabels {
   external factory ColumnrangeSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -28773,7 +29164,7 @@ class ColumnrangeSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesEvents extends OptionsObject {
+class ColumnrangeSeriesEvents {
   external factory ColumnrangeSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -28818,7 +29209,7 @@ class ColumnrangeSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesPoint extends OptionsObject {
+class ColumnrangeSeriesPoint {
   external factory ColumnrangeSeriesPoint ();
   /**
    * Events for each single point
@@ -28828,7 +29219,7 @@ class ColumnrangeSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesPointEvents extends OptionsObject {
+class ColumnrangeSeriesPointEvents {
   external factory ColumnrangeSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -28868,7 +29259,7 @@ class ColumnrangeSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesStates extends OptionsObject {
+class ColumnrangeSeriesStates {
   external factory ColumnrangeSeriesStates ();
   /**
    * Options for the hovered series
@@ -28878,7 +29269,7 @@ class ColumnrangeSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesStatesHover extends OptionsObject {
+class ColumnrangeSeriesStatesHover {
   external factory ColumnrangeSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -28898,7 +29289,7 @@ class ColumnrangeSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesStatesHoverHalo extends OptionsObject {
+class ColumnrangeSeriesStatesHoverHalo {
   external factory ColumnrangeSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -28918,7 +29309,7 @@ class ColumnrangeSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesTooltip extends OptionsObject {
+class ColumnrangeSeriesTooltip {
   external factory ColumnrangeSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -29014,7 +29405,7 @@ class ColumnrangeSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class ColumnrangeSeriesZones extends OptionsObject {
+class ColumnrangeSeriesZones {
   external factory ColumnrangeSeriesZones ();
   /**
    * Defines the color of the series.
@@ -29350,7 +29741,7 @@ class ErrorbarSeries extends Series {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesData extends OptionsObject {
+class ErrorbarSeriesData {
   external factory ErrorbarSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -29399,7 +29790,7 @@ class ErrorbarSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesDataEvents extends OptionsObject {
+class ErrorbarSeriesDataEvents {
   external factory ErrorbarSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -29439,7 +29830,7 @@ class ErrorbarSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesEvents extends OptionsObject {
+class ErrorbarSeriesEvents {
   external factory ErrorbarSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -29484,7 +29875,7 @@ class ErrorbarSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesPoint extends OptionsObject {
+class ErrorbarSeriesPoint {
   external factory ErrorbarSeriesPoint ();
   /**
    * Events for each single point
@@ -29494,7 +29885,7 @@ class ErrorbarSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesPointEvents extends OptionsObject {
+class ErrorbarSeriesPointEvents {
   external factory ErrorbarSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -29534,7 +29925,7 @@ class ErrorbarSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesStates extends OptionsObject {
+class ErrorbarSeriesStates {
   external factory ErrorbarSeriesStates ();
   /**
    * Options for the hovered series
@@ -29544,7 +29935,7 @@ class ErrorbarSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesStatesHover extends OptionsObject {
+class ErrorbarSeriesStatesHover {
   external factory ErrorbarSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -29564,7 +29955,7 @@ class ErrorbarSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesStatesHoverHalo extends OptionsObject {
+class ErrorbarSeriesStatesHoverHalo {
   external factory ErrorbarSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -29584,7 +29975,7 @@ class ErrorbarSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesTooltip extends OptionsObject {
+class ErrorbarSeriesTooltip {
   external factory ErrorbarSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -29680,7 +30071,7 @@ class ErrorbarSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class ErrorbarSeriesZones extends OptionsObject {
+class ErrorbarSeriesZones {
   external factory ErrorbarSeriesZones ();
   /**
    * Defines the color of the series.
@@ -29934,7 +30325,7 @@ class FunnelSeries extends Series {
 }
 @JS()
 @anonymous
-class FunnelSeriesData extends OptionsObject {
+class FunnelSeriesData {
   external factory FunnelSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -29988,7 +30379,7 @@ class FunnelSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesDataEvents extends OptionsObject {
+class FunnelSeriesDataEvents {
   external factory FunnelSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -30028,7 +30419,7 @@ class FunnelSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesDataLabels extends OptionsObject {
+class FunnelSeriesDataLabels {
   external factory FunnelSeriesDataLabels ();
   /**
    * The background color or gradient for the data label. Defaults to <code>undefined</code>.
@@ -30229,7 +30620,7 @@ class FunnelSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesEvents extends OptionsObject {
+class FunnelSeriesEvents {
   external factory FunnelSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -30274,7 +30665,7 @@ class FunnelSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesPoint extends OptionsObject {
+class FunnelSeriesPoint {
   external factory FunnelSeriesPoint ();
   /**
    * Events for each single point
@@ -30284,7 +30675,7 @@ class FunnelSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesPointEvents extends OptionsObject {
+class FunnelSeriesPointEvents {
   external factory FunnelSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -30329,7 +30720,7 @@ class FunnelSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesStates extends OptionsObject {
+class FunnelSeriesStates {
   external factory FunnelSeriesStates ();
   /**
    * Options for the hovered series
@@ -30339,7 +30730,7 @@ class FunnelSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesStatesHover extends OptionsObject {
+class FunnelSeriesStatesHover {
   external factory FunnelSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -30374,7 +30765,7 @@ class FunnelSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesStatesHoverHalo extends OptionsObject {
+class FunnelSeriesStatesHoverHalo {
   external factory FunnelSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -30394,7 +30785,7 @@ class FunnelSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesStatesHoverMarker extends OptionsObject {
+class FunnelSeriesStatesHoverMarker {
   external factory FunnelSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -30452,7 +30843,7 @@ class FunnelSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesTooltip extends OptionsObject {
+class FunnelSeriesTooltip {
   external factory FunnelSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -30548,7 +30939,7 @@ class FunnelSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class FunnelSeriesZones extends OptionsObject {
+class FunnelSeriesZones {
   external factory FunnelSeriesZones ();
   /**
    * Defines the color of the series.
@@ -30799,7 +31190,7 @@ class GaugeSeries extends Series {
 }
 @JS()
 @anonymous
-class GaugeSeriesData extends OptionsObject {
+class GaugeSeriesData {
   external factory GaugeSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -30843,7 +31234,7 @@ class GaugeSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesDataEvents extends OptionsObject {
+class GaugeSeriesDataEvents {
   external factory GaugeSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -30883,7 +31274,7 @@ class GaugeSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesDataLabels extends OptionsObject {
+class GaugeSeriesDataLabels {
   external factory GaugeSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -31069,7 +31460,7 @@ class GaugeSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesDial extends OptionsObject {
+class GaugeSeriesDial {
   external factory GaugeSeriesDial ();
   /**
    * The background or fill color of the gauge's dial.
@@ -31114,7 +31505,7 @@ class GaugeSeriesDial extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesEvents extends OptionsObject {
+class GaugeSeriesEvents {
   external factory GaugeSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -31159,7 +31550,7 @@ class GaugeSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesPivot extends OptionsObject {
+class GaugeSeriesPivot {
   external factory GaugeSeriesPivot ();
   /**
    * The background color or fill of the pivot.
@@ -31184,7 +31575,7 @@ class GaugeSeriesPivot extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesPoint extends OptionsObject {
+class GaugeSeriesPoint {
   external factory GaugeSeriesPoint ();
   /**
    * Events for each single point
@@ -31194,7 +31585,7 @@ class GaugeSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesPointEvents extends OptionsObject {
+class GaugeSeriesPointEvents {
   external factory GaugeSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -31234,7 +31625,7 @@ class GaugeSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesStates extends OptionsObject {
+class GaugeSeriesStates {
   external factory GaugeSeriesStates ();
   /**
    * Options for the hovered series
@@ -31244,7 +31635,7 @@ class GaugeSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesStatesHover extends OptionsObject {
+class GaugeSeriesStatesHover {
   external factory GaugeSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -31274,7 +31665,7 @@ class GaugeSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesStatesHoverHalo extends OptionsObject {
+class GaugeSeriesStatesHoverHalo {
   external factory GaugeSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -31294,7 +31685,7 @@ class GaugeSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesStatesHoverMarker extends OptionsObject {
+class GaugeSeriesStatesHoverMarker {
   external factory GaugeSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -31352,7 +31743,7 @@ class GaugeSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesTooltip extends OptionsObject {
+class GaugeSeriesTooltip {
   external factory GaugeSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -31448,7 +31839,7 @@ class GaugeSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class GaugeSeriesZones extends OptionsObject {
+class GaugeSeriesZones {
   external factory GaugeSeriesZones ();
   /**
    * Defines the color of the series.
@@ -31746,7 +32137,7 @@ class HeatmapSeries extends Series {
 }
 @JS()
 @anonymous
-class HeatmapSeriesData extends OptionsObject {
+class HeatmapSeriesData {
   external factory HeatmapSeriesData ();
   /**
    * The color of the point. In heat maps the point color is rarely set explicitly, as we use the color to denote the <code>value</code>. Options for this are set in the <a href="#colorAxis">colorAxis</a> configuration.
@@ -31805,7 +32196,7 @@ class HeatmapSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesDataEvents extends OptionsObject {
+class HeatmapSeriesDataEvents {
   external factory HeatmapSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -31845,7 +32236,7 @@ class HeatmapSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesDataLabels extends OptionsObject {
+class HeatmapSeriesDataLabels {
   external factory HeatmapSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -32031,7 +32422,7 @@ class HeatmapSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesEvents extends OptionsObject {
+class HeatmapSeriesEvents {
   external factory HeatmapSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -32076,7 +32467,7 @@ class HeatmapSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesPoint extends OptionsObject {
+class HeatmapSeriesPoint {
   external factory HeatmapSeriesPoint ();
   /**
    * Events for each single point
@@ -32086,7 +32477,7 @@ class HeatmapSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesPointEvents extends OptionsObject {
+class HeatmapSeriesPointEvents {
   external factory HeatmapSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -32126,7 +32517,7 @@ class HeatmapSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesStates extends OptionsObject {
+class HeatmapSeriesStates {
   external factory HeatmapSeriesStates ();
   /**
    * Options for the hovered series
@@ -32136,7 +32527,7 @@ class HeatmapSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesStatesHover extends OptionsObject {
+class HeatmapSeriesStatesHover {
   external factory HeatmapSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -32156,7 +32547,7 @@ class HeatmapSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesStatesHoverHalo extends OptionsObject {
+class HeatmapSeriesStatesHoverHalo {
   external factory HeatmapSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -32176,7 +32567,7 @@ class HeatmapSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesTooltip extends OptionsObject {
+class HeatmapSeriesTooltip {
   external factory HeatmapSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -32272,7 +32663,7 @@ class HeatmapSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class HeatmapSeriesZones extends OptionsObject {
+class HeatmapSeriesZones {
   external factory HeatmapSeriesZones ();
   /**
    * Defines the color of the series.
@@ -32660,7 +33051,7 @@ class LineSeries extends Series {
 }
 @JS()
 @anonymous
-class LineSeriesData extends OptionsObject {
+class LineSeriesData {
   external factory LineSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -32719,7 +33110,7 @@ class LineSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataEvents extends OptionsObject {
+class LineSeriesDataEvents {
   external factory LineSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -32759,7 +33150,7 @@ class LineSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataMarker extends OptionsObject {
+class LineSeriesDataMarker {
   external factory LineSeriesDataMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -32817,7 +33208,7 @@ class LineSeriesDataMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataMarkerStates extends OptionsObject {
+class LineSeriesDataMarkerStates {
   external factory LineSeriesDataMarkerStates ();
   /**
    * Options for the hovered series
@@ -32827,7 +33218,7 @@ class LineSeriesDataMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataMarkerStatesHover extends OptionsObject {
+class LineSeriesDataMarkerStatesHover {
   external factory LineSeriesDataMarkerStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -32857,7 +33248,7 @@ class LineSeriesDataMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataMarkerStatesHoverHalo extends OptionsObject {
+class LineSeriesDataMarkerStatesHoverHalo {
   external factory LineSeriesDataMarkerStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -32877,7 +33268,7 @@ class LineSeriesDataMarkerStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataMarkerStatesHoverMarker extends OptionsObject {
+class LineSeriesDataMarkerStatesHoverMarker {
   external factory LineSeriesDataMarkerStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -32935,7 +33326,7 @@ class LineSeriesDataMarkerStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesDataLabels extends OptionsObject {
+class LineSeriesDataLabels {
   external factory LineSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -33121,7 +33512,7 @@ class LineSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesEvents extends OptionsObject {
+class LineSeriesEvents {
   external factory LineSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -33166,7 +33557,7 @@ class LineSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesMarker extends OptionsObject {
+class LineSeriesMarker {
   external factory LineSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -33224,7 +33615,7 @@ class LineSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesMarkerStates extends OptionsObject {
+class LineSeriesMarkerStates {
   external factory LineSeriesMarkerStates ();
   /**
    * null
@@ -33240,7 +33631,7 @@ class LineSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesMarkerStatesHover extends OptionsObject {
+class LineSeriesMarkerStatesHover {
   external factory LineSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -33280,7 +33671,7 @@ class LineSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesMarkerStatesSelect extends OptionsObject {
+class LineSeriesMarkerStatesSelect {
   external factory LineSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -33311,7 +33702,7 @@ class LineSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesPoint extends OptionsObject {
+class LineSeriesPoint {
   external factory LineSeriesPoint ();
   /**
    * Events for each single point
@@ -33321,7 +33712,7 @@ class LineSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesPointEvents extends OptionsObject {
+class LineSeriesPointEvents {
   external factory LineSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -33361,7 +33752,7 @@ class LineSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesStates extends OptionsObject {
+class LineSeriesStates {
   external factory LineSeriesStates ();
   /**
    * Options for the hovered series
@@ -33371,7 +33762,7 @@ class LineSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesStatesHover extends OptionsObject {
+class LineSeriesStatesHover {
   external factory LineSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -33401,7 +33792,7 @@ class LineSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesStatesHoverHalo extends OptionsObject {
+class LineSeriesStatesHoverHalo {
   external factory LineSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -33421,7 +33812,7 @@ class LineSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesStatesHoverMarker extends OptionsObject {
+class LineSeriesStatesHoverMarker {
   external factory LineSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -33479,7 +33870,7 @@ class LineSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesTooltip extends OptionsObject {
+class LineSeriesTooltip {
   external factory LineSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -33575,7 +33966,7 @@ class LineSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class LineSeriesZones extends OptionsObject {
+class LineSeriesZones {
   external factory LineSeriesZones ();
   /**
    * Defines the color of the series.
@@ -33858,7 +34249,7 @@ class PieSeries extends Series {
 }
 @JS()
 @anonymous
-class PieSeriesData extends OptionsObject {
+class PieSeriesData {
   external factory PieSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -33917,7 +34308,7 @@ class PieSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesDataEvents extends OptionsObject {
+class PieSeriesDataEvents {
   external factory PieSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -33957,7 +34348,7 @@ class PieSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesDataLabels extends OptionsObject {
+class PieSeriesDataLabels {
   external factory PieSeriesDataLabels ();
   /**
    * The background color or gradient for the data label. Defaults to <code>undefined</code>.
@@ -34158,7 +34549,7 @@ class PieSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesEvents extends OptionsObject {
+class PieSeriesEvents {
   external factory PieSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -34203,7 +34594,7 @@ class PieSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesPoint extends OptionsObject {
+class PieSeriesPoint {
   external factory PieSeriesPoint ();
   /**
    * Events for each single point
@@ -34213,7 +34604,7 @@ class PieSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesPointEvents extends OptionsObject {
+class PieSeriesPointEvents {
   external factory PieSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -34258,7 +34649,7 @@ class PieSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesStates extends OptionsObject {
+class PieSeriesStates {
   external factory PieSeriesStates ();
   /**
    * Options for the hovered series
@@ -34268,7 +34659,7 @@ class PieSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesStatesHover extends OptionsObject {
+class PieSeriesStatesHover {
   external factory PieSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -34303,7 +34694,7 @@ class PieSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesStatesHoverHalo extends OptionsObject {
+class PieSeriesStatesHoverHalo {
   external factory PieSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -34323,7 +34714,7 @@ class PieSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesStatesHoverMarker extends OptionsObject {
+class PieSeriesStatesHoverMarker {
   external factory PieSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -34381,7 +34772,7 @@ class PieSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesTooltip extends OptionsObject {
+class PieSeriesTooltip {
   external factory PieSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -34477,7 +34868,7 @@ class PieSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PieSeriesZones extends OptionsObject {
+class PieSeriesZones {
   external factory PieSeriesZones ();
   /**
    * Defines the color of the series.
@@ -34808,7 +35199,7 @@ class PolygonSeries extends Series {
 }
 @JS()
 @anonymous
-class PolygonSeriesData extends OptionsObject {
+class PolygonSeriesData {
   external factory PolygonSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -34867,7 +35258,7 @@ class PolygonSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataEvents extends OptionsObject {
+class PolygonSeriesDataEvents {
   external factory PolygonSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -34907,7 +35298,7 @@ class PolygonSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataMarker extends OptionsObject {
+class PolygonSeriesDataMarker {
   external factory PolygonSeriesDataMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -34965,7 +35356,7 @@ class PolygonSeriesDataMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataMarkerStates extends OptionsObject {
+class PolygonSeriesDataMarkerStates {
   external factory PolygonSeriesDataMarkerStates ();
   /**
    * Options for the hovered series
@@ -34975,7 +35366,7 @@ class PolygonSeriesDataMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataMarkerStatesHover extends OptionsObject {
+class PolygonSeriesDataMarkerStatesHover {
   external factory PolygonSeriesDataMarkerStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -35005,7 +35396,7 @@ class PolygonSeriesDataMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataMarkerStatesHoverHalo extends OptionsObject {
+class PolygonSeriesDataMarkerStatesHoverHalo {
   external factory PolygonSeriesDataMarkerStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -35025,7 +35416,7 @@ class PolygonSeriesDataMarkerStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataMarkerStatesHoverMarker extends OptionsObject {
+class PolygonSeriesDataMarkerStatesHoverMarker {
   external factory PolygonSeriesDataMarkerStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -35083,7 +35474,7 @@ class PolygonSeriesDataMarkerStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesDataLabels extends OptionsObject {
+class PolygonSeriesDataLabels {
   external factory PolygonSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -35269,7 +35660,7 @@ class PolygonSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesEvents extends OptionsObject {
+class PolygonSeriesEvents {
   external factory PolygonSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -35314,7 +35705,7 @@ class PolygonSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesMarker extends OptionsObject {
+class PolygonSeriesMarker {
   external factory PolygonSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -35372,7 +35763,7 @@ class PolygonSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesMarkerStates extends OptionsObject {
+class PolygonSeriesMarkerStates {
   external factory PolygonSeriesMarkerStates ();
   /**
    * null
@@ -35388,7 +35779,7 @@ class PolygonSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesMarkerStatesHover extends OptionsObject {
+class PolygonSeriesMarkerStatesHover {
   external factory PolygonSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -35428,7 +35819,7 @@ class PolygonSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesMarkerStatesSelect extends OptionsObject {
+class PolygonSeriesMarkerStatesSelect {
   external factory PolygonSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -35459,7 +35850,7 @@ class PolygonSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesPoint extends OptionsObject {
+class PolygonSeriesPoint {
   external factory PolygonSeriesPoint ();
   /**
    * Events for each single point
@@ -35469,7 +35860,7 @@ class PolygonSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesPointEvents extends OptionsObject {
+class PolygonSeriesPointEvents {
   external factory PolygonSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -35509,7 +35900,7 @@ class PolygonSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesStates extends OptionsObject {
+class PolygonSeriesStates {
   external factory PolygonSeriesStates ();
   /**
    * Options for the hovered series
@@ -35519,7 +35910,7 @@ class PolygonSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesStatesHover extends OptionsObject {
+class PolygonSeriesStatesHover {
   external factory PolygonSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -35549,7 +35940,7 @@ class PolygonSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesStatesHoverHalo extends OptionsObject {
+class PolygonSeriesStatesHoverHalo {
   external factory PolygonSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -35569,7 +35960,7 @@ class PolygonSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesStatesHoverMarker extends OptionsObject {
+class PolygonSeriesStatesHoverMarker {
   external factory PolygonSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -35627,7 +36018,7 @@ class PolygonSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesTooltip extends OptionsObject {
+class PolygonSeriesTooltip {
   external factory PolygonSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -35723,7 +36114,7 @@ class PolygonSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PolygonSeriesZones extends OptionsObject {
+class PolygonSeriesZones {
   external factory PolygonSeriesZones ();
   /**
    * Defines the color of the series.
@@ -35967,7 +36358,7 @@ class PyramidSeries extends Series {
 }
 @JS()
 @anonymous
-class PyramidSeriesData extends OptionsObject {
+class PyramidSeriesData {
   external factory PyramidSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -36021,7 +36412,7 @@ class PyramidSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesDataEvents extends OptionsObject {
+class PyramidSeriesDataEvents {
   external factory PyramidSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -36061,7 +36452,7 @@ class PyramidSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesDataLabels extends OptionsObject {
+class PyramidSeriesDataLabels {
   external factory PyramidSeriesDataLabels ();
   /**
    * The background color or gradient for the data label. Defaults to <code>undefined</code>.
@@ -36262,7 +36653,7 @@ class PyramidSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesEvents extends OptionsObject {
+class PyramidSeriesEvents {
   external factory PyramidSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -36307,7 +36698,7 @@ class PyramidSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesPoint extends OptionsObject {
+class PyramidSeriesPoint {
   external factory PyramidSeriesPoint ();
   /**
    * Events for each single point
@@ -36317,7 +36708,7 @@ class PyramidSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesPointEvents extends OptionsObject {
+class PyramidSeriesPointEvents {
   external factory PyramidSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -36362,7 +36753,7 @@ class PyramidSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesStates extends OptionsObject {
+class PyramidSeriesStates {
   external factory PyramidSeriesStates ();
   /**
    * Options for the hovered series
@@ -36372,7 +36763,7 @@ class PyramidSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesStatesHover extends OptionsObject {
+class PyramidSeriesStatesHover {
   external factory PyramidSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -36407,7 +36798,7 @@ class PyramidSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesStatesHoverHalo extends OptionsObject {
+class PyramidSeriesStatesHoverHalo {
   external factory PyramidSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -36427,7 +36818,7 @@ class PyramidSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesStatesHoverMarker extends OptionsObject {
+class PyramidSeriesStatesHoverMarker {
   external factory PyramidSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -36485,7 +36876,7 @@ class PyramidSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesTooltip extends OptionsObject {
+class PyramidSeriesTooltip {
   external factory PyramidSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -36581,7 +36972,7 @@ class PyramidSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class PyramidSeriesZones extends OptionsObject {
+class PyramidSeriesZones {
   external factory PyramidSeriesZones ();
   /**
    * Defines the color of the series.
@@ -36926,7 +37317,7 @@ class ScatterSeries extends Series {
 }
 @JS()
 @anonymous
-class ScatterSeriesData extends OptionsObject {
+class ScatterSeriesData {
   external factory ScatterSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -36985,7 +37376,7 @@ class ScatterSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataEvents extends OptionsObject {
+class ScatterSeriesDataEvents {
   external factory ScatterSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -37025,7 +37416,7 @@ class ScatterSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataMarker extends OptionsObject {
+class ScatterSeriesDataMarker {
   external factory ScatterSeriesDataMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -37083,7 +37474,7 @@ class ScatterSeriesDataMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataMarkerStates extends OptionsObject {
+class ScatterSeriesDataMarkerStates {
   external factory ScatterSeriesDataMarkerStates ();
   /**
    * Options for the hovered series
@@ -37093,7 +37484,7 @@ class ScatterSeriesDataMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataMarkerStatesHover extends OptionsObject {
+class ScatterSeriesDataMarkerStatesHover {
   external factory ScatterSeriesDataMarkerStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -37123,7 +37514,7 @@ class ScatterSeriesDataMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataMarkerStatesHoverHalo extends OptionsObject {
+class ScatterSeriesDataMarkerStatesHoverHalo {
   external factory ScatterSeriesDataMarkerStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -37143,7 +37534,7 @@ class ScatterSeriesDataMarkerStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataMarkerStatesHoverMarker extends OptionsObject {
+class ScatterSeriesDataMarkerStatesHoverMarker {
   external factory ScatterSeriesDataMarkerStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -37201,7 +37592,7 @@ class ScatterSeriesDataMarkerStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesDataLabels extends OptionsObject {
+class ScatterSeriesDataLabels {
   external factory ScatterSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -37387,7 +37778,7 @@ class ScatterSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesEvents extends OptionsObject {
+class ScatterSeriesEvents {
   external factory ScatterSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -37432,7 +37823,7 @@ class ScatterSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesMarker extends OptionsObject {
+class ScatterSeriesMarker {
   external factory ScatterSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -37490,7 +37881,7 @@ class ScatterSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesMarkerStates extends OptionsObject {
+class ScatterSeriesMarkerStates {
   external factory ScatterSeriesMarkerStates ();
   /**
    * null
@@ -37506,7 +37897,7 @@ class ScatterSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesMarkerStatesHover extends OptionsObject {
+class ScatterSeriesMarkerStatesHover {
   external factory ScatterSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -37546,7 +37937,7 @@ class ScatterSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesMarkerStatesSelect extends OptionsObject {
+class ScatterSeriesMarkerStatesSelect {
   external factory ScatterSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -37577,7 +37968,7 @@ class ScatterSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesPoint extends OptionsObject {
+class ScatterSeriesPoint {
   external factory ScatterSeriesPoint ();
   /**
    * Events for each single point
@@ -37587,7 +37978,7 @@ class ScatterSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesPointEvents extends OptionsObject {
+class ScatterSeriesPointEvents {
   external factory ScatterSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -37627,7 +38018,7 @@ class ScatterSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesStates extends OptionsObject {
+class ScatterSeriesStates {
   external factory ScatterSeriesStates ();
   /**
    * Options for the hovered series
@@ -37637,7 +38028,7 @@ class ScatterSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesStatesHover extends OptionsObject {
+class ScatterSeriesStatesHover {
   external factory ScatterSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -37667,7 +38058,7 @@ class ScatterSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesStatesHoverHalo extends OptionsObject {
+class ScatterSeriesStatesHoverHalo {
   external factory ScatterSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -37687,7 +38078,7 @@ class ScatterSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesStatesHoverMarker extends OptionsObject {
+class ScatterSeriesStatesHoverMarker {
   external factory ScatterSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -37745,7 +38136,7 @@ class ScatterSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesTooltip extends OptionsObject {
+class ScatterSeriesTooltip {
   external factory ScatterSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -37841,7 +38232,7 @@ class ScatterSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class ScatterSeriesZones extends OptionsObject {
+class ScatterSeriesZones {
   external factory ScatterSeriesZones ();
   /**
    * Defines the color of the series.
@@ -38067,7 +38458,7 @@ class SolidgaugeSeries extends Series {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesData extends OptionsObject {
+class SolidgaugeSeriesData {
   external factory SolidgaugeSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -38121,7 +38512,7 @@ class SolidgaugeSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesDataEvents extends OptionsObject {
+class SolidgaugeSeriesDataEvents {
   external factory SolidgaugeSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -38161,7 +38552,7 @@ class SolidgaugeSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesDataLabels extends OptionsObject {
+class SolidgaugeSeriesDataLabels {
   external factory SolidgaugeSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -38347,7 +38738,7 @@ class SolidgaugeSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesEvents extends OptionsObject {
+class SolidgaugeSeriesEvents {
   external factory SolidgaugeSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -38392,7 +38783,7 @@ class SolidgaugeSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesPoint extends OptionsObject {
+class SolidgaugeSeriesPoint {
   external factory SolidgaugeSeriesPoint ();
   /**
    * Events for each single point
@@ -38402,7 +38793,7 @@ class SolidgaugeSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesPointEvents extends OptionsObject {
+class SolidgaugeSeriesPointEvents {
   external factory SolidgaugeSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -38442,7 +38833,7 @@ class SolidgaugeSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesStates extends OptionsObject {
+class SolidgaugeSeriesStates {
   external factory SolidgaugeSeriesStates ();
   /**
    * Options for the hovered series
@@ -38452,7 +38843,7 @@ class SolidgaugeSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesStatesHover extends OptionsObject {
+class SolidgaugeSeriesStatesHover {
   external factory SolidgaugeSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -38482,7 +38873,7 @@ class SolidgaugeSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesStatesHoverHalo extends OptionsObject {
+class SolidgaugeSeriesStatesHoverHalo {
   external factory SolidgaugeSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -38502,7 +38893,7 @@ class SolidgaugeSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesStatesHoverMarker extends OptionsObject {
+class SolidgaugeSeriesStatesHoverMarker {
   external factory SolidgaugeSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -38560,7 +38951,7 @@ class SolidgaugeSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesTooltip extends OptionsObject {
+class SolidgaugeSeriesTooltip {
   external factory SolidgaugeSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -38656,7 +39047,7 @@ class SolidgaugeSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class SolidgaugeSeriesZones extends OptionsObject {
+class SolidgaugeSeriesZones {
   external factory SolidgaugeSeriesZones ();
   /**
    * Defines the color of the series.
@@ -39039,7 +39430,7 @@ class SplineSeries extends Series {
 }
 @JS()
 @anonymous
-class SplineSeriesData extends OptionsObject {
+class SplineSeriesData {
   external factory SplineSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -39098,7 +39489,7 @@ class SplineSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataEvents extends OptionsObject {
+class SplineSeriesDataEvents {
   external factory SplineSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -39138,7 +39529,7 @@ class SplineSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataMarker extends OptionsObject {
+class SplineSeriesDataMarker {
   external factory SplineSeriesDataMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -39196,7 +39587,7 @@ class SplineSeriesDataMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataMarkerStates extends OptionsObject {
+class SplineSeriesDataMarkerStates {
   external factory SplineSeriesDataMarkerStates ();
   /**
    * Options for the hovered series
@@ -39206,7 +39597,7 @@ class SplineSeriesDataMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataMarkerStatesHover extends OptionsObject {
+class SplineSeriesDataMarkerStatesHover {
   external factory SplineSeriesDataMarkerStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -39236,7 +39627,7 @@ class SplineSeriesDataMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataMarkerStatesHoverHalo extends OptionsObject {
+class SplineSeriesDataMarkerStatesHoverHalo {
   external factory SplineSeriesDataMarkerStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -39256,7 +39647,7 @@ class SplineSeriesDataMarkerStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataMarkerStatesHoverMarker extends OptionsObject {
+class SplineSeriesDataMarkerStatesHoverMarker {
   external factory SplineSeriesDataMarkerStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -39314,7 +39705,7 @@ class SplineSeriesDataMarkerStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesDataLabels extends OptionsObject {
+class SplineSeriesDataLabels {
   external factory SplineSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -39500,7 +39891,7 @@ class SplineSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesEvents extends OptionsObject {
+class SplineSeriesEvents {
   external factory SplineSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -39545,7 +39936,7 @@ class SplineSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesMarker extends OptionsObject {
+class SplineSeriesMarker {
   external factory SplineSeriesMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -39603,7 +39994,7 @@ class SplineSeriesMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesMarkerStates extends OptionsObject {
+class SplineSeriesMarkerStates {
   external factory SplineSeriesMarkerStates ();
   /**
    * null
@@ -39619,7 +40010,7 @@ class SplineSeriesMarkerStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesMarkerStatesHover extends OptionsObject {
+class SplineSeriesMarkerStatesHover {
   external factory SplineSeriesMarkerStatesHover ();
   /**
    * Enable or disable the point marker.
@@ -39659,7 +40050,7 @@ class SplineSeriesMarkerStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesMarkerStatesSelect extends OptionsObject {
+class SplineSeriesMarkerStatesSelect {
   external factory SplineSeriesMarkerStatesSelect ();
   /**
    * Enable or disable visible feedback for selection.
@@ -39690,7 +40081,7 @@ class SplineSeriesMarkerStatesSelect extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesPoint extends OptionsObject {
+class SplineSeriesPoint {
   external factory SplineSeriesPoint ();
   /**
    * Events for each single point
@@ -39700,7 +40091,7 @@ class SplineSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesPointEvents extends OptionsObject {
+class SplineSeriesPointEvents {
   external factory SplineSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -39740,7 +40131,7 @@ class SplineSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesStates extends OptionsObject {
+class SplineSeriesStates {
   external factory SplineSeriesStates ();
   /**
    * Options for the hovered series
@@ -39750,7 +40141,7 @@ class SplineSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesStatesHover extends OptionsObject {
+class SplineSeriesStatesHover {
   external factory SplineSeriesStatesHover ();
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the legend.			.
@@ -39780,7 +40171,7 @@ class SplineSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesStatesHoverHalo extends OptionsObject {
+class SplineSeriesStatesHoverHalo {
   external factory SplineSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -39800,7 +40191,7 @@ class SplineSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesStatesHoverMarker extends OptionsObject {
+class SplineSeriesStatesHoverMarker {
   external factory SplineSeriesStatesHoverMarker ();
   /**
    * Enable or disable the point marker. If <code>null</code>, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -39858,7 +40249,7 @@ class SplineSeriesStatesHoverMarker extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesTooltip extends OptionsObject {
+class SplineSeriesTooltip {
   external factory SplineSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -39954,7 +40345,7 @@ class SplineSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class SplineSeriesZones extends OptionsObject {
+class SplineSeriesZones {
   external factory SplineSeriesZones ();
   /**
    * Defines the color of the series.
@@ -40267,7 +40658,7 @@ class TreemapSeries extends Series {
 }
 @JS()
 @anonymous
-class TreemapSeriesData extends OptionsObject {
+class TreemapSeriesData {
   external factory TreemapSeriesData ();
   /**
    * The color of the point. In heat maps the point color is rarely set explicitly, as we use the color to denote the <code>value</code>. Options for this are set in the <a href="#colorAxis">colorAxis</a> configuration.
@@ -40326,7 +40717,7 @@ class TreemapSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesDataEvents extends OptionsObject {
+class TreemapSeriesDataEvents {
   external factory TreemapSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -40366,7 +40757,7 @@ class TreemapSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesDataLabels extends OptionsObject {
+class TreemapSeriesDataLabels {
   external factory TreemapSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -40552,7 +40943,7 @@ class TreemapSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesEvents extends OptionsObject {
+class TreemapSeriesEvents {
   external factory TreemapSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -40597,7 +40988,7 @@ class TreemapSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesLevels extends OptionsObject {
+class TreemapSeriesLevels {
   external factory TreemapSeriesLevels ();
   /**
    * Can set borderColor on all points which lies on the same level.
@@ -40646,7 +41037,7 @@ class TreemapSeriesLevels extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesPoint extends OptionsObject {
+class TreemapSeriesPoint {
   external factory TreemapSeriesPoint ();
   /**
    * Events for each single point
@@ -40656,7 +41047,7 @@ class TreemapSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesPointEvents extends OptionsObject {
+class TreemapSeriesPointEvents {
   external factory TreemapSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -40696,7 +41087,7 @@ class TreemapSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesStates extends OptionsObject {
+class TreemapSeriesStates {
   external factory TreemapSeriesStates ();
   /**
    * Options for the hovered series
@@ -40706,7 +41097,7 @@ class TreemapSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesStatesHover extends OptionsObject {
+class TreemapSeriesStatesHover {
   external factory TreemapSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -40726,7 +41117,7 @@ class TreemapSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesStatesHoverHalo extends OptionsObject {
+class TreemapSeriesStatesHoverHalo {
   external factory TreemapSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -40746,7 +41137,7 @@ class TreemapSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesTooltip extends OptionsObject {
+class TreemapSeriesTooltip {
   external factory TreemapSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -40839,7 +41230,7 @@ class TreemapSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class TreemapSeriesZones extends OptionsObject {
+class TreemapSeriesZones {
   external factory TreemapSeriesZones ();
   /**
    * Defines the color of the series.
@@ -41266,7 +41657,7 @@ class WaterfallSeries extends Series {
 }
 @JS()
 @anonymous
-class WaterfallSeriesData extends OptionsObject {
+class WaterfallSeriesData {
   external factory WaterfallSeriesData ();
   /**
    * Individual color for the point. By default the color is pulled from the global <code>colors</code> array.
@@ -41330,7 +41721,7 @@ class WaterfallSeriesData extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesDataEvents extends OptionsObject {
+class WaterfallSeriesDataEvents {
   external factory WaterfallSeriesDataEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -41370,7 +41761,7 @@ class WaterfallSeriesDataEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesDataLabels extends OptionsObject {
+class WaterfallSeriesDataLabels {
   external factory WaterfallSeriesDataLabels ();
   /**
    * The alignment of the data label compared to the point.  If <code>right</code>, the right side of the label should be touching the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box, as given with the <a href="#plotOptions.column.dataLabels.inside">inside</a> option. Can be one of "left", "center" or "right".
@@ -41556,7 +41947,7 @@ class WaterfallSeriesDataLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesEvents extends OptionsObject {
+class WaterfallSeriesEvents {
   external factory WaterfallSeriesEvents ();
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the series is displayed.
@@ -41601,7 +41992,7 @@ class WaterfallSeriesEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesPoint extends OptionsObject {
+class WaterfallSeriesPoint {
   external factory WaterfallSeriesPoint ();
   /**
    * Events for each single point
@@ -41611,7 +42002,7 @@ class WaterfallSeriesPoint extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesPointEvents extends OptionsObject {
+class WaterfallSeriesPointEvents {
   external factory WaterfallSeriesPointEvents ();
   /**
    * <p></p>Fires when a point is clicked. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.<p></p> <p>If the <code>series.allowPointSelect</code> option is true, the default action for the point's click event is to toggle the point's select state. Returning <code>false</code> cancels this action.</p>
@@ -41651,7 +42042,7 @@ class WaterfallSeriesPointEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesStates extends OptionsObject {
+class WaterfallSeriesStates {
   external factory WaterfallSeriesStates ();
   /**
    * Options for the hovered series
@@ -41661,7 +42052,7 @@ class WaterfallSeriesStates extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesStatesHover extends OptionsObject {
+class WaterfallSeriesStatesHover {
   external factory WaterfallSeriesStatesHover ();
   /**
    * How much to brighten the point on interaction. Requires the main color to be defined in hex or rgb(a) format.
@@ -41681,7 +42072,7 @@ class WaterfallSeriesStatesHover extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesStatesHoverHalo extends OptionsObject {
+class WaterfallSeriesStatesHoverHalo {
   external factory WaterfallSeriesStatesHoverHalo ();
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
@@ -41701,7 +42092,7 @@ class WaterfallSeriesStatesHoverHalo extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesTooltip extends OptionsObject {
+class WaterfallSeriesTooltip {
   external factory WaterfallSeriesTooltip ();
   /**
    * <p>For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the closest data points. This member gives the default string representations used for each unit. For an overview of the replacement codes, see <a href="#Highcharts.dateFormat">dateFormat</a>.</p>
@@ -41797,7 +42188,7 @@ class WaterfallSeriesTooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class WaterfallSeriesZones extends OptionsObject {
+class WaterfallSeriesZones {
   external factory WaterfallSeriesZones ();
   /**
    * Defines the color of the series.
@@ -41822,7 +42213,7 @@ class WaterfallSeriesZones extends OptionsObject {
 }
 @JS()
 @anonymous
-class Subtitle extends OptionsObject {
+class Subtitle {
   external factory Subtitle ();
   /**
    * The horizontal alignment of the subtitle. Can be one of "left", "center" and "right".
@@ -41867,7 +42258,7 @@ class Subtitle extends OptionsObject {
 }
 @JS()
 @anonymous
-class Title extends OptionsObject {
+class Title {
   external factory Title ();
   /**
    * The horizontal alignment of the title. Can be one of "left", "center" and "right".
@@ -41917,7 +42308,7 @@ class Title extends OptionsObject {
 }
 @JS()
 @anonymous
-class Tooltip extends OptionsObject {
+class Tooltip {
   external factory Tooltip ();
   /**
    * Enable or disable animation of the tooltip. In slow legacy IE browsers the animation is disabled by default.
@@ -42094,7 +42485,7 @@ class Tooltip extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxis extends OptionsObject {
+class XAxis {
   external factory XAxis ();
   /**
    * Whether to allow decimals in this axis' ticks. When counting integers, like
@@ -42538,7 +42929,7 @@ class XAxis extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisBreaks extends OptionsObject {
+class XAxisBreaks {
   external factory XAxisBreaks ();
   /**
    * A number indicating how much space should be left between the start and the end of the break. The break size is given in axis units, so for instance on a <code>datetime</code> axis, a break size of 3600000 would indicate the equivalent of an hour.
@@ -42563,7 +42954,7 @@ class XAxisBreaks extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisCrosshair extends OptionsObject {
+class XAxisCrosshair {
   external factory XAxisCrosshair ();
   /**
    * The color of the crosshair. Defaults to <code>#C0C0C0</code> for numeric and datetime axes, and <code>rgba(155,200,255,0.2)</code> for category axes, where the crosshair by default highlights the whole category.
@@ -42593,7 +42984,7 @@ class XAxisCrosshair extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisEvents extends OptionsObject {
+class XAxisEvents {
   external factory XAxisEvents ();
   /**
    * An event fired after the breaks have rendered.
@@ -42627,7 +43018,7 @@ class XAxisEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisLabels extends OptionsObject {
+class XAxisLabels {
   external factory XAxisLabels ();
   /**
    * What part of the string the given position is anchored to. Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>. Defaults to an intelligent guess based on which side of the chart the axis is on and the rotation of the label.
@@ -42744,7 +43135,7 @@ class XAxisLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisPlotBands extends OptionsObject {
+class XAxisPlotBands {
   external factory XAxisPlotBands ();
   /**
    * Border color for the plot band. Also requires <code>borderWidth</code> to be set.
@@ -42794,7 +43185,7 @@ class XAxisPlotBands extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisPlotBandsLabel extends OptionsObject {
+class XAxisPlotBandsLabel {
   external factory XAxisPlotBandsLabel ();
   /**
    * Horizontal alignment of the label. Can be one of "left", "center" or "right".
@@ -42844,7 +43235,7 @@ class XAxisPlotBandsLabel extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisPlotLines extends OptionsObject {
+class XAxisPlotLines {
   external factory XAxisPlotLines ();
   /**
    * The color of the line.
@@ -42889,7 +43280,7 @@ class XAxisPlotLines extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisPlotLinesLabel extends OptionsObject {
+class XAxisPlotLinesLabel {
   external factory XAxisPlotLinesLabel ();
   /**
    * Horizontal alignment of the label. Can be one of "left", "center" or "right".
@@ -42939,7 +43330,7 @@ class XAxisPlotLinesLabel extends OptionsObject {
 }
 @JS()
 @anonymous
-class XAxisTitle extends OptionsObject {
+class XAxisTitle {
   external factory XAxisTitle ();
   /**
    * Alignment of the title relative to the axis values. Possible values
@@ -43479,7 +43870,7 @@ class YAxis extends Axis {
 }
 @JS()
 @anonymous
-class YAxisBreaks extends OptionsObject {
+class YAxisBreaks {
   external factory YAxisBreaks ();
   /**
    * A number indicating how much space should be left between the start and the end of the break. The break size is given in axis units, so for instance on a <code>datetime</code> axis, a break size of 3600000 would indicate the equivalent of an hour.
@@ -43504,7 +43895,7 @@ class YAxisBreaks extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisCrosshair extends OptionsObject {
+class YAxisCrosshair {
   external factory YAxisCrosshair ();
   /**
    * The color of the crosshair. Defaults to <code>#C0C0C0</code> for numeric and datetime axes, and <code>rgba(155,200,255,0.2)</code> for category axes, where the crosshair by default highlights the whole category.
@@ -43534,7 +43925,7 @@ class YAxisCrosshair extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisEvents extends OptionsObject {
+class YAxisEvents {
   external factory YAxisEvents ();
   /**
    * An event fired after the breaks have rendered.
@@ -43568,7 +43959,7 @@ class YAxisEvents extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisLabels extends OptionsObject {
+class YAxisLabels {
   external factory YAxisLabels ();
   /**
    * What part of the string the given position is anchored to.
@@ -43686,7 +44077,7 @@ class YAxisLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisPlotBands extends OptionsObject {
+class YAxisPlotBands {
   external factory YAxisPlotBands ();
   /**
    * Border color for the plot band. Also requires <code>borderWidth</code> to be set.
@@ -43751,7 +44142,7 @@ class YAxisPlotBands extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisPlotBandsLabel extends OptionsObject {
+class YAxisPlotBandsLabel {
   external factory YAxisPlotBandsLabel ();
   /**
    * Horizontal alignment of the label. Can be one of "left", "center" or "right".
@@ -43801,7 +44192,7 @@ class YAxisPlotBandsLabel extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisPlotLines extends OptionsObject {
+class YAxisPlotLines {
   external factory YAxisPlotLines ();
   /**
    * The color of the line.
@@ -43846,7 +44237,7 @@ class YAxisPlotLines extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisPlotLinesLabel extends OptionsObject {
+class YAxisPlotLinesLabel {
   external factory YAxisPlotLinesLabel ();
   /**
    * Horizontal alignment of the label. Can be one of "left", "center" or "right".
@@ -43896,7 +44287,7 @@ class YAxisPlotLinesLabel extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisStackLabels extends OptionsObject {
+class YAxisStackLabels {
   external factory YAxisStackLabels ();
   /**
    * Defines the horizontal alignment of the stack total label.  Can be one of <code>"left"</code>, <code>"center"</code> or <code>"right"</code>. The default value is calculated at runtime and depends on orientation and whether  the stack is positive or negative.
@@ -43959,7 +44350,7 @@ class YAxisStackLabels extends OptionsObject {
 }
 @JS()
 @anonymous
-class YAxisTitle extends OptionsObject {
+class YAxisTitle {
   external factory YAxisTitle ();
   /**
    * Alignment of the title relative to the axis values. Possible values
