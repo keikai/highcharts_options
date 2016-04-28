@@ -13,6 +13,7 @@ part 'time_series_zoomable.dart';
 part 'spline_with_inverted_axes.dart';
 part 'spline_with_symbols.dart';
 part 'time_data_with_irregular_intervals.dart';
+part 'xdateformat.dart';
 
 
 void clearOutput () {

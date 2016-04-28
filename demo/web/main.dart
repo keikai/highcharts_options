@@ -30,6 +30,11 @@ List menu = [
     'title': 'Time data with irregular intervals',
     'example': time_data_with_irregular_intervals
   }
+  ,
+  {
+    'title': 'X Date Format',
+    'example': x_date_format
+  }
 ];
 
 void main() {

@@ -16208,8 +16208,8 @@ class PlotOptionsSeries extends Series {
   /**
    * If no x values are given for the points in a series, pointStart defines on what value to start. For example, if a series contains one yearly value starting from 1945, set pointStart to 1945.
    */
-  external num get pointStart;
-  external void set pointStart (num a_pointStart);
+  external dynamic get pointStart;
+  external void set pointStart (dynamic a_pointStart);
   /**
    * Whether to select the series initially. If <code>showCheckbox</code> is true, the checkbox next to the series name will be checked for a selected series.
    */
