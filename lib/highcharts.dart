@@ -731,8 +731,8 @@ class ChartResetZoomButton {
   /**
    * The position of the button. This is an object that can hold the properties <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>.
    */
-  external JsObject get position;
-  external void set position (JsObject a_position);
+  external dynamic get position;
+  external void set position (dynamic a_position);
   /**
    * What frame the button should be placed related to. Can be either "plot" or "chart".
    */
@@ -741,8 +741,8 @@ class ChartResetZoomButton {
   /**
    * A collection of attributes for the button. The object takes SVG attributes like  <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the border radius. The theme also supports <code>style</code>, a collection of CSS properties for the text. Equivalent attributes for the hover state are given in <code>theme.states.hover</code>.
    */
-  external JsObject get theme;
-  external void set theme (JsObject a_theme);
+  external dynamic get theme;
+  external void set theme (dynamic a_theme);
 }
 @JS()
 @anonymous
@@ -773,8 +773,8 @@ class Credits {
 
       }</pre>
    */
-  external JsObject get position;
-  external void set position (JsObject a_position);
+  external dynamic get position;
+  external void set position (dynamic a_position);
   /**
    * CSS styles for the credits label. Defaults to:
 
@@ -900,8 +900,8 @@ class Data {
   /**
    * An array containing object with Point property names along with what column id the property should be taken from.
    */
-  external List<JsObject> get seriesMapping;
-  external void set seriesMapping (List<JsObject> a_seriesMapping);
+  external List<dynamic> get seriesMapping;
+  external void set seriesMapping (List<dynamic> a_seriesMapping);
   /**
    * In tabular input data, the first column (indexed by 0) to use.
    */
@@ -996,13 +996,13 @@ class Drilldown {
   /**
    * Options for the drill up button that appears when drilling down on a series. The text for the button is defined in <a href="#lang.drillUpText">lang.drillUpText</a>.
    */
-  external JsObject get drillUpButton;
-  external void set drillUpButton (JsObject a_drillUpButton);
+  external dynamic get drillUpButton;
+  external void set drillUpButton (dynamic a_drillUpButton);
   /**
    * An array of series configurations for the drill down. Each series configuration uses the same syntax as the <a href="#series">series</a> option set. These drilldown series are hidden by default. The drilldown series is linked to the parent series' point by its <code>id</code>.
    */
-  external List<JsObject> get series;
-  external void set series (List<JsObject> a_series);
+  external List<dynamic> get series;
+  external void set series (List<dynamic> a_series);
 }
 @JS()
 @anonymous
@@ -1011,8 +1011,8 @@ class DrilldownDrillUpButton {
   /**
    * Positioning options for the button within the <code>relativeTo</code> box. Available properties are <code>x</code>, <code>y</code>, <code>align</code> and <code>verticalAlign</code>.
    */
-  external JsObject get position;
-  external void set position (JsObject a_position);
+  external dynamic get position;
+  external void set position (dynamic a_position);
   /**
    * What box to align the button to. Can be either "plotBox" or "spacingBox".
    */
@@ -1021,8 +1021,8 @@ class DrilldownDrillUpButton {
   /**
    * A collection of attributes for the button. The object takes SVG attributes like  <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the border radius. The theme also supports <code>style</code>, a collection of CSS properties for the text. Equivalent attributes for the hover state are given in <code>theme.states.hover</code>.
    */
-  external JsObject get theme;
-  external void set theme (JsObject a_theme);
+  external dynamic get theme;
+  external void set theme (dynamic a_theme);
 }
 @JS()
 @anonymous
@@ -1045,8 +1045,8 @@ class Exporting {
   /**
    * Additional chart options to be merged into an exported chart. For example, a common use case is to add data labels to improve readaility of the exported chart, or to add a printer-friendly color scheme.
    */
-  external JsObject get chartOptions;
-  external void set chartOptions (JsObject a_chartOptions);
+  external dynamic get chartOptions;
+  external void set chartOptions (dynamic a_chartOptions);
   /**
    * Whether to enable the exporting module. Disabling the module will hide the context button, but API methods will still be available.
    */
@@ -1065,8 +1065,8 @@ class Exporting {
   /**
    * An object containing additional attributes for the POST form that sends the SVG to the export server. For example, a <code>target</code> can be set to make sure the generated image is received in another frame, or a custom <code>enctype</code> or <code>encoding</code> can be set.
    */
-  external JsObject get formAttributes;
-  external void set formAttributes (JsObject a_formAttributes);
+  external dynamic get formAttributes;
+  external void set formAttributes (dynamic a_formAttributes);
   /**
    * Defines the scale or zoom factor for the exported image compared to the on-screen display. While for instance a 600px wide chart may look good on a website, it will look bad in print. The default scale of 2 makes this chart export to a 1200px PNG or JPG.
    */
@@ -1136,8 +1136,8 @@ class ExportingButtonsContextButton {
       Menu items can be customized by defining a new array of items and assigning
       <code>null</code> to unwanted positions (see override example below).</p>
    */
-  external List<JsObject> get menuItems;
-  external void set menuItems (List<JsObject> a_menuItems);
+  external List<dynamic> get menuItems;
+  external void set menuItems (List<dynamic> a_menuItems);
   /**
    * A click handler callback to use on the button directly instead of the popup menu.
    */
@@ -1188,8 +1188,8 @@ class ExportingButtonsContextButton {
   /**
    * A configuration object for the button theme. The object accepts SVG properties like <code>stroke-width</code>, <code>stroke</code> and <code>fill</code>. Tri-state button styles are supported by the <code>states.hover</code> and <code>states.select</code> objects.
    */
-  external JsObject get theme;
-  external void set theme (JsObject a_theme);
+  external dynamic get theme;
+  external void set theme (dynamic a_theme);
   /**
    * The vertical alignment of the buttons. Can be one of "top", "middle" or "bottom".
    */
@@ -1220,8 +1220,8 @@ class Labels {
   /**
    * A HTML label that can be positioned anywhere in the chart area.
    */
-  external List<JsObject> get items;
-  external void set items (List<JsObject> a_items);
+  external List<dynamic> get items;
+  external void set items (List<dynamic> a_items);
   /**
    * Shared CSS styles for all labels. Defaults to:
       <pre>style: {
@@ -1634,8 +1634,8 @@ class NavigationButtonOptions {
   /**
    * A configuration object for the button theme. The object accepts SVG properties like <code>stroke-width</code>, <code>stroke</code> and <code>fill</code>. Tri-state button styles are supported by the <code>states.hover</code> and <code>states.select</code> objects.
    */
-  external JsObject get theme;
-  external void set theme (JsObject a_theme);
+  external dynamic get theme;
+  external void set theme (dynamic a_theme);
   /**
    * The vertical alignment of the buttons. Can be one of "top", "middle" or "bottom".
    */
@@ -1659,13 +1659,13 @@ class NoData {
   /**
    * An object of additional SVG attributes for the no-data label.
    */
-  external JsObject get attr;
-  external void set attr (JsObject a_attr);
+  external dynamic get attr;
+  external void set attr (dynamic a_attr);
   /**
    * The position of the no-data label, relative to the plot area.
    */
-  external JsObject get position;
-  external void set position (JsObject a_position);
+  external dynamic get position;
+  external void set position (dynamic a_position);
   /**
    * CSS styles for the no-data label.
    */
@@ -1684,8 +1684,8 @@ class Pane {
   /**
    * An object, or array of objects, for backgrounds. Sub options include <code>backgroundColor</code> (can be solid or gradient), <code>shape</code> ("solid" or "arc"), <code>innerWidth</code>, <code>outerWidth</code>, <code>borderWidth</code>, <code>borderColor</code>.
    */
-  external List<JsObject> get background;
-  external void set background (List<JsObject> a_background);
+  external List<dynamic> get background;
+  external void set background (List<dynamic> a_background);
   /**
    * The center of a polar chart or angular gauge, given as an array of [x, y] positions. Positions can be given as integers that transform to pixels, or as percentages of the plot area size.
    */
@@ -1739,13 +1739,13 @@ class PlotOptions {
   /**
    * A box plot is a convenient way of depicting groups of data through their five-number summaries: the smallest observation (sample minimum), lower quartile (Q1), median (Q2), upper quartile (Q3), and largest observation (sample maximum).
    */
-  external JsObject get boxplot;
-  external void set boxplot (JsObject a_boxplot);
+  external dynamic get boxplot;
+  external void set boxplot (dynamic a_boxplot);
   /**
    * A bubble series is a three dimensional series type where each point renders an X, Y and Z value. Each points is drawn as a bubble where the position along the X and Y axes mark the X and Y values, and the size of the bubble relates to the Z value.
    */
-  external JsObject get bubble;
-  external void set bubble (JsObject a_bubble);
+  external dynamic get bubble;
+  external void set bubble (dynamic a_bubble);
   /**
    * null
    */
@@ -1754,23 +1754,23 @@ class PlotOptions {
   /**
    * The column range is a cartesian series type with higher and lower Y values along an X axis. Requires <code>highcharts-more.js</code>. To display horizontal bars, set <a href="#chart.inverted">chart.inverted</a> to <code>true</code>.
    */
-  external JsObject get columnrange;
-  external void set columnrange (JsObject a_columnrange);
+  external dynamic get columnrange;
+  external void set columnrange (dynamic a_columnrange);
   /**
    * Error bars are a graphical representation of the variability of data and are used on graphs to indicate the error, or uncertainty in a reported measurement.
    */
-  external JsObject get errorbar;
-  external void set errorbar (JsObject a_errorbar);
+  external dynamic get errorbar;
+  external void set errorbar (dynamic a_errorbar);
   /**
    * Funnel charts are a type of chart often used to visualize stages in a sales project, where the top are the initial stages with the most clients. It requires that the <code>modules/funnel.js</code> file is loaded.
    */
-  external JsObject get funnel;
-  external void set funnel (JsObject a_funnel);
+  external dynamic get funnel;
+  external void set funnel (dynamic a_funnel);
   /**
    * General plotting options for the gauge series type. Requires <code>highcharts-more.js</code>
    */
-  external JsObject get gauge;
-  external void set gauge (JsObject a_gauge);
+  external dynamic get gauge;
+  external void set gauge (dynamic a_gauge);
   /**
    * <p>The heatmap series type. This series type is available both in Highcharts and Highmaps.</p>
 
@@ -1778,8 +1778,8 @@ class PlotOptions {
 
       <p>The colors of each heat map point is usually determined by its value and controlled by settings on the <a href="#colorAxis">colorAxis</a>.</p>
    */
-  external JsObject get heatmap;
-  external void set heatmap (JsObject a_heatmap);
+  external dynamic get heatmap;
+  external void set heatmap (dynamic a_heatmap);
   /**
    * null
    */
@@ -1793,13 +1793,13 @@ class PlotOptions {
   /**
    * A polygon series can be used to draw any freeform shape in the cartesian coordinate system. A fill is applied with the <code>color</code> option, and stroke is applied through <code>lineWidth</code> and <code>lineColor</code> options. Requires the <code>highcharts-more.js</code> file.
    */
-  external JsObject get polygon;
-  external void set polygon (JsObject a_polygon);
+  external dynamic get polygon;
+  external void set polygon (dynamic a_polygon);
   /**
    * A pyramid chart consists of a single pyramid with item heights corresponding to each point value. Technically it is the same as a reversed funnel chart without a neck.
    */
-  external JsObject get pyramid;
-  external void set pyramid (JsObject a_pyramid);
+  external dynamic get pyramid;
+  external void set pyramid (dynamic a_pyramid);
   /**
    * null
    */
@@ -1813,8 +1813,8 @@ class PlotOptions {
   /**
    * A gauge showing values using a filled arc with colors indicating the value. The solid gauge plots values against the <code>yAxis</code>, which is extended with some color options, <a href="#yAxis.minColor">minColor</a>, <a href="#yAxis.maxColor">maxColor</a> and <a href="#yAxis.stops">stops</a>, to control the color of the gauge itself.
    */
-  external JsObject get solidgauge;
-  external void set solidgauge (JsObject a_solidgauge);
+  external dynamic get solidgauge;
+  external void set solidgauge (dynamic a_solidgauge);
   /**
    * null
    */
@@ -1825,13 +1825,13 @@ class PlotOptions {
 
       Requires the module <code>heatmap.js</code> as well, if functionality such as the <a href="http://api.highcharts.com/highmaps#colorAxis">colorAxis</a> is to be used.
    */
-  external JsObject get treemap;
-  external void set treemap (JsObject a_treemap);
+  external dynamic get treemap;
+  external void set treemap (dynamic a_treemap);
   /**
    * Options for the waterfall series type.
    */
-  external JsObject get waterfall;
-  external void set waterfall (JsObject a_waterfall);
+  external dynamic get waterfall;
+  external void set waterfall (dynamic a_waterfall);
 }
 @JS()
 @anonymous
@@ -2096,8 +2096,8 @@ class PlotOptionsArea {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -2575,8 +2575,8 @@ class PlotOptionsAreaStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -2600,8 +2600,8 @@ class PlotOptionsAreaStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -2704,8 +2704,8 @@ class PlotOptionsAreaTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -2881,8 +2881,8 @@ class PlotOptionsArearange {
   /**
    * Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -3025,8 +3025,8 @@ class PlotOptionsArearange {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -3369,8 +3369,8 @@ class PlotOptionsArearangeStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -3394,8 +3394,8 @@ class PlotOptionsArearangeStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -3498,8 +3498,8 @@ class PlotOptionsArearangeTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -3844,8 +3844,8 @@ class PlotOptionsAreaspline {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -4323,8 +4323,8 @@ class PlotOptionsAreasplineStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -4348,8 +4348,8 @@ class PlotOptionsAreasplineStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -4452,8 +4452,8 @@ class PlotOptionsAreasplineTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -4629,8 +4629,8 @@ class PlotOptionsAreasplinerange {
   /**
    * Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -4768,8 +4768,8 @@ class PlotOptionsAreasplinerange {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -5112,8 +5112,8 @@ class PlotOptionsAreasplinerangeStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -5137,8 +5137,8 @@ class PlotOptionsAreasplinerangeStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -5241,8 +5241,8 @@ class PlotOptionsAreasplinerangeTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -5592,8 +5592,8 @@ class PlotOptionsBar {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -5936,8 +5936,8 @@ class PlotOptionsBarStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -5946,8 +5946,8 @@ class PlotOptionsBarStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -5992,8 +5992,8 @@ class PlotOptionsBarTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -6303,8 +6303,8 @@ class PlotOptionsBoxplot {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -6476,8 +6476,8 @@ class PlotOptionsBoxplotStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -6486,8 +6486,8 @@ class PlotOptionsBoxplotStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -6532,8 +6532,8 @@ class PlotOptionsBoxplotTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -6849,8 +6849,8 @@ class PlotOptionsBubble {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Set the initial visibility of the series.
    */
@@ -7330,8 +7330,8 @@ class PlotOptionsBubbleStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -7355,8 +7355,8 @@ class PlotOptionsBubbleStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -7459,8 +7459,8 @@ class PlotOptionsBubbleTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -7810,8 +7810,8 @@ class PlotOptionsColumn {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -8154,8 +8154,8 @@ class PlotOptionsColumnStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -8164,8 +8164,8 @@ class PlotOptionsColumnStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -8210,8 +8210,8 @@ class PlotOptionsColumnTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -8378,8 +8378,8 @@ class PlotOptionsColumnrange {
   /**
    * Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Depth of the columns in a 3D column chart. Requires <code>highcharts-3d.js</code>.
    */
@@ -8537,8 +8537,8 @@ class PlotOptionsColumnrange {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -8891,8 +8891,8 @@ class PlotOptionsColumnrangeStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -8901,8 +8901,8 @@ class PlotOptionsColumnrangeStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -8947,8 +8947,8 @@ class PlotOptionsColumnrangeTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -9223,8 +9223,8 @@ class PlotOptionsErrorbar {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -9396,8 +9396,8 @@ class PlotOptionsErrorbarStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -9406,8 +9406,8 @@ class PlotOptionsErrorbarStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -9452,8 +9452,8 @@ class PlotOptionsErrorbarTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -9686,8 +9686,8 @@ class PlotOptionsFunnel {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Set the initial visibility of the series.
    */
@@ -10037,8 +10037,8 @@ class PlotOptionsFunnelStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -10062,8 +10062,8 @@ class PlotOptionsFunnelStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -10166,8 +10166,8 @@ class PlotOptionsFunnelTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -10297,13 +10297,13 @@ class PlotOptionsGauge {
   /**
    * Data labels for the gauge. For gauges, the data labels are enabled by default and shown in a bordered box below the point.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Options for the dial or arrow pointer of the gauge.
    */
-  external JsObject get dial;
-  external void set dial (JsObject a_dial);
+  external dynamic get dial;
+  external void set dial (dynamic a_dial);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -10342,8 +10342,8 @@ class PlotOptionsGauge {
   /**
    * Options for the pivot or the center point of the gauge.
    */
-  external JsObject get pivot;
-  external void set pivot (JsObject a_pivot);
+  external dynamic get pivot;
+  external void set pivot (dynamic a_pivot);
   /**
    * Properties for each single point
    */
@@ -10387,8 +10387,8 @@ class PlotOptionsGauge {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Set the initial visibility of the series.
    */
@@ -10783,8 +10783,8 @@ class PlotOptionsGaugeStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -10808,8 +10808,8 @@ class PlotOptionsGaugeStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -10912,8 +10912,8 @@ class PlotOptionsGaugeTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -11165,8 +11165,8 @@ class PlotOptionsHeatmap {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -11509,8 +11509,8 @@ class PlotOptionsHeatmapStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -11519,8 +11519,8 @@ class PlotOptionsHeatmapStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -11565,8 +11565,8 @@ class PlotOptionsHeatmapTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -11895,8 +11895,8 @@ class PlotOptionsLine {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -12369,8 +12369,8 @@ class PlotOptionsLineStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -12394,8 +12394,8 @@ class PlotOptionsLineStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -12498,8 +12498,8 @@ class PlotOptionsLineTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -12766,8 +12766,8 @@ class PlotOptionsPie {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Set the initial visibility of the series.
    */
@@ -13112,8 +13112,8 @@ class PlotOptionsPieStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -13137,8 +13137,8 @@ class PlotOptionsPieStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -13241,8 +13241,8 @@ class PlotOptionsPieTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -13519,8 +13519,8 @@ class PlotOptionsPolygon {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -13993,8 +13993,8 @@ class PlotOptionsPolygonStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -14018,8 +14018,8 @@ class PlotOptionsPolygonStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -14122,8 +14122,8 @@ class PlotOptionsPolygonTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -14346,8 +14346,8 @@ class PlotOptionsPyramid {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Set the initial visibility of the series.
    */
@@ -14697,8 +14697,8 @@ class PlotOptionsPyramidStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -14722,8 +14722,8 @@ class PlotOptionsPyramidStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -14826,8 +14826,8 @@ class PlotOptionsPyramidTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -15118,8 +15118,8 @@ class PlotOptionsScatter {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -15592,8 +15592,8 @@ class PlotOptionsScatterStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -15617,8 +15617,8 @@ class PlotOptionsScatterStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -15721,8 +15721,8 @@ class PlotOptionsScatterTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -16051,8 +16051,8 @@ class PlotOptionsSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -16525,8 +16525,8 @@ class PlotOptionsSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -16550,8 +16550,8 @@ class PlotOptionsSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -16654,8 +16654,8 @@ class PlotOptionsSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -16780,8 +16780,8 @@ class PlotOptionsSolidgauge {
   /**
    * Data labels for the gauge. For gauges, the data labels are enabled by default and shown in a bordered box below the point.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -16850,8 +16850,8 @@ class PlotOptionsSolidgauge {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Set the initial visibility of the series.
    */
@@ -17176,8 +17176,8 @@ class PlotOptionsSolidgaugeStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -17201,8 +17201,8 @@ class PlotOptionsSolidgaugeStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -17305,8 +17305,8 @@ class PlotOptionsSolidgaugeTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -17630,8 +17630,8 @@ class PlotOptionsSpline {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -18104,8 +18104,8 @@ class PlotOptionsSplineStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -18129,8 +18129,8 @@ class PlotOptionsSplineStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -18233,8 +18233,8 @@ class PlotOptionsSplineTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -18453,8 +18453,8 @@ class PlotOptionsTreemap {
   /**
    * Set options on specific levels. Takes precedence over series options, but not point options.
    */
-  external List<JsObject> get levels;
-  external void set levels (List<JsObject> a_levels);
+  external List<dynamic> get levels;
+  external void set levels (List<dynamic> a_levels);
   /**
    * The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series.
    */
@@ -18801,8 +18801,8 @@ class PlotOptionsTreemapLevels {
 
       <a href="#plotOptions.treemap.dataLabels">plotOptions.treemap.dataLabels</a> for possible values.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Can set the layoutAlgorithm option on a specific level.
    */
@@ -18906,8 +18906,8 @@ class PlotOptionsTreemapStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -18916,8 +18916,8 @@ class PlotOptionsTreemapStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -18962,8 +18962,8 @@ class PlotOptionsTreemapTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -19331,8 +19331,8 @@ class PlotOptionsWaterfall {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The color used specifically for positive point columns. When not specified, the general series color is used.
    */
@@ -19672,8 +19672,8 @@ class PlotOptionsWaterfallStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -19682,8 +19682,8 @@ class PlotOptionsWaterfallStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -19728,8 +19728,8 @@ class PlotOptionsWaterfallTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -20377,8 +20377,8 @@ class AreaSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -20442,8 +20442,8 @@ class AreaSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -20614,8 +20614,8 @@ class AreaSeriesDataMarkerStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -20639,8 +20639,8 @@ class AreaSeriesDataMarkerStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -21158,8 +21158,8 @@ class AreaSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -21183,8 +21183,8 @@ class AreaSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -21287,8 +21287,8 @@ class AreaSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -21509,8 +21509,8 @@ class ArearangeSeries extends Series {
   /**
    * Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -21673,8 +21673,8 @@ class ArearangeSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -21738,8 +21738,8 @@ class ArearangeSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -22143,8 +22143,8 @@ class ArearangeSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -22168,8 +22168,8 @@ class ArearangeSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -22272,8 +22272,8 @@ class ArearangeSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -22696,8 +22696,8 @@ class AreasplineSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -22761,8 +22761,8 @@ class AreasplineSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -22933,8 +22933,8 @@ class AreasplineSeriesDataMarkerStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -22958,8 +22958,8 @@ class AreasplineSeriesDataMarkerStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -23477,8 +23477,8 @@ class AreasplineSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -23502,8 +23502,8 @@ class AreasplineSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -23606,8 +23606,8 @@ class AreasplineSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -23828,8 +23828,8 @@ class AreasplinerangeSeries extends Series {
   /**
    * Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -23987,8 +23987,8 @@ class AreasplinerangeSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * Whether the whole area or just the line should respond to mouseover tooltips and other mouse or touch events.
    */
@@ -24052,8 +24052,8 @@ class AreasplinerangeSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -24457,8 +24457,8 @@ class AreasplinerangeSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -24482,8 +24482,8 @@ class AreasplinerangeSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -24586,8 +24586,8 @@ class AreasplinerangeSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -25015,8 +25015,8 @@ class BarSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -25075,8 +25075,8 @@ class BarSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -25480,8 +25480,8 @@ class BarSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -25490,8 +25490,8 @@ class BarSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -25536,8 +25536,8 @@ class BarSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -25918,8 +25918,8 @@ class BoxplotSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -25993,8 +25993,8 @@ class BoxplotSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -26237,8 +26237,8 @@ class BoxplotSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -26247,8 +26247,8 @@ class BoxplotSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -26293,8 +26293,8 @@ class BoxplotSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -26675,8 +26675,8 @@ class BubbleSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -26742,8 +26742,8 @@ class BubbleSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -27282,8 +27282,8 @@ class BubbleSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -27307,8 +27307,8 @@ class BubbleSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -27411,8 +27411,8 @@ class BubbleSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -27840,8 +27840,8 @@ class ColumnSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -27900,8 +27900,8 @@ class ColumnSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -28305,8 +28305,8 @@ class ColumnSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -28315,8 +28315,8 @@ class ColumnSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -28361,8 +28361,8 @@ class ColumnSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -28574,8 +28574,8 @@ class ColumnrangeSeries extends Series {
   /**
    * Extended data labels for range series types. Range series  data labels have no <code>x</code> and <code>y</code> options. Instead, they have <code>xLow</code>, <code>xHigh</code>, <code>yLow</code> and <code>yHigh</code> options to allow the higher and lower data label sets individually.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Depth of the columns in a 3D column chart. Requires <code>highcharts-3d.js</code>.
    */
@@ -28753,8 +28753,8 @@ class ColumnrangeSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -28813,8 +28813,8 @@ class ColumnrangeSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -29233,8 +29233,8 @@ class ColumnrangeSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -29243,8 +29243,8 @@ class ColumnrangeSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -29289,8 +29289,8 @@ class ColumnrangeSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -29630,8 +29630,8 @@ class ErrorbarSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -29919,8 +29919,8 @@ class ErrorbarSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -29929,8 +29929,8 @@ class ErrorbarSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -29975,8 +29975,8 @@ class ErrorbarSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -30262,8 +30262,8 @@ class FunnelSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -30309,8 +30309,8 @@ class FunnelSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -30724,8 +30724,8 @@ class FunnelSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -30749,8 +30749,8 @@ class FunnelSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -30853,8 +30853,8 @@ class FunnelSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -31017,13 +31017,13 @@ class GaugeSeries extends Series {
   /**
    * Data labels for the gauge. For gauges, the data labels are enabled by default and shown in a bordered box below the point.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Options for the dial or arrow pointer of the gauge.
    */
-  external JsObject get dial;
-  external void set dial (JsObject a_dial);
+  external dynamic get dial;
+  external void set dial (dynamic a_dial);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -31082,8 +31082,8 @@ class GaugeSeries extends Series {
   /**
    * Options for the pivot or the center point of the gauge.
    */
-  external JsObject get pivot;
-  external void set pivot (JsObject a_pivot);
+  external dynamic get pivot;
+  external void set pivot (dynamic a_pivot);
   /**
    * Properties for each single point
    */
@@ -31127,8 +31127,8 @@ class GaugeSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -31184,8 +31184,8 @@ class GaugeSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Individual point events
    */
@@ -31634,8 +31634,8 @@ class GaugeSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -31659,8 +31659,8 @@ class GaugeSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -31763,8 +31763,8 @@ class GaugeSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -32081,8 +32081,8 @@ class HeatmapSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -32141,8 +32141,8 @@ class HeatmapSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -32551,8 +32551,8 @@ class HeatmapSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -32561,8 +32561,8 @@ class HeatmapSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -32607,8 +32607,8 @@ class HeatmapSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -33015,8 +33015,8 @@ class LineSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -33075,8 +33075,8 @@ class LineSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -33247,8 +33247,8 @@ class LineSeriesDataMarkerStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -33272,8 +33272,8 @@ class LineSeriesDataMarkerStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -33791,8 +33791,8 @@ class LineSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -33816,8 +33816,8 @@ class LineSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -33920,8 +33920,8 @@ class LineSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -34241,8 +34241,8 @@ class PieSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -34283,8 +34283,8 @@ class PieSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -34703,8 +34703,8 @@ class PieSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -34728,8 +34728,8 @@ class PieSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -34832,8 +34832,8 @@ class PieSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -35183,8 +35183,8 @@ class PolygonSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -35243,8 +35243,8 @@ class PolygonSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -35415,8 +35415,8 @@ class PolygonSeriesDataMarkerStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -35440,8 +35440,8 @@ class PolygonSeriesDataMarkerStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -35959,8 +35959,8 @@ class PolygonSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -35984,8 +35984,8 @@ class PolygonSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -36088,8 +36088,8 @@ class PolygonSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -36365,8 +36365,8 @@ class PyramidSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -36412,8 +36412,8 @@ class PyramidSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -36827,8 +36827,8 @@ class PyramidSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -36852,8 +36852,8 @@ class PyramidSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -36956,8 +36956,8 @@ class PyramidSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -37321,8 +37321,8 @@ class ScatterSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -37381,8 +37381,8 @@ class ScatterSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -37553,8 +37553,8 @@ class ScatterSeriesDataMarkerStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -37578,8 +37578,8 @@ class ScatterSeriesDataMarkerStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -38097,8 +38097,8 @@ class ScatterSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * The width of the line connecting the data points.
    */
@@ -38122,8 +38122,8 @@ class ScatterSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -38226,8 +38226,8 @@ class ScatterSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -38385,8 +38385,8 @@ class SolidgaugeSeries extends Series {
   /**
    * Data labels for the gauge. For gauges, the data labels are enabled by default and shown in a bordered box below the point.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
    */
@@ -38475,8 +38475,8 @@ class SolidgaugeSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -38532,8 +38532,8 @@ class SolidgaugeSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Individual point events
    */
@@ -38922,8 +38922,8 @@ class SolidgaugeSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -38947,8 +38947,8 @@ class SolidgaugeSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -39051,8 +39051,8 @@ class SolidgaugeSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -39454,8 +39454,8 @@ class SplineSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
       or two dimensional arrays with x and y values are allowed. Also, only the first
@@ -39514,8 +39514,8 @@ class SplineSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -39686,8 +39686,8 @@ class SplineSeriesDataMarkerStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -39711,8 +39711,8 @@ class SplineSeriesDataMarkerStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -40230,8 +40230,8 @@ class SplineSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
   /**
    * Pixel with of the graph line.
    */
@@ -40255,8 +40255,8 @@ class SplineSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -40359,8 +40359,8 @@ class SplineSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -40627,8 +40627,8 @@ class TreemapSeries extends Series {
   /**
    * Set options on specific levels. Takes precedence over series options, but not point options.
    */
-  external List<JsObject> get levels;
-  external void set levels (List<JsObject> a_levels);
+  external List<dynamic> get levels;
+  external void set levels (List<dynamic> a_levels);
   /**
    * The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series.
    */
@@ -40757,8 +40757,8 @@ class TreemapSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -41106,8 +41106,8 @@ class TreemapSeriesLevels {
 
       <a href="#plotOptions.treemap.dataLabels">plotOptions.treemap.dataLabels</a> for possible values.
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * Can set the layoutAlgorithm option on a specific level.
    */
@@ -41211,8 +41211,8 @@ class TreemapSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -41221,8 +41221,8 @@ class TreemapSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -41267,8 +41267,8 @@ class TreemapSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -41714,8 +41714,8 @@ class WaterfallSeries extends Series {
   /**
    * A configuration object for the tooltip rendering of each single series. Properties are inherited from <a href="#tooltip">tooltip</a>, but only the following properties can be defined on a series level.
    */
-  external JsObject get tooltip;
-  external void set tooltip (JsObject a_tooltip);
+  external dynamic get tooltip;
+  external void set tooltip (dynamic a_tooltip);
   /**
    * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
       <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
@@ -41771,8 +41771,8 @@ class WaterfallSeriesData {
   /**
    * Individual data label for each point. The options are the same as the ones for  <a class="internal" href="#plotOptions.series.dataLabels">plotOptions.series.dataLabels</a>
    */
-  external JsObject get dataLabels;
-  external void set dataLabels (JsObject a_dataLabels);
+  external dynamic get dataLabels;
+  external void set dataLabels (dynamic a_dataLabels);
   /**
    * The <code>id</code> of a series in the <a href="#drilldown.series">drilldown.series</a> array to use for a drilldown for this point.
    */
@@ -42186,8 +42186,8 @@ class WaterfallSeriesStatesHover {
   /**
    * Options for the halo appearing around the hovered point in line-type series as well as outside the hovered slice in pie charts. By default the halo is filled by the current point or series color with an opacity of 0.25. The halo can be disabled by setting the <code>halo</code> option to <code>false</code>.
    */
-  external JsObject get halo;
-  external void set halo (JsObject a_halo);
+  external dynamic get halo;
+  external void set halo (dynamic a_halo);
 }
 @JS()
 @anonymous
@@ -42196,8 +42196,8 @@ class WaterfallSeriesStatesHoverHalo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example <code>fill</code>, <code>stroke</code> and <code>stroke-width</code>.
    */
-  external JsObject get attributes;
-  external void set attributes (JsObject a_attributes);
+  external dynamic get attributes;
+  external void set attributes (dynamic a_attributes);
   /**
    * Opacity for the halo unless a specific fill is overridden using the <code>attributes</code> setting. Note that Highcharts is only able to apply opacity to colors of hex or rgb(a) formats.
    */
@@ -42242,8 +42242,8 @@ class WaterfallSeriesTooltip {
 
       </p>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * <p>Whether the tooltip should follow the mouse as it moves across columns, pie slices and other point types with an extent. By default it behaves this way for scatter, bubble and pie series by override in the <code>plotOptions</code> for those series types. </p>
 
@@ -42488,8 +42488,8 @@ class Tooltip {
 
       </p>
    */
-  external JsObject get date;
-  external void set date (JsObject a_date);
+  external dynamic get date;
+  external void set date (dynamic a_date);
   /**
    * Enable or disable the tooltip.
    */
@@ -42679,8 +42679,8 @@ class XAxis {
 
       }</pre>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * Whether to force the axis to end on a tick. Use this option with the <code>maxPadding</code> option to control the axis end.
    */
@@ -42873,13 +42873,13 @@ class XAxis {
 
       <p>In a gauge, a plot band on the Y axis (value axis) will stretch along the perimeter of the gauge.</p>
    */
-  external List<JsObject> get plotBands;
-  external void set plotBands (List<JsObject> a_plotBands);
+  external List<dynamic> get plotBands;
+  external void set plotBands (List<dynamic> a_plotBands);
   /**
    * An array of lines stretching across the plot area, marking a specific value on one of the axes.
    */
-  external List<JsObject> get plotLines;
-  external void set plotLines (List<JsObject> a_plotLines);
+  external List<dynamic> get plotLines;
+  external void set plotLines (List<dynamic> a_plotLines);
   /**
    * Whether to reverse the axis so that the highest number is closest to the origin. If the chart is inverted, the x axis is reversed by default.
    */
@@ -43279,8 +43279,8 @@ class XAxisPlotBands {
   /**
    * An object defining mouse events for the plot band. Supported properties are <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mousemove</code>.
    */
-  external JsObject get events;
-  external void set events (JsObject a_events);
+  external dynamic get events;
+  external void set events (dynamic a_events);
   /**
    * The start position of the plot band in axis units.
    */
@@ -43324,8 +43324,8 @@ class XAxisPlotBandsLabel {
   /**
    * CSS styles for the text label.
    */
-  external JsObject get style;
-  external void set style (JsObject a_style);
+  external dynamic get style;
+  external void set style (dynamic a_style);
   /**
    * The string text itself. A subset of HTML is supported.
    */
@@ -43374,8 +43374,8 @@ class XAxisPlotLines {
   /**
    * An object defining mouse events for the plot line. Supported properties are <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mousemove</code>.
    */
-  external JsObject get events;
-  external void set events (JsObject a_events);
+  external dynamic get events;
+  external void set events (dynamic a_events);
   /**
    * An id used for identifying the plot line in Axis.removePlotLine.
    */
@@ -43419,8 +43419,8 @@ class XAxisPlotLinesLabel {
   /**
    * CSS styles for the text label.
    */
-  external JsObject get style;
-  external void set style (JsObject a_style);
+  external dynamic get style;
+  external void set style (dynamic a_style);
   /**
    * The text itself. A subset of HTML is supported.
    */
@@ -43579,8 +43579,8 @@ class YAxis extends Axis {
 
       }</pre>
    */
-  external JsObject get dateTimeLabelFormats;
-  external void set dateTimeLabelFormats (JsObject a_dateTimeLabelFormats);
+  external dynamic get dateTimeLabelFormats;
+  external void set dateTimeLabelFormats (dynamic a_dateTimeLabelFormats);
   /**
    * Whether to force the axis to end on a tick. Use this option with the <code>maxPadding</code> option to control the axis end.
    */
@@ -43792,13 +43792,13 @@ class YAxis extends Axis {
   /**
    * An array of objects defining plot bands on the Y axis.
    */
-  external List<JsObject> get plotBands;
-  external void set plotBands (List<JsObject> a_plotBands);
+  external List<dynamic> get plotBands;
+  external void set plotBands (List<dynamic> a_plotBands);
   /**
    * An array of objects representing plot lines on the X axis
    */
-  external List<JsObject> get plotLines;
-  external void set plotLines (List<JsObject> a_plotLines);
+  external List<dynamic> get plotLines;
+  external void set plotLines (List<dynamic> a_plotLines);
   /**
    * Whether to reverse the axis so that the highest number is closest to the origin. If the chart is inverted, the x axis is reversed by default.
    */
@@ -44222,8 +44222,8 @@ class YAxisPlotBands {
   /**
    * An object defining mouse events for the plot band. Supported properties are <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mousemove</code>.
    */
-  external JsObject get events;
-  external void set events (JsObject a_events);
+  external dynamic get events;
+  external void set events (dynamic a_events);
   /**
    * The start position of the plot band in axis units.
    */
@@ -44282,8 +44282,8 @@ class YAxisPlotBandsLabel {
   /**
    * CSS styles for the text label.
    */
-  external JsObject get style;
-  external void set style (JsObject a_style);
+  external dynamic get style;
+  external void set style (dynamic a_style);
   /**
    * The string text itself. A subset of HTML is supported.
    */
@@ -44332,8 +44332,8 @@ class YAxisPlotLines {
   /**
    * An object defining mouse events for the plot line. Supported properties are <code>click</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mousemove</code>.
    */
-  external JsObject get events;
-  external void set events (JsObject a_events);
+  external dynamic get events;
+  external void set events (dynamic a_events);
   /**
    * An id used for identifying the plot line in Axis.removePlotLine.
    */
@@ -44377,8 +44377,8 @@ class YAxisPlotLinesLabel {
   /**
    * CSS styles for the text label.
    */
-  external JsObject get style;
-  external void set style (JsObject a_style);
+  external dynamic get style;
+  external void set style (dynamic a_style);
   /**
    * The text itself. A subset of HTML is supported.
    */

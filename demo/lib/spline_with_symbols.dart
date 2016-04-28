@@ -52,12 +52,9 @@ void spline_with_symbols (_) {
           new LineSeriesMarker()
             ..symbol = 'square'
         )
-        ..data = [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, new JsObject.jsify ({
-          'y': 26.5,
-          'marker': {
-            'symbol': 'url(https://www.highcharts.com/samples/graphics/sun.png)'
-          }
-        }), 23.3, 18.3, 13.9, 9.6]
+        ..data = [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
+                    new DataItem (y:26.5, marker: new Marker()..symbol = 'url(https://www.highcharts.com/samples/graphics/sun.png)'),
+                    23.3, 18.3, 13.9, 9.6]
     ]
   ;
   HighchartsChart chart = new HighchartsChart(chartOptions);

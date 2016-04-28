@@ -34,6 +34,10 @@ List menu = [
   {
     'title': 'X Date Format',
     'example': x_date_format
+  },
+  {
+    'title': 'Basic Area',
+    'example': basic_area
   }
 ];
 
