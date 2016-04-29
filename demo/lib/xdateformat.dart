@@ -24,7 +24,8 @@ void x_date_format (_) {
           ..series = (
             new PlotOptionsSeries()
               ..pointStart = dateUTC(2012, 0, 1)
-              ..pointInterval = 24 * 3600 * 1000
+              ..pointInterval = 1
+              ..pointIntervalUnit = "month"
           )
     )
     ..series = [
@@ -36,4 +37,5 @@ void x_date_format (_) {
   ;
 
   HighchartsChart chart = new HighchartsChart(chartOptions);
+  consoleDebug(chartOptions);
 }
