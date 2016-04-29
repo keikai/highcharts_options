@@ -45,7 +45,7 @@ void basic_area (_) {
       new PlotOptions()
         ..area = (
           new PlotOptionsArea()
-            ..pointStart = 1940
+            ..pointStart = 1940   // TODO: What if this point is a date? Change this num to dynamic in apigen
             ..marker = (
               new PlotOptionsAreaMarker()
                 ..enabled = false
