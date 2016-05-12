@@ -417,6 +417,13 @@ class OptionsObject {
 @JS()
 @anonymous
 class Axis {
+  external factory Axis();
+  external dynamic addPlotBand(dynamic options);
+  external dynamic addPlotLine(dynamic options);
+  external void removePlotBand(String id);
+  external void removePlotLine(String id);
+  external num toPixels(num value, [bool paneCoordinates]);
+  external num toValue(num pixel, [bool paneCoordinates]);
 }
 
 @JS()
@@ -1460,6 +1467,11 @@ class Exporting {
   external dynamic get formAttributes;
   external void set formAttributes (dynamic a_formAttributes);
   /**
+   * When printing the chart from the menu item in the burger menu, if the on-screen chart exceeds this width, it is resized. After printing or cancelled, it is restored. The default width makes the chart fit into typical paper format. Note that this does not affect the chart when printing the web page as a whole.
+   */
+  external num get printMaxWidth;
+  external void set printMaxWidth (num a_printMaxWidth);
+  /**
    * Defines the scale or zoom factor for the exported image compared to the on-screen display. While for instance a 600px wide chart may look good on a website, it will look bad in print. The default scale of 2 makes this chart export to a 1200px PNG or JPG.
    */
   external num get scale;
@@ -1480,7 +1492,7 @@ class Exporting {
   external String get type;
   external void set type (String a_type);
   /**
-   * The URL for the server module converting the SVG string to an image format. By default this points to Highslide Software's free web service.
+   * The URL for the server module converting the SVG string to an image format. By default this points to Highchart's free web service.
    */
   external String get url;
   external void set url (String a_url);
@@ -42806,6 +42818,11 @@ class Title {
    */
   external String get verticalAlign;
   external void set verticalAlign (String a_verticalAlign);
+  /**
+   * Adjustment made to the title width, normally to reserve space for the exporting burger menu.
+   */
+  external num get widthAdjust;
+  external void set widthAdjust (num a_widthAdjust);
   /**
    * The x position of the title relative to the alignment within chart.spacingLeft and chart.spacingRight.
    */
