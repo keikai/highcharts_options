@@ -1,18 +1,8 @@
-Highcharts for Dart
--------------------
-Highcharts API wrapped via JS interop (js package).
+part of highcharts_options.samples;
 
-How does it work?
------------------
-First of all, add the dependency to your **pubspec.yaml**: 
-```
-dependencies: 
-  highcharts: any
-```
-
-Create the chart options object to be used by the polymer or the angular component: 
-```
-ChartOptions chartOptions = new ChartOptions ()
+void basicLine (_) {
+  clearOutput();
+  ChartOptions chartOptions = new ChartOptions ()
     ..chart = (
         new Chart()
           ..renderTo = "output"
@@ -67,9 +57,4 @@ ChartOptions chartOptions = new ChartOptions ()
         ..data = [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8],
     ];
   HighchartsChart chart = new HighchartsChart(chartOptions);
-```
-
-Disclaimer
-----------
-*This is just a work in progress. This is just a piece of software to help people use Highcharts in their Dart projects, but the author is not part of the Highcharts team. *
-*Keep in mind that if you want to use Highcharts in commercial applications, you will have to acquire a developer licence* 
+}
