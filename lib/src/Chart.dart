@@ -1,59 +1,9 @@
-library highcharts;
+part of highcharts;
 
-import 'package:uuid/uuid.dart';
-import 'dart:js';
-import 'package:js/js.dart';
-import 'dart:html';
-
-part 'src/Chart.dart';
-part 'src/Credits.dart';
-part 'src/Data.dart';
-part 'src/Drilldown.dart';
-part 'src/Exporting.dart';
-part 'src/Labels.dart';
-part 'src/Legend.dart';
-part 'src/Loading.dart';
-part 'src/Navigation.dart';
-part 'src/NoData.dart';
-part 'src/Pane.dart';
-part 'src/PlotOptions.dart';
-part 'src/Series.dart';
-part 'src/AreaSeries.dart';
-part 'src/ArearangeSeries.dart';
-part 'src/AreasplineSeries.dart';
-part 'src/AreasplinerangeSeries.dart';
-part 'src/BarSeries.dart';
-part 'src/BoxplotSeries.dart';
-part 'src/BubbleSeries.dart';
-part 'src/ColumnSeries.dart';
-part 'src/ColumnrangeSeries.dart';
-part 'src/ErrorbarSeries.dart';
-part 'src/FunnelSeries.dart';
-part 'src/GaugeSeries.dart';
-part 'src/HeatmapSeries.dart';
-part 'src/LineSeries.dart';
-part 'src/PieSeries.dart';
-part 'src/PolygonSeries.dart';
-part 'src/PyramidSeries.dart';
-part 'src/ScatterSeries.dart';
-part 'src/SolidgaugeSeries.dart';
-part 'src/SplineSeries.dart';
-part 'src/TreemapSeries.dart';
-part 'src/WaterfallSeries.dart';
-part 'src/Subtitle.dart';
-part 'src/Title.dart';
-part 'src/Tooltip.dart';
-part 'src/XAxis.dart';
-part 'src/YAxis.dart';
-
-@JS('Date.UTC')
-external DateTime dateUTC (year, month, day);
-
-@JS('Highcharts.Chart')
-class HighchartsChart {
-  external HighchartsChart (ChartOptions options);
-  external List<Series> get series;
-  external List<Axis> get axes;
+@JS()
+@anonymous
+class Chart {
+  external factory Chart ();
   /** 
    * When using multiple axis, the ticks of two or more opposite axes will  automatically be aligned by adding ticks to the axis or axes with the least ticks. This can be prevented by setting <code>alignTicks</code> to false. If the grid lines look messy, it's a good idea to hide them for the secondary axis by setting <code>gridLineWidth</code> to 0. 
    */
@@ -392,109 +342,221 @@ redraw: Boolean<br>Whether to redraw the chart. Defaults to true.
   */
   external void updatePosition ();
 }
-
 @JS()
 @anonymous
-class OptionsObject {
-  static Uuid uidGen = new Uuid();
-  JsObject jsChart;
-}
+class ChartEvents {
+  external factory ChartEvents ();
+  /** 
+   * Fires when a series is added to the chart after load time, using the <code>addSeries</code> method. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts. Through <code>event.options</code> you can access the series options that was passed to the <code>addSeries</code>  method. Returning false prevents the series from being added. 
+   */
+  external Function get addSeries;
+  external void set addSeries (Function a_addSeries);
+  /** 
+   * Fires after a chart is printed through the context menu item or the <code>Chart.print</code> method. Requires the exporting module. 
+   */
+  external Function get afterPrint;
+  external void set afterPrint (Function a_afterPrint);
+  /** 
+   * Fires before a chart is printed through the context menu item or the <code>Chart.print</code> method. Requires the exporting module. 
+   */
+  external Function get beforePrint;
+  external void set beforePrint (Function a_beforePrint);
+  /** 
+   * <p>Fires when clicking on the plot background. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.</p> <p>Information on the clicked spot can be found through <code>event.xAxis</code> and  <code>event.yAxis</code>, which are arrays containing the axes of each dimension and each axis' value at the clicked spot. The primary axes are <code>event.xAxis[0]</code> and <code>event.yAxis[0]</code>. Remember the unit of a datetime axis is milliseconds since 1970-01-01 00:00:00.</p>
+<pre>click: function(e) {
+	console.log(
+		Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', e.xAxis[0].value), 
+		e.yAxis[0].value
+	)
+}</pre> 
+   */
+  external Function get click;
+  external void set click (Function a_click);
+  /** 
+   * <p>Fires when a drilldown point is clicked, before the new series is added. Event arguments:</p>
 
+<dl>
+
+  <dt><code>category</code></dt>
+  <dd>If a category label was clicked, which index.</dd>
+
+  <dt><code>point</code></dt>
+  <dd>The originating point.</dd>
+
+  <dt><code>originalEvent</code></dt>
+  <dd>The original browser event (usually click) that triggered the drilldown.</dd>
+
+  <dt><code>points</code></dt>
+  <dd>If a category label was clicked, this array holds all points corresponing to the category.</dd>
+
+  <dt><code>seriesOptions</code></dt>
+  <dd>Options for the new series</dd>
+
+</dl>
+<p>This event is also utilized for async drilldown, where the seriesOptions are not added by option, but rather loaded async.</p> 
+   */
+  external Function get drilldown;
+  external void set drilldown (Function a_drilldown);
+  /** 
+   * Fires when drilling up from a drilldown series. 
+   */
+  external Function get drillup;
+  external void set drillup (Function a_drillup);
+  /** 
+   * In a chart with multiple drilldown series, this event fires after all the series have been drilled up. 
+   */
+  external Function get drillupall;
+  external void set drillupall (Function a_drillupall);
+  /** 
+   * <p>Fires when the chart is finished loading. Since v4.2.2, it also waits for images to be loaded, for example from point markers. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts.</p>
+
+<p>There is also a second parameter to the chart constructor where a callback function can be passed to be executed on chart.load.</p> 
+   */
+  external Function get load;
+  external void set load (Function a_load);
+  /** 
+   * Fires when the chart is redrawn, either after a call to chart.redraw() or after an axis, series or point is modified with the <code>redraw</code> option set to true. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts. 
+   */
+  external Function get redraw;
+  external void set redraw (Function a_redraw);
+  /** 
+   * <p>Fires when an area of the chart has been selected. Selection is enabled by setting the chart's zoomType. One parameter, <code>event</code>, is passed to the function. This contains common event information based on jQuery or MooTools depending on  which library is used as the base for Highcharts. The default action for the  selection event is to zoom the  chart to the selected area. It can be prevented by calling  <code>event.preventDefault()</code>.</p> <p>Information on the selected area can be found through <code>event.xAxis</code> and  <code>event.yAxis</code>, which are arrays containing the axes of each dimension and each axis' min and max values. The primary axes are <code>event.xAxis[0]</code> and <code>event.yAxis[0]</code>. Remember the unit of a datetime axis is milliseconds since 1970-01-01 00:00:00.</p> 
+<pre>selection: function(event) {
+	// log the min and max of the primary, datetime x-axis
+	console.log(
+		Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].min),
+		Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', event.xAxis[0].max)
+	);
+	// log the min and max of the y axis
+	console.log(event.yAxis[0].min, event.yAxis[0].max);
+}</pre> 
+   */
+  external Function get selection;
+  external void set selection (Function a_selection);
+}
 @JS()
 @anonymous
-class Axis {
+class ChartOptions3d {
+  external factory ChartOptions3d ();
+  /** 
+   * One of the two rotation angles for the chart. 
+   */
+  external num get alpha;
+  external void set alpha (num a_alpha);
+  /** 
+   * One of the two rotation angles for the chart. 
+   */
+  external num get beta;
+  external void set beta (num a_beta);
+  /** 
+   * The total depth of the chart. 
+   */
+  external num get depth;
+  external void set depth (num a_depth);
+  /** 
+   * Wether to render the chart using the 3D functionality. 
+   */
+  external bool get enabled;
+  external void set enabled (bool a_enabled);
+  /** 
+   * Whether the 3d box should automatically adjust to the chart plot area. 
+   */
+  external bool get fitToPlot;
+  external void set fitToPlot (bool a_fitToPlot);
+  /** 
+   * Provides the option to draw a frame around the charts by defining a bottom, front and back panel.  
+   */
+  external ChartOptions3dFrame get frame;
+  external void set frame (ChartOptions3dFrame a_frame);
+  /** 
+   * Defines the distance the viewer is standing in front of the chart, this setting is important to calculate the perspective effect in column and scatter charts.
+It is not used for 3D pie charts. 
+   */
+  external num get viewDistance;
+  external void set viewDistance (num a_viewDistance);
 }
-
 @JS()
 @anonymous
-class ChartOptions {
-  external factory ChartOptions ();
-  
-  external Chart get chart;
-  external void set chart (Chart a_chart);
-  
-  external List<String> get colors;
-  external void set colors (List<String> a_colors);
-  
-  external Credits get credits;
-  external void set credits (Credits a_credits);
-  
-  external Data get data;
-  external void set data (Data a_data);
-  
-  external Drilldown get drilldown;
-  external void set drilldown (Drilldown a_drilldown);
-  
-  external Exporting get exporting;
-  external void set exporting (Exporting a_exporting);
-  
-  external Labels get labels;
-  external void set labels (Labels a_labels);
-  
-  external Legend get legend;
-  external void set legend (Legend a_legend);
-  
-  external Loading get loading;
-  external void set loading (Loading a_loading);
-  
-  external Navigation get navigation;
-  external void set navigation (Navigation a_navigation);
-  
-  external NoData get noData;
-  external void set noData (NoData a_noData);
-  
-  external Pane get pane;
-  external void set pane (Pane a_pane);
-  
-  external PlotOptions get plotOptions;
-  external void set plotOptions (PlotOptions a_plotOptions);
-  
-  external List<Series> get series;
-  external void set series (List<Series> a_series);
-  
-  external Subtitle get subtitle;
-  external void set subtitle (Subtitle a_subtitle);
-  
-  external Title get title;
-  external void set title (Title a_title);
-  
-  external Tooltip get tooltip;
-  external void set tooltip (Tooltip a_tooltip);
-  
-  external XAxis get xAxis;
-  external void set xAxis (XAxis a_xAxis);
-  
-  external YAxis get yAxis;
-  external void set yAxis (YAxis a_yAxis);
-  
+class ChartOptions3dFrame {
+  external factory ChartOptions3dFrame ();
+  /** 
+   * Defines the back panel of the frame around 3D charts. 
+   */
+  external dynamic get back;
+  external void set back (dynamic a_back);
+  /** 
+   * The bottom of the frame around a 3D chart. 
+   */
+  external dynamic get bottom;
+  external void set bottom (dynamic a_bottom);
+  /** 
+   * The side for the frame around a 3D chart. 
+   */
+  external dynamic get side;
+  external void set side (dynamic a_side);
 }
-
 @JS()
 @anonymous
-class DateTimeLabelFormats {
-  external factory DateTimeLabelFormats();
-  external String get millisecond;
-  external void set millisecond(String a_milliseconds);
-  
-  external String get second;
-  external void set second(String a_seconds);
-  
-  external String get minute;
-  external void set minute(String a_minute);
-  
-  external String get hour;
-  external void set hour(String a_hour);
-  
-  external String get day;
-  external void set day(String a_day);
-  
-  external String get week;
-  external void set week(String a_week);
-  
-  external String get month;
-  external void set month(String a_month);
-  
-  external String get year;
-  external void set year(String a_year);
+class ChartOptions3dFrameBack {
+  external factory ChartOptions3dFrameBack ();
+  /** 
+   * The color of the panel. 
+   */
+  external dynamic get color;
+  external void set color (dynamic a_color);
+  /** 
+   * Thickness of the panel. 
+   */
+  external num get size;
+  external void set size (num a_size);
 }
-
+@JS()
+@anonymous
+class ChartOptions3dFrameBottom {
+  external factory ChartOptions3dFrameBottom ();
+  /** 
+   * The color of the panel. 
+   */
+  external dynamic get color;
+  external void set color (dynamic a_color);
+  /** 
+   * The thickness of the panel. 
+   */
+  external num get size;
+  external void set size (num a_size);
+}
+@JS()
+@anonymous
+class ChartOptions3dFrameSide {
+  external factory ChartOptions3dFrameSide ();
+  /** 
+   * The color of the panel. 
+   */
+  external dynamic get color;
+  external void set color (dynamic a_color);
+  /** 
+   * The thickness of the panel. 
+   */
+  external num get size;
+  external void set size (num a_size);
+}
+@JS()
+@anonymous
+class ChartResetZoomButton {
+  external factory ChartResetZoomButton ();
+  /** 
+   * The position of the button. This is an object that can hold the properties <code>align</code>, <code>verticalAlign</code>, <code>x</code> and <code>y</code>. 
+   */
+  external dynamic get position;
+  external void set position (dynamic a_position);
+  /** 
+   * What frame the button should be placed related to. Can be either "plot" or "chart". 
+   */
+  external String get relativeTo;
+  external void set relativeTo (String a_relativeTo);
+  /** 
+   * A collection of attributes for the button. The object takes SVG attributes like  <code>fill</code>, <code>stroke</code>, <code>stroke-width</code> or <code>r</code>, the border radius. The theme also supports <code>style</code>, a collection of CSS properties for the text. Equivalent attributes for the hover state are given in <code>theme.states.hover</code>. 
+   */
+  external dynamic get theme;
+  external void set theme (dynamic a_theme);
+}
