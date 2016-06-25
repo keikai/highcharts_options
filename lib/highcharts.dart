@@ -5,49 +5,46 @@ import 'dart:js';
 import 'package:js/js.dart';
 import 'dart:html';
 
-part 'src/Chart.dart';
-part 'src/Credits.dart';
-part 'src/Data.dart';
-part 'src/Drilldown.dart';
-part 'src/Exporting.dart';
-part 'src/Labels.dart';
-part 'src/Legend.dart';
-part 'src/Loading.dart';
-part 'src/Navigation.dart';
-part 'src/NoData.dart';
-part 'src/Pane.dart';
-part 'src/PlotOptions.dart';
-part 'src/Series.dart';
-part 'src/AreaSeries.dart';
-part 'src/ArearangeSeries.dart';
-part 'src/AreasplineSeries.dart';
-part 'src/AreasplinerangeSeries.dart';
-part 'src/BarSeries.dart';
-part 'src/BoxplotSeries.dart';
-part 'src/BubbleSeries.dart';
-part 'src/ColumnSeries.dart';
-part 'src/ColumnrangeSeries.dart';
-part 'src/ErrorbarSeries.dart';
-part 'src/FunnelSeries.dart';
-part 'src/GaugeSeries.dart';
-part 'src/HeatmapSeries.dart';
-part 'src/LineSeries.dart';
-part 'src/PieSeries.dart';
-part 'src/PolygonSeries.dart';
-part 'src/PyramidSeries.dart';
-part 'src/ScatterSeries.dart';
-part 'src/SolidgaugeSeries.dart';
-part 'src/SplineSeries.dart';
-part 'src/TreemapSeries.dart';
-part 'src/WaterfallSeries.dart';
-part 'src/Subtitle.dart';
-part 'src/Title.dart';
-part 'src/Tooltip.dart';
-part 'src/XAxis.dart';
-part 'src/YAxis.dart';
-
-@JS('Date.UTC')
-external DateTime dateUTC (year, month, day);
+part 'src/chart.dart';
+part 'src/credits.dart';
+part 'src/data.dart';
+part 'src/drilldown.dart';
+part 'src/exporting.dart';
+part 'src/labels.dart';
+part 'src/legend.dart';
+part 'src/loading.dart';
+part 'src/navigation.dart';
+part 'src/no_data.dart';
+part 'src/pane.dart';
+part 'src/plot_options.dart';
+part 'src/series.dart';
+part 'src/area_series.dart';
+part 'src/arearange_series.dart';
+part 'src/areaspline_series.dart';
+part 'src/areasplinerange_series.dart';
+part 'src/bar_series.dart';
+part 'src/boxplot_series.dart';
+part 'src/bubble_series.dart';
+part 'src/column_series.dart';
+part 'src/columnrange_series.dart';
+part 'src/errorbar_series.dart';
+part 'src/funnel_series.dart';
+part 'src/gauge_series.dart';
+part 'src/heatmap_series.dart';
+part 'src/line_series.dart';
+part 'src/pie_series.dart';
+part 'src/polygon_series.dart';
+part 'src/pyramid_series.dart';
+part 'src/scatter_series.dart';
+part 'src/solidgauge_series.dart';
+part 'src/spline_series.dart';
+part 'src/treemap_series.dart';
+part 'src/waterfall_series.dart';
+part 'src/subtitle.dart';
+part 'src/title.dart';
+part 'src/tooltip.dart';
+part 'src/xaxis.dart';
+part 'src/yaxis.dart';
 
 @JS('Highcharts.Chart')
 class HighchartsChart {
@@ -393,6 +390,10 @@ redraw: Boolean<br>Whether to redraw the chart. Defaults to true.
   external void updatePosition ();
 }
 
+
+@JS('Date.UTC')
+external DateTime dateUTC (year, month, day);
+
 @JS()
 @anonymous
 class OptionsObject {
@@ -409,64 +410,64 @@ class Axis {
 @anonymous
 class ChartOptions {
   external factory ChartOptions ();
-  
+
   external Chart get chart;
   external void set chart (Chart a_chart);
-  
+
   external List<String> get colors;
   external void set colors (List<String> a_colors);
-  
+
   external Credits get credits;
   external void set credits (Credits a_credits);
-  
+
   external Data get data;
   external void set data (Data a_data);
-  
+
   external Drilldown get drilldown;
   external void set drilldown (Drilldown a_drilldown);
-  
+
   external Exporting get exporting;
   external void set exporting (Exporting a_exporting);
-  
+
   external Labels get labels;
   external void set labels (Labels a_labels);
-  
+
   external Legend get legend;
   external void set legend (Legend a_legend);
-  
+
   external Loading get loading;
   external void set loading (Loading a_loading);
-  
+
   external Navigation get navigation;
   external void set navigation (Navigation a_navigation);
-  
+
   external NoData get noData;
   external void set noData (NoData a_noData);
-  
+
   external Pane get pane;
   external void set pane (Pane a_pane);
-  
+
   external PlotOptions get plotOptions;
   external void set plotOptions (PlotOptions a_plotOptions);
-  
+
   external List<Series> get series;
   external void set series (List<Series> a_series);
-  
+
   external Subtitle get subtitle;
   external void set subtitle (Subtitle a_subtitle);
-  
+
   external Title get title;
   external void set title (Title a_title);
-  
+
   external Tooltip get tooltip;
   external void set tooltip (Tooltip a_tooltip);
-  
+
   external XAxis get xAxis;
   external void set xAxis (XAxis a_xAxis);
-  
+
   external YAxis get yAxis;
   external void set yAxis (YAxis a_yAxis);
-  
+
 }
 
 @JS()
@@ -475,25 +476,25 @@ class DateTimeLabelFormats {
   external factory DateTimeLabelFormats();
   external String get millisecond;
   external void set millisecond(String a_milliseconds);
-  
+
   external String get second;
   external void set second(String a_seconds);
-  
+
   external String get minute;
   external void set minute(String a_minute);
-  
+
   external String get hour;
   external void set hour(String a_hour);
-  
+
   external String get day;
   external void set day(String a_day);
-  
+
   external String get week;
   external void set week(String a_week);
-  
+
   external String get month;
   external void set month(String a_month);
-  
+
   external String get year;
   external void set year(String a_year);
 }
