@@ -45,7 +45,6 @@ part 'src/title.dart';
 part 'src/tooltip.dart';
 part 'src/xaxis.dart';
 part 'src/yaxis.dart';
-
 @JS('Highcharts.Chart')
 class HighchartsChart {
   external HighchartsChart (ChartOptions options);
@@ -404,6 +403,13 @@ class OptionsObject {
 @JS()
 @anonymous
 class Axis {
+  external factory Axis();
+  external dynamic addPlotBand(dynamic options);
+  external dynamic addPlotLine(dynamic options);
+  external void removePlotBand(String id);
+  external void removePlotLine(String id);
+  external num toPixels(num value, [bool paneCoordinates]);
+  external num toValue(num pixel, [bool paneCoordinates]);
 }
 
 @JS()

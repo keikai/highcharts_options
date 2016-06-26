@@ -38,6 +38,10 @@ List menu = [
   {
     'title': 'Basic Area',
     'example': basic_area
+  },
+  {
+    'title': 'Area with negative values',
+    'example': area_with_negative_values
   }
 ];
 

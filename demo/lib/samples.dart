@@ -15,6 +15,7 @@ part 'spline_with_symbols.dart';
 part 'time_data_with_irregular_intervals.dart';
 part 'xdateformat.dart';
 part 'basic_area.dart';
+part 'area_with_negative_values.dart';
 
 // TODO: Should this JS classes be in the highcharts api ???
 @JS()
