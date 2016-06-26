@@ -42,6 +42,10 @@ List menu = [
   {
     'title': 'Area with negative values',
     'example': area_with_negative_values
+  },
+  {
+    'title': 'Stacked Area',
+    'example': stacked_area
   }
 ];
 
