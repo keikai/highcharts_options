@@ -1,3 +1,4 @@
+@JS()
 library highcharts;
 
 import 'package:uuid/uuid.dart';
@@ -135,17 +136,20 @@ class HighchartsChart {
   external List get margin;
   external void set margin (List a_margin);
   /** 
-   * The margin between the bottom outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingBottom</code>. 
+   * The margin between the bottom outer edge of the chart and the plot area. Use this to set a fixed
+ pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingBottom</code>. 
    */
   external num get marginBottom;
   external void set marginBottom (num a_marginBottom);
   /** 
-   * The margin between the left outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingLeft</code>. 
+   * The margin between the left outer edge of the chart and the plot area. Use this to set a fixed
+ pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingLeft</code>. 
    */
   external num get marginLeft;
   external void set marginLeft (num a_marginLeft);
   /** 
-   * The margin between the right outer edge of the chart and the plot area. Use this to set a fixed pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingRight</code>. 
+   * The margin between the right outer edge of the chart and the plot area. Use this to set a fixed
+ pixel value for the margin as opposed to the default dynamic margin. See also <code>spacingRight</code>. 
    */
   external num get marginRight;
   external void set marginRight (num a_marginRight);
@@ -225,7 +229,8 @@ class HighchartsChart {
   external dynamic get selectionMarkerFill;
   external void set selectionMarkerFill (dynamic a_selectionMarkerFill);
   /** 
-   * Whether to apply a drop shadow to the outer chart area. Requires that  backgroundColor be set. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>. 
+   * Whether to apply a drop shadow to the outer chart area. Requires that 
+ backgroundColor be set. Since 2.3 the shadow can be an object configuration containing <code>color</code>, <code>offsetX</code>, <code>offsetY</code>, <code>opacity</code> and <code>width</code>. 
    */
   external dynamic get shadow;
   external void set shadow (dynamic a_shadow);
@@ -240,17 +245,20 @@ class HighchartsChart {
   external List<num> get spacing;
   external void set spacing (List<num> a_spacing);
   /** 
-   * <p>The space between the bottom edge of the chart and the content (plot area, axis title and labels, title, subtitle or  legend in top position).</p> 
+   * <p>The space between the bottom edge of the chart and the content (plot area, axis title and labels, title, subtitle or 
+ legend in top position).</p> 
    */
   external num get spacingBottom;
   external void set spacingBottom (num a_spacingBottom);
   /** 
-   * <p>The space between the left edge of the chart and the content (plot area, axis title and labels, title, subtitle or  legend in top position).</p> 
+   * <p>The space between the left edge of the chart and the content (plot area, axis title and labels, title, subtitle or 
+ legend in top position).</p> 
    */
   external num get spacingLeft;
   external void set spacingLeft (num a_spacingLeft);
   /** 
-   * <p>The space between the right edge of the chart and the content (plot area, axis title and labels, title, subtitle or  legend in top position).</p> 
+   * <p>The space between the right edge of the chart and the content (plot area, axis title and labels, title, subtitle or 
+ legend in top position).</p> 
    */
   external num get spacingRight;
   external void set spacingRight (num a_spacingRight);

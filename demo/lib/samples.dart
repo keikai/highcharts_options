@@ -1,3 +1,4 @@
+@JS()
 library highcharts_options.samples;
 
 import 'dart:js';
