@@ -1,5 +1,5 @@
 name: highcharts
-version: 0.5.1
+version: 0.5.2
 author: Gonzalo Pezzi <gonzalopezzi@gmail.com>
 description: Highcharts API wrapped via JS interop (js package).
 homepage: https://github.com/gonzalopezzi
