@@ -2,10 +2,12 @@ part of highcharts;
 
 @JS()
 @anonymous
-class XAxis {
+class XAxis extends Axis {
   external factory XAxis ();
   /** 
-   * Whether to allow decimals in this axis' ticks. When counting integers, like persons or hits on a web page, decimals must be avoided in the axis tick labels. 
+   * Whether to allow decimals in this axis' ticks. When counting integers, like
+ persons or hits on a web page, decimals must be avoided in the axis tick
+ labels. 
    */
   external bool get allowDecimals;
   external void set allowDecimals (bool a_allowDecimals);
@@ -294,7 +296,9 @@ Defaults to:
   external num get tickLength;
   external void set tickLength (num a_tickLength);
   /** 
-   * If tickInterval is <code>null</code> this option sets the approximate pixel interval of the tick marks. Not applicable to categorized axis. Defaults to <code>72</code>  for the Y axis and <code>100</code> for	the X axis. 
+   * If tickInterval is <code>null</code> this option sets the approximate pixel interval of the
+ tick marks. Not applicable to categorized axis. Defaults to <code>72</code> 
+ for the Y axis and <code>100</code> for	the X axis. 
    */
   external num get tickPixelInterval;
   external void set tickPixelInterval (num a_tickPixelInterval);
@@ -491,7 +495,10 @@ class XAxisLabels {
   external String get format;
   external void set format (String a_format);
   /** 
-   * Callback JavaScript function to format the label. The value is  given by <code>this.value</code>. Additional properties for <code>this</code> are <code>axis</code>, <code>chart</code>, <code>isFirst</code> and <code>isLast</code>. Defaults to: 
+   * Callback JavaScript function to format the label. The value is 
+ given by <code>this.value</code>. Additional properties for <code>this</code> are
+ <code>axis</code>, <code>chart</code>, <code>isFirst</code> and <code>isLast</code>.
+ Defaults to: 
 <pre>function() {
 	return this.value;
 }</pre> 

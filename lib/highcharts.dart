@@ -1,6 +1,5 @@
 @JS()
 library highcharts;
-
 import 'package:uuid/uuid.dart';
 import 'dart:js';
 import 'package:js/js.dart';
@@ -395,6 +394,10 @@ redraw: Boolean<br>Whether to redraw the chart. Defaults to true.
   * 
   */
   external void updatePosition ();
+
+  external List<XAxis> get xAxis;
+
+  external List<YAxis> get yAxis;
 }
 
 
@@ -418,6 +421,10 @@ class Axis {
   external void removePlotLine(String id);
   external num toPixels(num value, [bool paneCoordinates]);
   external num toValue(num pixel, [bool paneCoordinates]);
+
+  // Extend the Axis.prototype for dynamic methods
+  external void setCategories(List categories, [bool redraw]);
+  external void setTitle(Title titleOptions, [bool redraw]);
 }
 
 @JS()

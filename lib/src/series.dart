@@ -85,7 +85,9 @@ Example:
   external String get stack;
   external void set stack (String a_stack);
   /** 
-   * The type of series. Can be one of <code>area</code>, <code>areaspline</code>, <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>, <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component. 
+   * The type of series. Can be one of <code>area</code>, <code>areaspline</code>,
+ <code>bar</code>, <code>column</code>, <code>line</code>, <code>pie</code>,
+ <code>scatter</code> or <code>spline</code>. From version 2.3, <code>arearange</code>, <code>areasplinerange</code> and <code>columnrange</code> are supported with the highcharts-more.js component. 
    */
   external String get type;
   external void set type (String a_type);
@@ -109,7 +111,7 @@ Example:
 redraw: Boolean<br>Defaults to <code>true</code>. Whether to redraw the chart after the point is added. When adding more than one point, it is highly recommended that the <code>redraw</code> option be set to false, and instead <code>chart.redraw()</code> is explicitly called after the adding of points is finished.||
 shift: Boolean<br>Defaults to <code>false</code>. When shift is true, one point is shifted off the start of the series as one is appended to the end. Use this option for live charts monitoring a value over time.||animation: Mixed<br>Defaults to true. When true, the graph will be animated with default animation options. The animation can also be a configuration object with properties <code>duration</code> and <code>easing</code>.
   */
-  external void addPoint ( dynamic options, bool redraw, bool shift, dynamic animation);
+  external void addPoint ( dynamic options, [bool redraw, bool shift, dynamic animation]);
   /** 
   * null
   */
@@ -139,11 +141,11 @@ animation: Mixed<br>When the updated data is the same length as the existing dat
 
 updatePoints: Boolean<br>When the updated data is the same length as the existing data, points will be updated instead of replace. This option prevents this, and makes setData behave like it did prior to Highcharts 3.0.10.
   */
-  external void setData ( dynamic data, bool redraw, dynamic animation, bool updatePoints);
+  external void setData ( dynamic data, [bool redraw, dynamic animation, bool updatePoints]);
   /** 
   * visible: Boolean<br>Whether to show or hide the series. If undefined, the visibility is toggled.||redraw: Boolean<br>Defaults to <code>true</code>. Whether to redraw the chart after the series is altered.If doing more operations on the chart, it is a good idea to set redraw to false and call <code>chart.redraw()</code> after.
   */
-  external void setVisible ( bool visible, bool redraw);
+  external void setVisible ( bool visible, [bool redraw]);
   /** 
   * null
   */
@@ -157,7 +159,7 @@ New options that will be merged into the series' existing options.
 redraw: Boolean<br>
 Defaults to <code>true</code>. Whether to redraw the chart after the series is altered. If doing more operations on the chart, it is a good idea to set redraw to false and call <code>chart.redraw()</code> after.
   */
-  external void update ( dynamic options, bool redraw);
+  external void update ( dynamic options, [bool redraw]);
 }
 @JS()
 @anonymous
