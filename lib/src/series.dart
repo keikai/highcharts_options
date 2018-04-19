@@ -164,5 +164,5 @@ Defaults to <code>true</code>. Whether to redraw the chart after the series is a
 @JS()
 @anonymous
 class SeriesData {
-  external factory SeriesData ();
+  external factory SeriesData ({name, y, data});
 }
