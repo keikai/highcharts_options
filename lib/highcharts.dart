@@ -484,10 +484,10 @@ class ChartOptions {
   external void set tooltip (Tooltip a_tooltip);
 
   external XAxis get xAxis;
-  external void set xAxis (XAxis a_xAxis);
+  external void set xAxis (dynamic a_xAxis);
 
   external YAxis get yAxis;
-  external void set yAxis (YAxis a_yAxis);
+  external void set yAxis (dynamic a_yAxis);
 
 }
 
