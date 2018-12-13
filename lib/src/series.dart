@@ -92,8 +92,8 @@ Example:
   external String get type;
   external void set type (String a_type);
 
-  external String get color;
-  external void set color (String a_color);
+  external dynamic get color;
+  external void set color (dynamic a_color);
   /** 
    * When using dual or multiple x axes, this number defines which xAxis the particular series is connected to. It refers to either the <a href="#xAxis.id">axis id</a> or the index of the axis in the xAxis array, with 0 being the first. 
    */

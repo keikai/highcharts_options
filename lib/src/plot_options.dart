@@ -32,13 +32,13 @@ class PlotOptions {
   /** 
    * A box plot is a convenient way of depicting groups of data through their five-number summaries: the smallest observation (sample minimum), lower quartile (Q1), median (Q2), upper quartile (Q3), and largest observation (sample maximum).  
    */
-  external dynamic get boxplot;
-  external void set boxplot (dynamic a_boxplot);
+  external PlotOptionsBoxplot get boxplot;
+  external void set boxplot (PlotOptionsBoxplot a_boxplot);
   /** 
    * A bubble series is a three dimensional series type where each point renders an X, Y and Z value. Each points is drawn as a bubble where the position along the X and Y axes mark the X and Y values, and the size of the bubble relates to the Z value. 
    */
-  external dynamic get bubble;
-  external void set bubble (dynamic a_bubble);
+  external PlotOptionsBubble get bubble;
+  external void set bubble (PlotOptionsBubble a_bubble);
   /** 
    * null 
    */
@@ -47,30 +47,30 @@ class PlotOptions {
   /** 
    * The column range is a cartesian series type with higher and lower Y values along an X axis. Requires <code>highcharts-more.js</code>. To display horizontal bars, set <a href="#chart.inverted">chart.inverted</a> to <code>true</code>. 
    */
-  external dynamic get columnrange;
-  external void set columnrange (dynamic a_columnrange);
+  external PlotOptionsColumnrange get columnrange;
+  external void set columnrange (PlotOptionsColumnrange a_columnrange);
   /** 
    * Error bars are a graphical representation of the variability of data and are used on graphs to indicate the error, or uncertainty in a reported measurement.  
    */
-  external dynamic get errorbar;
-  external void set errorbar (dynamic a_errorbar);
+  external PlotOptionsErrorbar get errorbar;
+  external void set errorbar (PlotOptionsErrorbar a_errorbar);
   /** 
    * Funnel charts are a type of chart often used to visualize stages in a sales project, where the top are the initial stages with the most clients. It requires that the <code>modules/funnel.js</code> file is loaded. 
    */
-  external dynamic get funnel;
-  external void set funnel (dynamic a_funnel);
+  external PlotOptionsFunnel get funnel;
+  external void set funnel (PlotOptionsFunnel a_funnel);
   /** 
    * General plotting options for the gauge series type. Requires <code>highcharts-more.js</code> 
    */
-  external dynamic get gauge;
-  external void set gauge (dynamic a_gauge);
+  external PlotOptionsGauge get gauge;
+  external void set gauge (PlotOptionsGauge a_gauge);
   /** 
    * <p>The heatmap series type. This series type is available both in Highcharts and Highmaps.</p>
 
 <p>The colors of each heat map point is usually determined by its value and controlled by settings on the <a href="#colorAxis">colorAxis</a>.</p> 
    */
-  external dynamic get heatmap;
-  external void set heatmap (dynamic a_heatmap);
+  external PlotOptionsHeatmap get heatmap;
+  external void set heatmap (PlotOptionsHeatmap a_heatmap);
   /** 
    * null 
    */
@@ -84,13 +84,13 @@ class PlotOptions {
   /** 
    * A polygon series can be used to draw any freeform shape in the cartesian coordinate system. A fill is applied with the <code>color</code> option, and stroke is applied through <code>lineWidth</code> and <code>lineColor</code> options. Requires the <code>highcharts-more.js</code> file. 
    */
-  external dynamic get polygon;
-  external void set polygon (dynamic a_polygon);
+  external PlotOptionsPolygon get polygon;
+  external void set polygon (PlotOptionsPolygon a_polygon);
   /** 
    * A pyramid chart consists of a single pyramid with item heights corresponding to each point value. Technically it is the same as a reversed funnel chart without a neck. 
    */
-  external dynamic get pyramid;
-  external void set pyramid (dynamic a_pyramid);
+  external PlotOptionsPyramid get pyramid;
+  external void set pyramid (PlotOptionsPyramid a_pyramid);
   /** 
    * null 
    */
@@ -104,8 +104,8 @@ class PlotOptions {
   /** 
    * A gauge showing values using a filled arc with colors indicating the value. The solid gauge plots values against the <code>yAxis</code>, which is extended with some color options, <a href="#yAxis.minColor">minColor</a>, <a href="#yAxis.maxColor">maxColor</a> and <a href="#yAxis.stops">stops</a>, to control the color of the gauge itself. 
    */
-  external dynamic get solidgauge;
-  external void set solidgauge (dynamic a_solidgauge);
+  external PlotOptionsSolidgauge get solidgauge;
+  external void set solidgauge (PlotOptionsSolidgauge a_solidgauge);
   /** 
    * null 
    */
@@ -115,13 +115,13 @@ class PlotOptions {
    * The size of the point shape is determined by its value relative to its siblings values.
 Requires the module <code>heatmap.js</code> as well, if functionality such as the <a href="http://api.highcharts.com/highmaps#colorAxis">colorAxis</a> is to be used. 
    */
-  external dynamic get treemap;
-  external void set treemap (dynamic a_treemap);
+  external PlotOptionsTreemap get treemap;
+  external void set treemap (PlotOptionsTreemap a_treemap);
   /** 
    * Options for the waterfall series type. 
    */
-  external dynamic get waterfall;
-  external void set waterfall (dynamic a_waterfall);
+  external PlotOptionsWaterfall get waterfall;
+  external void set waterfall (PlotOptionsWaterfall a_waterfall);
 }
 @JS()
 @anonymous
@@ -338,12 +338,18 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external String get step;
   external void set step (String a_step);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
   /** 
-   * The Y axis value to serve as the base for the area, for distinguishing between values above and below a threshold. If <code>null</code>, the area behaves like a line series with fill between the graph and the Y axis minimum. 
+   * The Y axis value to serve as the base for the area, for distinguishing between values above and below a threshold. If <code>null</code>, the area behaves
+ like a line series with fill between the graph and the Y axis minimum. 
    */
   external num get threshold;
   external void set threshold (num a_threshold);
@@ -358,7 +364,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external bool get trackByArea;
   external void set trackByArea (bool a_trackByArea);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -927,7 +936,8 @@ class PlotOptionsAreaTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -1186,7 +1196,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external String get step;
   external void set step (String a_step);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -1201,7 +1216,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external bool get trackByArea;
   external void set trackByArea (bool a_trackByArea);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -1639,7 +1657,8 @@ class PlotOptionsArearangeTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -1915,12 +1934,18 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
   /** 
-   * The Y axis value to serve as the base for the area, for distinguishing between values above and below a threshold. If <code>null</code>, the area behaves like a line series with fill between the graph and the Y axis minimum. 
+   * The Y axis value to serve as the base for the area, for distinguishing between values above and below a threshold. If <code>null</code>, the area behaves
+ like a line series with fill between the graph and the Y axis minimum. 
    */
   external num get threshold;
   external void set threshold (num a_threshold);
@@ -1935,7 +1960,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external bool get trackByArea;
   external void set trackByArea (bool a_trackByArea);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -2504,7 +2532,8 @@ class PlotOptionsAreasplineTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -2758,7 +2787,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -2773,7 +2807,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external bool get trackByArea;
   external void set trackByArea (bool a_trackByArea);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -3211,7 +3248,8 @@ class PlotOptionsAreasplinerangeTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -3325,7 +3363,9 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -3504,7 +3544,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -3519,7 +3564,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -3891,7 +3939,8 @@ class PlotOptionsBarTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -3977,7 +4026,9 @@ class PlotOptionsBoxplot {
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -4159,7 +4210,12 @@ class PlotOptionsBoxplot {
   external num get stemWidth;
   external void set stemWidth (num a_stemWidth);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -4169,7 +4225,10 @@ class PlotOptionsBoxplot {
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -4398,7 +4457,8 @@ class PlotOptionsBoxplotTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -4650,7 +4710,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -5244,7 +5309,8 @@ class PlotOptionsBubbleTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -5358,7 +5424,9 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -5537,7 +5605,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -5552,7 +5625,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -5924,7 +6000,8 @@ class PlotOptionsColumnTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -6038,7 +6115,9 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -6200,7 +6279,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -6210,7 +6294,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -6592,7 +6679,8 @@ class PlotOptionsColumnrangeTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -6678,7 +6766,9 @@ class PlotOptionsErrorbar {
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -6825,7 +6915,12 @@ class PlotOptionsErrorbar {
   external num get stemWidth;
   external void set stemWidth (num a_stemWidth);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -6835,7 +6930,10 @@ class PlotOptionsErrorbar {
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -7064,7 +7162,8 @@ class PlotOptionsErrorbarTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -7262,7 +7361,12 @@ class PlotOptionsFunnel {
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -7725,7 +7829,8 @@ class PlotOptionsFunnelTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -7894,7 +7999,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external bool get showInLegend;
   external void set showInLegend (bool a_showInLegend);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -8291,7 +8401,8 @@ class PlotOptionsGaugeTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -8405,7 +8516,9 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -8500,7 +8613,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -8510,7 +8628,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -8882,7 +9003,8 @@ class PlotOptionsHeatmapTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -9143,7 +9265,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external String get step;
   external void set step (String a_step);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -9158,7 +9285,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -9727,7 +9857,8 @@ class PlotOptionsLineTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -9947,7 +10078,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -10405,7 +10541,8 @@ class PlotOptionsPieTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -10625,7 +10762,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -10635,7 +10777,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -11204,7 +11349,8 @@ class PlotOptionsPolygonTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -11392,7 +11538,12 @@ class PlotOptionsPyramid {
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -11855,7 +12006,8 @@ class PlotOptionsPyramidTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -12082,7 +12234,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -12097,7 +12254,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -12666,7 +12826,8 @@ class PlotOptionsScatterTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -12927,7 +13088,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external String get step;
   external void set step (String a_step);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -12942,7 +13108,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -13511,7 +13680,8 @@ class PlotOptionsSeriesTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -13660,7 +13830,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external bool get showInLegend;
   external void set showInLegend (bool a_showInLegend);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -13982,7 +14157,8 @@ class PlotOptionsSolidgaugeTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -14238,7 +14414,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -14253,7 +14434,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -14822,7 +15006,8 @@ class PlotOptionsSplineTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
@@ -14942,7 +15127,9 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -15057,7 +15244,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -15067,7 +15259,10 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get tooltip;
   external void set tooltip (dynamic a_tooltip);
   /** 
-   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers, or two dimensional arrays with x and y values are allowed. Also, only the first point is tested, and the rest are assumed to be the same format. This saves expensive data checking and indexing in long series. Set it to <code>0</code> disable. 
+   * When a series contains a data array that is longer than this, only one dimensional arrays of numbers,
+ or two dimensional arrays with x and y values are allowed. Also, only the first
+ point is tested, and the rest are assumed to be the same format. This saves expensive
+ data checking and indexing in long series. Set it to <code>0</code> disable. 
    */
   external num get turboThreshold;
   external void set turboThreshold (num a_turboThreshold);
@@ -15599,7 +15794,9 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get color;
   external void set color (dynamic a_color);
   /** 
-   * When using automatic point colors pulled from the <code>options.colors</code> collection, this option determines whether the chart should receive  one color per series or one color per point. 
+   * When using automatic point colors pulled from the <code>options.colors</code>
+ collection, this option determines whether the chart should receive 
+ one color per series or one color per point. 
    */
   external bool get colorByPoint;
   external void set colorByPoint (bool a_colorByPoint);
@@ -15786,7 +15983,12 @@ Due to poor performance, animation is disabled in old IE browsers for column cha
   external dynamic get states;
   external void set states (dynamic a_states);
   /** 
-   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event on a series isn't triggered until the mouse moves over another series, or out of the plot area. When false, the <code>mouseOut</code> event on a series is triggered when the mouse leaves the area around the series' graph or markers. This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the  tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
+   * Sticky tracking of mouse events. When true, the <code>mouseOut</code> event
+ on a series isn't triggered until the mouse moves over another series, or out
+ of the plot area. When false, the <code>mouseOut</code> event on a series is
+ triggered when the mouse leaves the area around the series' graph or markers.
+ This also implies the tooltip. When <code>stickyTracking</code> is false and <code>tooltip.shared</code> is false, the 
+ tooltip will be hidden when moving the mouse between series. Defaults to true for line and area type series, but to false for columns, pies etc. 
    */
   external bool get stickyTracking;
   external void set stickyTracking (bool a_stickyTracking);
@@ -16173,7 +16375,8 @@ class PlotOptionsWaterfallTooltip {
   external String get footerFormat;
   external void set footerFormat (String a_footerFormat);
   /** 
-   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p> 
+   * <p>The HTML of the tooltip header line. Variables are enclosed by curly brackets. Available variables			are <code>point.key</code>, <code>series.name</code>, <code>series.color</code> and other members from the <code>point</code> and <code>series</code> objects. The <code>point.key</code> variable contains the category name, x value or datetime string depending on the type of axis. For datetime axes, the <code>point.key</code> date format can be set using tooltip.xDateFormat.</p>
+ 
 <p>Defaults to <code>&lt;span style="font-size: 10px"&gt;{point.key}&lt;/span&gt;&lt;br/&gt;</code></p> 
    */
   external String get headerFormat;
