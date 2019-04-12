@@ -73,3 +73,8 @@ Disclaimer
 ----------
 *This is just a work in progress. This is just a piece of software to help people use Highcharts in their Dart projects, but the author is not part of the Highcharts team. *
 *Keep in mind that if you want to use Highcharts in commercial applications, you will have to acquire a developer licence* 
+
+## Who Uses
+
+* [Keikai](https://keikai.io) - a sophisticated spreadsheet for big data
+
