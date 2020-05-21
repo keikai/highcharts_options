@@ -124,6 +124,11 @@ class PlotOptions {
    */
   external PlotOptionsWaterfall get waterfall;
   external void set waterfall (PlotOptionsWaterfall a_waterfall);
+  /**
+   * histogram
+   */
+  external PlotOptionsHistogram get histogram;
+  external void set histogram (PlotOptionsHistogram a_histogram);
 }
 @JS()
 @anonymous
@@ -5649,6 +5654,11 @@ class PlotOptionsColumn {
    */
   external List get zones;
   external void set zones (List a_zones);
+}
+@JS()
+@anonymous
+class PlotOptionsHistogram extends PlotOptionsColumn {
+  external factory PlotOptionsHistogram ();
 }
 @JS()
 @anonymous
