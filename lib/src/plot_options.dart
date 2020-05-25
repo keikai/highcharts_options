@@ -129,6 +129,126 @@ class PlotOptions {
    */
   external PlotOptionsHistogram get histogram;
   external void set histogram (PlotOptionsHistogram a_histogram);
+  /**
+   * networkgraph
+   */
+  external PlotOptionsNetworkgraph get networkgraph;
+  external void set networkgraph (PlotOptionsNetworkgraph a_networkgraph);
+}
+
+@JS()
+@anonymous
+class PlotOptionsNetworkgraph {
+  external factory PlotOptionsNetworkgraph ();
+  /**
+   * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
+   */
+  external bool get allowPointSelect;
+  external void set allowPointSelect (bool a_allowPointSelect);
+  /**
+   * The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the  <code>options.colors</code> array.
+   */
+  external dynamic get color;
+  external void set color (dynamic a_color);
+  /**
+   * You can set the cursor to "pointer" if you have click events attached to  the series, to signal to the user that the points and lines can be clicked.
+   */
+  external String get cursor;
+  external void set cursor (String a_cursor);
+  /**
+   * A name for the dash style to use for the graph. Applies only to series type having a graph, like <code>line</code>, <code>spline</code>, <code>area</code> and <code>scatter</code> in  case it has a <code>lineWidth</code>. The value for the <code>dashStyle</code> include:
+      <ul>
+      <li>Solid</li>
+      <li>ShortDash</li>
+      <li>ShortDot</li>
+      <li>ShortDashDot</li>
+      <li>ShortDashDotDot</li>
+      <li>Dot</li>
+      <li>Dash</li>
+      <li>LongDash</li>
+      <li>DashDot</li>
+      <li>LongDashDot</li>
+      <li>LongDashDotDot</li>
+      </ul>
+   */
+  external String get dashStyle;
+  external void set dashStyle (String a_dashStyle);
+  /**
+   * null
+   */
+  external PlotOptionsNetworkgraphDataLabels get dataLabels;
+  external void set dataLabels (PlotOptionsNetworkgraphDataLabels a_dataLabels);
+  /**
+   * Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
+   */
+  external bool get enableMouseTracking;
+  external void set enableMouseTracking (bool a_enableMouseTracking);
+  /**
+   * null
+   */
+  external PlotOptionsNetworkgraphEvents get events;
+  external void set events (PlotOptionsNetworkgraphEvents a_events);
+  /**
+   * An array specifying which option maps to which key in the data point array. This makes it convenient to work with unstructured data arrays from different sources.
+   */
+  external List<String> get keys;
+  external void set keys (List<String> a_keys);
+
+  external PlotOptionsNetworkgraphLayoutAlgorithm get layoutAlgorithm;
+  external void set layoutAlgorithm (PlotOptionsNetworkgraphLayoutAlgorithm a_layoutAlgorithm);
+
+  /**
+   * Pixel with of the graph line.
+   */
+  external num get lineWidth;
+  external void set lineWidth (num a_lineWidth);
+  /**
+   * The <a href="#series.id">id</a> of another series to link to. Additionally, the value can be ":previous" to link to the previous series. When two series are linked, only the first one appears in the legend. Toggling the visibility of this also toggles the linked series.
+   */
+  external String get linkedTo;
+  external void set linkedTo (String a_linkedTo);
+  /**
+   * null
+   */
+  external PlotOptionsNetworkgraphMarker get marker;
+  external void set marker (PlotOptionsNetworkgraphMarker a_marker);
+}
+@JS()
+@anonymous
+class PlotOptionsNetworkgraphLayoutAlgorithm {
+  external factory PlotOptionsNetworkgraphLayoutAlgorithm();
+  external String get approximation;
+  external void set approximation(String a_external);
+
+  external bool get enableSimulation;
+  external void set enableSimulation (bool a_enableSimulation);
+
+  external double get friction;
+  external void set friction (double a_friction);
+
+  external double get gravitationalConstant;
+  external void set gravitationalConstant (double a_gravitationalConstant);
+
+  external int get initialPositionRadius;
+  external void set initialPositionRadius (int a_initialPositionRadius);
+
+  external String get initialPositions;
+  external void set initialPositions(String a_initialPositions);
+
+  external num get linkLength;
+  external void set linkLength(num a_linkLength);
+
+  external int get maxIterations;
+  external void set maxIterations(int a_maxIterations);
+
+  external int get maxSpeed;
+  external void set maxSpeed(int a_maxSpeed);
+
+  external double get theta;
+  external void set theta (double a_theta);
+
+  external String get type;
+  external void set type(String a_type);
 }
 @JS()
 @anonymous
@@ -554,6 +674,11 @@ class PlotOptionsAreaDataLabels {
 }
 @JS()
 @anonymous
+class PlotOptionsNetworkgraphDataLabels extends PlotOptionsAreaDataLabels {
+  external factory PlotOptionsNetworkgraphDataLabels();
+}
+@JS()
+@anonymous
 class PlotOptionsAreaEvents {
   external factory PlotOptionsAreaEvents ();
   /**
@@ -596,6 +721,11 @@ class PlotOptionsAreaEvents {
    */
   external Function get show;
   external void set show (Function a_show);
+}
+@JS()
+@anonymous
+class PlotOptionsNetworkgraphEvents extends PlotOptionsAreaEvents {
+  external factory PlotOptionsNetworkgraphEvents ();
 }
 @JS()
 @anonymous
@@ -650,6 +780,12 @@ class PlotOptionsAreaMarker {
    */
   external num get width;
   external void set width (num a_width);
+}
+
+@JS()
+@anonymous
+class PlotOptionsNetworkgraphMarker extends PlotOptionsAreaMarker {
+  external factory PlotOptionsNetworkgraphMarker ();
 }
 @JS()
 @anonymous
