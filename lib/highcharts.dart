@@ -500,6 +500,26 @@ class ColorAxis {
   external void set minColor(String a_minColor);
   external String get maxColor;
   external void set maxColor(String a_maxColor);
+  external ColorAxisLabels get labels;
+  external void set labels(ColorAxisLabels a_labels);
+
+}
+@JS()
+@anonymous
+class ColorAxisLabels {
+  external factory ColorAxisLabels();
+  external String get align;
+  external void set align(String a_align);
+  external List<num> get autoRotation;
+  external void set autoRotation(List<num> a_autoRotation);
+  external num get autoRotationLimit;
+  external void set autoRotationLimit(num a_autoRotationLimit);
+  external num get distance;
+  external void set distance(num a_distance);
+  external bool get enable;
+  external void set enable(bool a_enable);
+  external String get format;
+  external void set format(String a_format);
 }
 
 @JS()
